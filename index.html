@@ -1,0 +1,807 @@
+<html>
+  <head>
+    <title>Armstrong Aboah</title>
+    <script src='js/jquery-1.11.2.min.js'></script>
+    <script src='js/bootstrap.min.js'></script>
+    <link href='css/bootstrap.min.css' rel='stylesheet'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,900,100italic,100,300,300italic,400italic,500italic,900italic,700italic' rel='stylesheet' type='text/css'>
+    <style>
+      body {
+        font-family: 'sans-serif';
+        font-size: 12pt;
+        background-color: #FFFCF4;
+        color: #4F6071;
+      }
+      .color1 {
+        background-color: #CCC;
+      }
+      #header {
+        width: 100%;
+        height: 360px;
+        background-color: #F0EAD6
+      }
+      #header-inner {
+        position: absolute;
+        width: 70%;
+        left: 30%;
+        top: 150px;
+      }
+      .img-me {
+        border: 3px solid white;
+        float: left;
+        height: 200px;
+      }
+      .header-text {
+        margin-top: 60px;
+        margin-left: 220px;
+      }
+      .header-text-name {
+        font-weight: bold;
+        font-size: 40px;
+      }
+      .header-text-email {
+        font-size: 20px;
+        font-style: italic;
+      }
+      .header-text-desc {
+        font-size: 20px;
+      }
+      #contact-info {
+        position: absolute;
+        left: 80%;
+        width: 20%;
+        top: 360px;
+        height: 100px;
+        background-color: #EEE;
+      }
+      .vspace {
+        margin-bottom: 20px;
+      }
+      .vspace-top {
+        margin-top: 30px;
+      }
+      .paper-image {
+        width: 150px;
+      }
+      .paper-title {
+        font-size: 14pt;
+        font-weight: bold;
+      }
+      .paper-authors {
+      }
+      .paper-authors a {
+        color: #4F6071;
+      }
+      .paper-link {
+      }
+    </style>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-50623594-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <div id='header'>
+      <div id='header-inner'>
+        <img src='images/arm1.jpg' class='img-circle img-me'>
+        <div class='header-text'>
+          <div class='header-text-name'>
+            Armstrong Aboah
+          </div>
+          <div class='header-text-email'>
+            aa5mv at umsystem dot edu
+          </div>
+          <div>
+            <a href="https://github.com/aboah1994">[GitHub]</a>
+            <a href="https://scholar.google.com/citations?user=Ev1PAAwAAAAJ&hl=en&oi=ao">[Google Scholar]</a>
+            <a href="https://twitter.com/armweak9">[Twitter]</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='container'>
+      <div class='col-xs-10 col-md-offset-1'>
+        <div class='row'>
+          <h1>About</h1>
+          <div class='vspace'>
+            I am a Ph.D. Student at the University of Missouri-Columbia
+            and an incoming  Post-doctoral student at Northwestern University.
+          </div>
+          <div class='vspace'>
+            I'm broadly interested in computer vision and machine learning.
+            My research involves visual reasoning, vision and language, image generation,
+            air taxis, naturalistic studies, and autonomous Vehicles.
+          </div>
+          <div class='vspace'>
+            I received my PhD from University of Missouri-Columbia, advised by
+            <a href="https://engineering.missouri.edu/faculty/yaw-adu-gyamfi/" target='_blank'>Yaw Adu-Gyamfi</a>.
+          </div>
+        </div>
+
+        <!-- <div class='row'>
+          <h1>Students</h1>
+          PhD Students
+          <ul>
+            <li><a href='https://kdexd.github.io/'>Karan Desai</a></li>
+            <li>
+              <a href='https://nileshkulkarni.github.io/'>Nilesh Kulkarni</a>
+              (Co-advised with <a href='https://web.eecs.umich.edu/~fouhey/'>David Fouhey</a>)
+            </li>
+            <li>
+              <a href='https://mbanani.github.io/'>Mohamed El Banani</a>
+            </li>
+            <li>
+              <a href='https://crockwell.github.io/'>Chris Rockwell</a>
+              (Co-advised with <a href='https://web.eecs.umich.edu/~fouhey/'>David Fouhey</a>)
+            </li>
+            <li>
+              Ang Cao
+            </li>
+          </ul>
+        </div>
+
+        <div class='row'>
+          <h1>Teaching</h1>
+          <h3>University of Michigan</h3>
+          EECS 498/598: Deep Learning for Computer Vision
+          <a href='https://web.eecs.umich.edu/~justincj/teaching/eecs498/FA2019'>[Fall 2019]</a>
+          <a href='https://web.eecs.umich.edu/~justincj/teaching/eecs498/FA2020'>[Fall 2020]</a>
+          <br>
+          EECS 442: Computer Vision
+          <a href='https://web.eecs.umich.edu/~justincj/teaching/eecs442/WI2020'>[Winter 2020]</a>
+          <a href='https://web.eecs.umich.edu/~justincj/teaching/eecs442/WI2021'>[Winter 2021]</a>
+          <h3>Stanford University</h3>
+            CS 231N: Convolutional Neural Networks for Visual Recognition
+            <a href='https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv'>
+              (2017 Lecture Videos)
+            </a>
+            <ul>
+              <li>
+                <a href='http://cs231n.stanford.edu/2019/'>Spring 2019</a>,
+                <a href='http://cs231n.stanford.edu/2018/'>Spring 2018</a>,
+                <a href='http://cs231n.stanford.edu/2017/'>Spring 2017</a>
+                with <a href='http://ai.stanford.edu/~syyeung/'>Serena Yeung</a>
+                and <a href='https://profiles.stanford.edu/fei-fei-li/'>Fei-Fei Li</a>
+              </li>
+              <li>
+                <a href='http://cs231n.stanford.edu/2016/'>Winter 2016</a>
+                with <a href='https://cs.stanford.edu/people/karpathy/'>Andrej Karpathy</a>
+                and <a href='https://profiles.stanford.edu/fei-fei-li/'>Fei-Fei Li</a>
+              </li>
+            </ul>
+          </h2>
+        </div> -->
+
+        <div class='row'>
+          <h1>Publications</h1>
+
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='images/pave.jpg'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                Pavement Roughness Estimation
+              </div>
+              <div class='paper-authors'>
+                <u>Armstrong Aboah</u>,
+                Yaw Adu-Gyamfi
+              </div>
+              <div>Advances in Data Science and Adaptive Analysis</div>
+              <div>
+                <a href='https://www.researchgate.net/publication/346260803_Smartphone-Based_Pavement_Roughness_Estimation_Using_Deep_Learning_with_Entity_Embedding'>[research gate]</a>
+                <a href='https://github.com/aboah1994/Deep-Learning-Projects'>[code]</a>
+                <!-- <a href='https://github.com/mbanani/byoc'>[code]</a> -->
+              </div>
+            </div>
+          </div>
+
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='images/anomaly.jpg'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                Vehicle Anomaly Detection  
+              </div>
+              <div class='paper-authors'>
+                <!-- <a href='https://crockwell.github.io/'>Chris Rockwell</a>, -->
+                <!-- <a href='https://web.eecs.umich.edu/~fouhey/'>David Fouhey</a>, -->
+                <u>Armstrong Aboah*</u>, Maged Shoman*, Vishal Mandal, Yaw Adu-Gyamfi et al.
+              </div>
+              <div>CVPR 2021</div>
+              <div>
+                <a href='https://arxiv.org/abs/2104.06856'>[arXiv]</a>
+                <a href='https://openaccess.thecvf.com/content/CVPR2021W/AICity/html/Aboah_A_Vision-Based_System_for_Traffic_Anomaly_Detection_Using_Deep_Learning_CVPRW_2021_paper.html'>[CVF]</a>
+                <!-- <a href='https://github.com/crockwell/pixelsynth'>[code]</a> -->
+              </div>
+            </div>
+          </div>
+
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='images/Figure5.png'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                Automatic Retail Checkout
+              </div>
+              <div class='paper-authors'>
+                Maged Shoman*, <u>Armstrong Aboah*</u>, Yaw Adu-Gyamfi et al.
+              </div>
+              <div>CVPR 2022</div>
+              <div>
+                <a href='https://arxiv.org/abs/2204.08584'>[arXiv]</a>
+                <a href='https://openaccess.thecvf.com/content/CVPR2022W/AICity/papers/Shoman_A_Region-Based_Deep_Learning_Approach_to_Automated_Retail_Checkout_CVPRW_2022_paper.pdf'>[CVF]</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='images/delay.jpg'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                Bus Delay Prediction
+              </div>
+              <div class='paper-authors'>
+                Maged Shoman, <u>Armstrong Aboah</u>, Yaw Adu-Gyamfi
+              </div>
+              <div>Journal of Big Data Analytics in Transportation</div>
+              <div>
+                <a href='https://www.researchgate.net/profile/Armstrong-Aboah/publication/348230467_Deep_Learning_Framework_for_Predicting_Bus_Delays_on_Multiple_Routes_Using_Heterogenous_Datasets/links/5ff4dd60299bf1408874dbd8/Deep-Learning-Framework-for-Predicting-Bus-Delays-on-Multiple-Routes-Using-Heterogenous-Datasets.pdf'>[research gate]</a>
+                <!-- <a href='https://mbanani.github.io/unsupervisedrr/index.html'>[project]</a>
+                <a href='https://github.com/mbanani/unsupervisedrr'>[code]</a> -->
+              </div>
+            </div>
+          </div>
+
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='images/pav1.jpg'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                Pavement Condition Prediction              
+              </div>
+              <div class='paper-authors'>
+                Ashkan Behzadian, Tanner Wambui Muturi, Amanda Mullins, <u>Armstrong Aboah</u>, Yaw Adu-Gyamfi et al.
+              </div>
+              <div>arXiv</div>
+              <div>
+                <a href='https://arxiv.org/abs/2206.04874'>[arXiv]</a>
+                <a href='https://dsps-1e998.web.app/'>[competition]</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='images/virtex.jpg'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                Mobile Sensing
+              </div>
+              <div class='paper-authors'>
+                <u>Armstrong Aboah</u>, Michael Boeding, Yaw Adu-Gyamfi
+              </div>
+              <div>arXiv</div>
+              <div>
+                <a href='https://arxiv.org/ftp/arxiv/papers/2106/2106.10733.pdf'>[arXiv]</a>
+                <!-- <a href='https://github.com/kdexd/virtex'>[GitHub]</a>
+                <a href='https://kdexd.github.io/virtex/'>[docs]</a>
+                <a href='https://www.youtube.com/watch?v=L-Fx-7WqPPs'>[video]</a> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='images/pytorch3dlogo.png'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                Accelerating 3D Deep Learning with PyTorch3D
+              </div>
+              <div class='paper-authors'>
+                <a href='https://twitter.com/nikhilaravi?lang=en'>Nikhila Ravi</a>,
+                Jeremy Reizenstein,
+                <a href='http://www.robots.ox.ac.uk/~david/'>David Novotny</a>,
+                Taylor Gordon, <br>
+                <a href='https://www.linkedin.com/in/wanyenlo/'>Wan-Yen Lo</a>, 
+                <u>Justin Johnson</u>,
+                <a href='https://gkioxari.github.io/'>Georgia Gkioxari</a>
+              </div>
+              <div>arXiv 2020</div>
+              <div>
+                <a href='https://arxiv.org/abs/2007.08501'>[arXiv]</a>
+                <a href='https://pytorch3d.org/'>[website]</a>
+                <a href='https://github.com/facebookresearch/pytorch3d'>[GitHub]</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='images/daqa.png'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                Temporal Reasoning via Audio Question Answering
+              </div>
+              <div class='paper-authors'>
+                <a href='https://haythamfayek.com/'>Haytham Fayek</a>,
+                <u>Justin Johnson</u>
+              </div>
+              <div>IEEE/ACM Transactions on Audio, Speech, and Language Processing, 2020</div>
+              <div>
+                <a href='https://arxiv.org/abs/1911.09655'>[arXiv]</a>
+                <a href='https://github.com/facebookresearch/daqa'>[code]</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='images/synsin.gif'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                SynSin: End-to-end View Synthesis from a Single Image
+              </div>
+              <div class='paper-authors'>
+                <a href='https://www.robots.ox.ac.uk/~ow/'>Olivia Wiles</a>,
+                <a href='https://gkioxari.github.io/'>Georgia Gkioxari</a>,
+                <a href='http://szeliski.org/RichardSzeliski.htm'>Richard Szeliski</a>,
+                <u>Justin Johnson</u>
+              </div>
+              <div>CVPR 2020 (Oral)</div>
+              <div>
+                <a href='https://arxiv.org/abs/1912.08804'>[arXiv]</a>
+                <a href='https://www.robots.ox.ac.uk/~ow/synsin.html'>[project]</a>
+                <a href='https://github.com/facebookresearch/synsin'>[code]</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='images/phyre.png'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                PHYRE: A New Benchmark for Physical Reasoning
+              </div>
+              <div class='paper-authors'>
+                <a href='https://github.com/akhti'>Anton Bakhtin</a>,
+                <a href='https://lvdmaaten.github.io/'>Laurens van der Maaten</a>,
+                <u>Justin Johnson</u>,
+                <a href='https://www.linkedin.com/in/laura-gustafson-b1b165b0'>Laura Gustafson</a>,
+                <a href='https://www.rossgirshick.info/'>Ross Girshick</a>
+              </div>
+              <div>NeurIPS 2019</div>
+              <div>
+                <a href='https://arxiv.org/abs/1908.05656'>[arXiv]</a>
+                <a href='https://phyre.ai/'>[project]</a>
+                <a href='https://github.com/facebookresearch/phyre'>[code]</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='images/meshrcnn.gif'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                Mesh R-CNN
+              </div>
+              <div class='paper-authors'>
+                <a href='https://gkioxari.github.io/'>Georgia Gkioxari</a>,
+                <a href='https://people.eecs.berkeley.edu/~malik/'>Jitendra Malik</a>,
+                <u>Justin Johnson</u>
+              </div>
+              <div>ICCV 2019</div>
+              <div>
+                <a href='https://arxiv.org/abs/1906.02739'>[arXiv]</a>
+                <a href='https://gkioxari.github.io/meshrcnn/'>[project]</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='images/nms.png'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                On Network Design Spaces for Visual Recognition
+              </div>
+              <div class='paper-authors'>
+                <a href='https://scholar.google.com/citations?user=UKpinl8AAAAJ'>Ilija Radosavovic</a>,
+                <u>Justin Johnson</u>,
+                <a href='http://vcl.ucsd.edu/~sxie/'>Saining Xie</a>,
+                <a href='https://www.linkedin.com/in/wanyenlo'>Wan-Yen Lo</a>,
+                <a href='https://pdollar.github.io/'>Piotr Doll&aacute;r</a>
+              </div>
+              <div>ICCV 2019</div>
+              <div>
+                <a href='https://arxiv.org/abs/1905.13214'>[arXiv]</a>
+                <a href='https://github.com/facebookresearch/nds'>[code]</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='images/hidden_thumb.png'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                HiDDeN: Hiding Data With Deep Networks
+              </div>
+              <div class='paper-authors'>
+                <a href='https://www.linkedin.com/in/jirenz'>Jiren Zhu*</a>,
+                <a href='https://www.linkedin.com/in/russelljkaplan'>Russell Kaplan*</a>,
+                <u>Justin Johnson</u>,
+                <a href='http://vision.stanford.edu/feifeili/'>Li Fei-Fei</a>
+                <br>
+                [* indicates equal contribution]
+              </div>
+              <div>ECCV 2018</div>
+              <div>
+                <a href="https://arxiv.org/abs/1807.09937">[arXiv]</a>
+                <a href='https://github.com/jirenz/HiDDeN'>[code]</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='images/sg2im_thumb.png'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                Image Generation from Scene Graphs
+              </div>
+              <div class='paper-authors'>
+                <u>Justin Johnson</u>,
+                <a href='http://web.stanford.edu/~agrim/'>Agrim Gupta</a>,
+                <a href='http://vision.stanford.edu/feifeili/'>Li Fei-Fei</a>
+              </div>
+              <div>
+                CVPR 2018
+              </div>
+              <div>
+                <a href="https://arxiv.org/abs/1804.01622">[arXiv]</a>
+                <a href="https://github.com/google/sg2im">[code]</a>
+              </div>
+            </div>
+          </div>
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='images/sgan_thumb.png'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                Social GAN: Socially Acceptable Trajectories with Generative Adversarial Networks
+              </div>
+              <div class='paper-authors'>
+                <a href='http://web.stanford.edu/~agrim/'>Agrim Gupta</a>,
+                <u>Justin Johnson</u>,
+                <a href='http://vision.stanford.edu/feifeili/'>Li Fei-Fei</a>,
+                <a href='http://cvgl.stanford.edu/silvio/'>Silvio Savarese</a>,
+                <a href='https://people.epfl.ch/alexandre.alahi?lang=en'>Alexandre Alahi</a>
+              </div>
+              <div>
+                CVPR 2018
+              </div>
+              <div>
+                <a href="https://arxiv.org/abs/1803.10892">[arXiv]</a>
+                <a href="https://github.com/agrimgupta92/sgan">[code]</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='images/iep_thumb.png'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                Inferring and Executing Programs for Visual Reasoning
+              </div>
+              <div class='paper-authors'>
+                <u>Justin Johnson</u>,
+                <a href='http://home.bharathh.info/'>Bharath Hariharan</a>,
+                <a href='https://lvdmaaten.github.io/'>Laurens van der Maaten</a>,
+                <br>
+                <a href='https://www.cc.gatech.edu/~judy/'>Judy Hoffman</a>,
+                <a href='http://vision.stanford.edu/feifeili/'>Li Fei-Fei</a>,
+                <a href='http://larryzitnick.org/'>C. Lawrence Zitnick</a>,
+                <a href='https://www.rossgirshick.info/'>Ross Girshick</a>
+              </div>
+              <div>ICCV 2017 (Oral)</div>
+              <div>
+                <a href='iep'>[project]</a>
+                <a href='https://github.com/facebookresearch/clevr-iep'>[code]</a>
+                <a href='https://arxiv.org/abs/1705.03633'>[arXiv]</a>
+                <a href='https://www.youtube.com/watch?v=3pCLma2FqSk'>[video]</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='images/stable-style.png'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                Characterizing and Improving Stability in Neural Style Transfer
+              </div>
+              <div class='paper-authors'>
+                <a href='http://web.stanford.edu/~agrim/'>Agrim Gupta</a>,
+                <u>Justin Johnson</u>,
+                <a href='https://people.epfl.ch/alexandre.alahi?lang=en'>Alexandre Alahi</a>,
+                <a href='http://vision.stanford.edu/feifeili/'>Li Fei-Fei</a>
+              </div>
+              <div>ICCV 2017</div>
+              <div>
+                <a href='https://arxiv.org/abs/1705.02092'>[arXiv]</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='papers/clevr/teaser_crop.jpg'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                CLEVR: A Diagnostic Dataset for <br> Compositional Language and Elementary Visual Reasoning
+              </div>
+              <div class='paper-authors'>
+                <u>Justin Johnson</u>,
+                <a href='http://home.bharathh.info/'>Bharath Hariharan</a>,
+                <a href='https://lvdmaaten.github.io/'>Laurens van der Maaten</a>,
+                <br>
+                <a href='http://vision.stanford.edu/feifeili/'>Li Fei-Fei</a>,
+                <a href='http://larryzitnick.org/'>C. Lawrence Zitnick</a>,
+                <a href='https://www.rossgirshick.info/'>Ross Girshick</a>
+              </div>
+              <div>CVPR 2017</div>
+              <div>
+                <a href='clevr'>[project]</a>
+                <a href='https://github.com/facebookresearch/clevr-dataset-gen'>[code]</a>
+                <a href='https://arxiv.org/abs/1612.06890'>[arXiv]</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='images/im2p_thumb.png'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                A Hierarchical Approach for Generating Descriptive Image Paragraphs                
+              </div>
+              <div class='paper-authors'>
+                <a href='http://ai.stanford.edu/~jkrause/'>Jonathan Krause</a>,
+                <u>Justin Johnson</u>,
+                <a href='https://ranjaykrishna.com/index.html'>Ranjay Krishna</a>,
+                <a href='http://vision.stanford.edu/feifeili/'>Li Fei-Fei</a>
+              </div>
+              <div>CVPR 2017 (Spotlight)</div>
+              <div>
+                <a href='http://cs.stanford.edu/people/ranjaykrishna/im2p/index.html'>[project]</a>
+                <a href='https://arxiv.org/abs/1611.06607'>[arXiv]</a>
+                <a href='http://visualgenome.org/static/data/dataset/paragraphs_v1.json.zip'>[dataset]</a>
+                <a href='https://www.youtube.com/watch?v=G_hWOGH0a0w'>[video]</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='papers/visual-genome/vg-logo.png'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                Visual Genome: Connecting Language and Vision <br>
+                using Crowdsourced Dense Image Annotations
+              </div>
+              <div class='paper-authors'>
+                <a href='https://ranjaykrishna.com/index.html'>Ranjay Krishna</a>,
+                <a href='https://ai.stanford.edu/~yukez/'>Yuke Zhu</a>,
+                <a href='https://ori.ox.ac.uk/ori-people/oliver-groth/'>Oliver Groth</a>,
+                <u>Justin Johnson</u>,
+                <br>
+                <a href='https://scholar.google.com/citations?user=Fu9I2SwAAAAJ&hl=en'>Kenji Hata</a>,
+                <a href='https://www.linkedin.com/in/jlkravitz'>Joshua Kravitz</a>,
+                Stephanie Chen,
+                <a href='https://www.skamalas.com/'>Yannis Kalantidis</a>,
+                <br>
+                <a href='http://vision.stanford.edu/lijiali/'>Li-Jia Li</a>,
+                <a href='https://scholar.google.com/citations?user=ge8g4uoAAAAJ&hl=en'>David A. Shamma</a>,
+                <a href='https://hci.stanford.edu/msb/'>Michael Bernstein</a>,
+                <a href='http://vision.stanford.edu/feifeili/'>Li Fei-Fei</a>
+              </div>
+              <div>IJCV 2017</div>
+              <div>
+                <a href='http://visualgenome.org'>[project]</a>
+                <a href='http://visualgenome.org/static/paper/Visual_Genome.pdf'>[pdf]</a>
+                <a href='http://arxiv.org/abs/1602.07332'>[arXiv]</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='papers/eccv16/31_muse_mine.png'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                Perceptual Losses for Real-Time Style Transfer and Super-Resolution
+              </div>
+              <div class='paper-authors'>
+                <u>Justin Johnson</u>,
+                <a href='https://people.epfl.ch/alexandre.alahi?lang=en'>Alexandre Alahi</a>,
+                <a href='http://vision.stanford.edu/feifeili/'>Li Fei-Fei</a>
+              </div>
+              <div>ECCV 2016</div>
+              <div>
+                <a href='eccv16'>[project]</a>
+                <a href='https://github.com/jcjohnson/fast-neural-style'>[code]</a>
+                <a href='papers/eccv16/JohnsonECCV16.pdf'>[pdf]</a>
+                <a href='http://arxiv.org/abs/1603.08155'>[arXiv]</a>
+                <a href='papers/eccv16/JohnsonECCV16Supplementary.pdf'>[supplementary]</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='papers/densecap/SimpleSystem.svg'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                DenseCap: Fully Convolutional Localization Networks for Dense Captioning
+              </div>
+              <div class='paper-authors'>
+                <u>Justin Johnson</u>*,
+                <a href='https://cs.stanford.edu/people/karpathy/'>Andrej Karpathy*</a>,
+                <a href='http://vision.stanford.edu/feifeili/'>Li Fei-Fei</a>
+              <br>
+                [* indicates equal contribution]
+              </div>
+              <div>CVPR 2016 (Oral)</div>
+              <div>
+                <a href='http://cs.stanford.edu/people/karpathy/densecap/'>[project]</a>
+                <a href='https://github.com/jcjohnson/densecap'>[code]</a>
+                <a href='papers/densecap/JohnsonCVPR2016.pdf'>[pdf]</a>
+                <a href='http://arxiv.org/abs/1511.07571'>[arXiv]</a>
+                <a href='http://cs.stanford.edu/people/jcjohns/densecap/densecap_splits.zip'>[data splits]</a>
+                <a href='https://drive.google.com/file/d/0Byvt-AfX75o1Q3F6bWpYamNwSUE/view?usp=sharing'>[slides]</a>
+                <a href='https://www.youtube.com/watch?v=2wRnmRSrgCo'>[video]</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='papers/understanding-rnns/onion.png'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                Visualizing and Understanding Recurrent Networks
+              </div>
+              <div class='paper-authors'>
+                <a href='https://cs.stanford.edu/people/karpathy/'>Andrej Karpathy*</a>,
+                <u>Justin Johnson</u>*,
+                <a href='http://vision.stanford.edu/feifeili/'>Li Fei-Fei</a>
+                <br>
+                [* indicates equal contribution]
+              </div>
+              <div>ICLR Workshop 2016</div>
+              <div>
+                <a href='papers/understanding-rnns/KarpathyICLR2016.pdf'>[pdf]</a>
+                <a href='http://arxiv.org/abs/1506.02078'>[arXiv]</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src='papers/iccv15/GraphNeighborhoodSmall.svg'>
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                Love Thy Neighbors: Image Annotation by Exploiting Image Metadata
+              </div>
+              <div class='paper-authors'>
+                <u>Justin Johnson</u>*,
+                <a href='http://www.lambertoballan.net/'>Lamberto Ballan*</a>,
+                <a href='http://vision.stanford.edu/feifeili/'>Li Fei-Fei</a>
+                <br>
+                [* indicates equal contribution]
+              </div>
+              <div>ICCV 2015</div>
+              <div>
+                <a href='papers/iccv15/JohnsonICCV2015.pdf'>[pdf]</a>
+                <a href="papers/iccv15/JohnsonICCV2015.bib">[bib]</a>
+                <a href='http://arxiv.org/abs/1508.07647'>[arXiv]</a>
+              </div>
+            </div>
+          </div>
+
+          <div class='row vspace-top'>
+            <div class='col-xs-3 text-center'>
+              <img class='paper-image' src="papers/cvpr2015/scene_graph_282.png">
+            </div>
+            <div class='col-xs-9'>
+              <div class='paper-title'>
+                Image Retrieval using Scene Graphs
+              </div>
+              <div class='paper-authors'>
+                <u>Justin Johnson</u>,
+                <a href='https://ranjaykrishna.com/index.html'>Ranjay Krishna</a>,
+                <a href='https://scholar.google.com/citations?user=cCda-zQAAAAJ&hl=en'>Michael Stark</a>,
+                <a href='http://vision.stanford.edu/lijiali/'>Li-Jia Li</a>,
+                <a href='https://scholar.google.com/citations?user=ge8g4uoAAAAJ&hl=en'>David A. Shamma</a>,
+                <br>
+                <a href='https://hci.stanford.edu/msb/'>Michael Bernstein</a>,
+                <a href='http://vision.stanford.edu/feifeili/'>Li Fei-Fei</a>
+              </div>
+              <div>
+                CVPR 2015
+              </div>
+              <div>
+                <a href="papers/cvpr2015/JohnsonCVPR2015.pdf">[pdf]</a>
+                <a href="papers/cvpr2015/JohnsonCVPR2015.bib">[bib]</a>
+                <a href="http://imagenet.stanford.edu/internal/jcjohns/scene_graphs/sg_dataset.zip">[dataset (2GB)]</a>
+                <a href="http://cs.stanford.edu/people/jcjohns/cvpr15_supp/">[supplementary]</a>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <div class='row vspace-top'>
+          <h1>Side Projects</h1>
+          <a href='https://github.com/aboah1994/Movie-Recommendation-System' target='_blank'>
+            <h2>movie-recommendation-system</h2>
+          </a>
+          A simple NLP algorithm for recommending movies.
+          In this project I developed a simple movie recommendation 
+          system, that returns the top 10 movies base on a given movie title.
+
+
+          <a href='https://github.com/aboah1994/Naturalistic-Driving-Studies-NDS-' target='_blank'>
+            <h2>naturalistic-driving-studies-nds</h2>
+          </a>
+          The goal of this Project was to understand the driver's environment in a naturalistic settings.
+
+          <a href='https://github.com/aboah1994/CamVid-Competition' target='_blank'>
+            <h2>camvid-competition</h2>
+          </a>
+          This repository contains implementations of multiple deep learning models 
+          (U-Net, FCN32 and SegNet) for multiclass semantic segmentation of the CamVid dataset.
+
+          <a href='https://github.com/aboah1994/Classification-Projects-ML-/tree/main/Multilable%20Weather%20classification' target='_blank'>
+            <h2>multclass-weather-classification</h2>
+          </a>
+          This project involves a multiclass classification of the weather. Three main multi-classes were considered. 
+          They are '[day,rainy]', '[night,clear]', and '[day,clear]'. The project utilizes image data sourced from smarphone camera.
+        </div>
+        <div class='row vspace-top'></div>
+      </div>
+    </div>
+  </body>
+</html>
