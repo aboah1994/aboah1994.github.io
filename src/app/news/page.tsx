@@ -1,0 +1,72 @@
+import React from "react";
+import HeroBanner from "@/components/hero-banner";
+import { news } from "@/lib/constants";
+
+const FeaturedNews = ({ item }: { item: (typeof news)[0] }) => (
+  <div className="flex flex-col gap-2 border-l-8 border-slate-900 bg-slate-50 rounded-lg p-6 mb-10">
+    <div className="flex items-center gap-3 mb-2">
+      <span className="inline-block bg-slate-900 text-white text-xs font-semibold rounded px-2 py-1">
+        {new Date(item.date).toLocaleDateString(undefined, {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        })}
+      </span>
+      <span className="uppercase text-xs text-slate-900 font-bold tracking-wider">
+        Featured
+      </span>
+    </div>
+    <h2 className="text-2xl font-bold text-slate-900 mb-2 leading-tight">
+      {item.title}
+    </h2>
+    <div className="text-gray-700 text-base">{item.description}</div>
+  </div>
+);
+
+const NewsCard = ({ item }: { item: (typeof news)[0] }) => (
+  <div className="flex gap-4 items-start py-4 border-b border-gray-100 last:border-b-0">
+    <div className="flex flex-col items-center mr-2">
+      <span className="bg-slate-100 text-slate-900 text-xs font-semibold rounded px-2 py-0.5 mb-1">
+        {new Date(item.date).toLocaleDateString(undefined, {
+          year: "2-digit",
+          month: "short",
+          day: "numeric",
+        })}
+      </span>
+    </div>
+    <div>
+      <div className="text-lg font-semibold text-slate-900 mb-1">
+        {item.title}
+      </div>
+      <div className="text-gray-700 mb-1 text-base">{item.description}</div>
+    </div>
+  </div>
+);
+
+const News = () => {
+  const [featured, ...rest] = news;
+  return (
+    <>
+      <HeroBanner
+        id="news"
+        title="News & Updates"
+        subtitle="My Latest Achievements and Milestones"
+        description="Stay updated with my latest developments, including new publications, grants, awards, and research achievements in transportation engineering and data science."
+        pageType="news"
+        isSmall={true}
+      />
+      <section className="py-16 px-4 md:px-6">
+        <div className="container mx-auto max-w-7xl">
+          <FeaturedNews item={featured} />
+          <div className="divide-y divide-gray-100 bg-white rounded-lg p-4">
+            {rest.map((item) => (
+              <NewsCard key={item.id} item={item} />
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default News;
