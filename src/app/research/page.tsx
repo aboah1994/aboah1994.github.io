@@ -191,7 +191,7 @@ const Research = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
       >
-        <div className="container mx-auto max-w-7xl">
+        <div className="container mx-auto max-w-6xl">
           <motion.div className="text-center mb-16" variants={fadeInUp}>
             <motion.h2
               className="text-3xl md:text-4xl font-bold text-slate-900 mb-6"
@@ -288,7 +288,7 @@ const Research = () => {
         viewport={{ once: true, amount: 0.1 }}
         variants={staggerContainer}
       >
-        <div className="container mx-auto max-w-7xl">
+        <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div variants={fadeInLeft}>
               <motion.h2

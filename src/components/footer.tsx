@@ -1,5 +1,4 @@
 import {
-  Facebook,
   Github,
   Linkedin,
   Mail,
@@ -12,39 +11,54 @@ import { navLinks } from "@/lib/constants";
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-900 text-slate-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+    <footer className="bg-teal-800 text-white pt-12 pb-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           {/* Company Info Section */}
-          <div className="md:col-span-4">
-            <div className="flex items-center space-x-3 mb-4">
-              <Link href="/" className="flex items-center space-x-3 group">
-                <div>
-                  <h1 className="text-lg font-bold text-slate-300 group-hover:text-slate-400 transition-colors">
-                    Prof. Aboah Armstrong
-                  </h1>
-                  <p className="text-xs text-slate-400 -mt-1">
-                    Professor & Researcher
-                  </p>
-                </div>
-              </Link>
-            </div>
-            <p className="text-sm text-slate-400 mb-6 leading-relaxed">
-              Follow me on the various social media platforms for updates and
-              tips on how to care for your loved ones.
+          <div className="md:col-span-4 flex flex-col gap-4">
+            <Link href="/" className="flex items-center space-x-3 group mb-2">
+              <div>
+                <h1 className="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">
+                  Prof. Aboah Armstrong
+                </h1>
+                <p className="text-xs text-orange-400 -mt-1">
+                  Professor & Data Scientist
+                </p>
+              </div>
+            </Link>
+            <p className="text-sm text-teal-100 mb-2 leading-relaxed">
+              Dedicated to advancing transportation engineering, computer
+              vision, and data science through research, teaching, and
+              collaboration.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-3 mt-2">
               {[
-                { icon: Twitter, label: "Twitter" },
-                { icon: Linkedin, label: "LinkedIn" },
-                { icon: Facebook, label: "Facebook" },
-                { icon: Github, label: "GitHub" },
+                {
+                  icon: Twitter,
+                  label: "Twitter",
+                  href: "https://twitter.com/armweak9",
+                  color: "bg-orange-400",
+                },
+                {
+                  icon: Linkedin,
+                  label: "LinkedIn",
+                  href: "https://www.linkedin.com/in/armstrong-aboah-ph-d-5ab809142/",
+                  color: "bg-white text-teal-800",
+                },
+                {
+                  icon: Github,
+                  label: "GitHub",
+                  href: "https://github.com/aboah1994",
+                  color: "bg-teal-900",
+                },
               ].map((social) => (
                 <Link
                   key={social.label}
-                  href="#"
-                  className="text-slate-400 hover:text-white transition-colors duration-200"
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
+                  className={`w-9 h-9 flex items-center justify-center rounded-full ${social.color} hover:scale-110 transition-transform`}
                 >
                   <social.icon className="h-5 w-5" />
                 </Link>
@@ -54,8 +68,8 @@ const Footer = () => {
 
           {/* Resources Section */}
           <div className="md:col-span-3 md:col-start-6">
-            <h3 className="text-white font-semibold text-base mb-4">
-              Quick links
+            <h3 className="text-orange-400 font-semibold text-base mb-4 uppercase tracking-wide">
+              Quick Links
             </h3>
             <ul className="space-y-3">
               {navLinks
@@ -64,7 +78,7 @@ const Footer = () => {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-slate-400 hover:text-white transition-colors duration-200"
+                      className="text-sm text-teal-100 hover:text-orange-400 transition-colors duration-200"
                     >
                       {link.name}
                     </Link>
@@ -75,21 +89,21 @@ const Footer = () => {
 
           {/* Contact Section */}
           <div className="md:col-span-4">
-            <h3 className="text-white font-semibold text-base mb-4">
+            <h3 className="text-orange-400 font-semibold text-base mb-4 uppercase tracking-wide">
               Contact Info
             </h3>
             <ul className="space-y-4">
               {[
                 {
                   icon: MapPin,
-                  text: "3081 Namib dr, Colorado Springs, CO, 80939",
+                  text: "CIE 201K, 1410 North 14th Avenue, Fargo, ND 58102",
                 },
-                { icon: PhoneCall, text: "(719) 291-0835" },
+                { icon: PhoneCall, text: "(701) 231-7564" },
                 { icon: Mail, text: "aboah.armstrong@ndsu.edu" },
               ].map((contact, index) => (
                 <li key={index}>
-                  <div className="flex items-start space-x-3 text-slate-400">
-                    <contact.icon className="h-5 w-5 mt-0.5 flex-shrink-0" />
+                  <div className="flex items-start space-x-3 text-teal-100">
+                    <contact.icon className="h-5 w-5 mt-0.5 flex-shrink-0 text-orange-400" />
                     <span className="text-sm">{contact.text}</span>
                   </div>
                 </li>
@@ -99,8 +113,8 @@ const Footer = () => {
         </div>
 
         {/* Copyright Section */}
-        <div className="mt-12 pt-8 border-t border-slate-800">
-          <p className="text-center text-sm text-slate-500">
+        <div className="mt-12 pt-8 border-t border-teal-700">
+          <p className="text-center text-xs text-teal-100">
             &copy; {new Date().getFullYear()} Professor Aboah Armstrong. All
             rights reserved.
           </p>

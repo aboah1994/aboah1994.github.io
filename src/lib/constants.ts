@@ -201,6 +201,7 @@ export const publications = [
     subtext: "IEEE Access",
     image: "/divnends.png",
     links: [{ label: "Paper", url: "#" }],
+    year: 2024,
   },
   {
     id: 2,
@@ -212,6 +213,7 @@ export const publications = [
       "IEEE / CVF Computer Vision and Pattern Recognition Conference Workshop (CVPR 2024)",
     image: "/lowlight.png",
     links: [{ label: "Paper", url: "#" }],
+    year: 2024,
   },
   {
     id: 3,
@@ -222,6 +224,7 @@ export const publications = [
       "IEEE / CVF Computer Vision and Pattern Recognition Conference Workshop (CVPR 2024)",
     image: "/vidcap.png",
     links: [{ label: "Paper", url: "#" }],
+    year: 2024,
   },
   {
     id: 4,
@@ -231,6 +234,7 @@ export const publications = [
     subtext: "TRB",
     image: "/gaze.png",
     links: [{ label: "Paper", url: "#" }],
+    year: 2024,
   },
   {
     id: 5,
@@ -241,6 +245,7 @@ export const publications = [
     subtext: "WACV 2024 [Early Accept]",
     image: "/gaze.png",
     links: [{ label: "Paper", url: "#" }],
+    year: 2024,
   },
   {
     id: 6,
@@ -251,6 +256,7 @@ export const publications = [
       "Proceedings of the Human Factors and Ergonomics Society Annual Meeting",
     image: "/3dcnn.jpeg",
     links: [{ label: "Paper", url: "#" }],
+    year: 2024,
   },
   {
     id: 7,
@@ -262,6 +268,7 @@ export const publications = [
       "103rd Annual Conference of the Transportation Research Board (TRB), Washington, DC",
     image: "/nemma.gif",
     links: [{ label: "arXiv", url: "#" }],
+    year: 2024,
   },
   {
     id: 8,
@@ -272,6 +279,7 @@ export const publications = [
       "103rd Annual Conference of the Transportation Research Board (TRB), Washington, DC",
     image: "/lidar1.jpg",
     links: [],
+    year: 2024,
   },
   {
     id: 9,
@@ -283,6 +291,7 @@ export const publications = [
       "103rd Annual Conference of the Transportation Research Board (TRB), Washington, DC",
     image: "/edge-computing.png",
     links: [{ label: "arXiv", url: "#" }],
+    year: 2024,
   },
   {
     id: 10,
@@ -297,6 +306,7 @@ export const publications = [
       { label: "arXiv", url: "#" },
       { label: "code", url: "#" },
     ],
+    year: 2023,
   },
   {
     id: 11,
@@ -310,6 +320,7 @@ export const publications = [
       { label: "arXiv", url: "#" },
       { label: "code", url: "#" },
     ],
+    year: 2023,
   },
   {
     id: 12,
@@ -322,6 +333,7 @@ export const publications = [
       { label: "arXiv", url: "#" },
       { label: "Paper", url: "#" },
     ],
+    year: 2023,
   },
   {
     id: 13,
@@ -331,6 +343,7 @@ export const publications = [
     subtext: "Journal of Transportation Engineering Part A: Systems",
     image: "/maneu.png",
     links: [{ label: "arXiv", url: "#" }],
+    year: 2024,
   },
   {
     id: 14,
@@ -343,6 +356,7 @@ export const publications = [
       { label: "research gate", url: "#" },
       { label: "code", url: "#" },
     ],
+    year: 2024,
   },
   {
     id: 15,
@@ -357,6 +371,7 @@ export const publications = [
       { label: "arXiv", url: "#" },
       { label: "CVF", url: "#" },
     ],
+    year: 2021,
   },
   {
     id: 16,
@@ -369,6 +384,7 @@ export const publications = [
       { label: "arXiv", url: "#" },
       { label: "CVF", url: "#" },
     ],
+    year: 2022,
   },
   {
     id: 17,
@@ -378,6 +394,7 @@ export const publications = [
     subtext: "Journal of Big Data Analytics in Transportation",
     image: "/delay.jpg",
     links: [{ label: "research gate", url: "#" }],
+    year: 2024,
   },
   {
     id: 18,
@@ -390,6 +407,7 @@ export const publications = [
       { label: "arXiv", url: "#" },
       { label: "competition", url: "#" },
     ],
+    year: 2024,
   },
   {
     id: 19,
@@ -398,6 +416,7 @@ export const publications = [
     subtext: "Journal of Big Data Analytics in Transportation",
     image: "/virtex.jpg",
     links: [{ label: "arXiv", url: "#" }],
+    year: 2024,
   },
   {
     id: 20,
@@ -406,6 +425,7 @@ export const publications = [
     subtext: "IEEE Transactions on Intelligent Transportation Systems",
     image: "/gcru.jpg",
     links: [{ label: "arXiv", url: "#" }],
+    year: 2024,
   },
 ];
 

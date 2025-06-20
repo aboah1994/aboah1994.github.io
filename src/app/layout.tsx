@@ -1,18 +1,11 @@
 import type { Metadata } from "next";
-import { Raleway, Work_Sans } from "next/font/google";
+import { Bitter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
-const workSans = Work_Sans({
-  variable: "--font-work-sans",
-  subsets: ["latin"],
-  display: "swap",
-  preload: true,
-});
-
-const raleway = Raleway({
-  variable: "--font-raleway",
+const bitter = Bitter({
+  variable: "--font-bitter",
   subsets: ["latin"],
   display: "swap",
   preload: true,
@@ -30,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${workSans.variable} ${raleway.variable} antialiased`}>
+      <body className={`${bitter.variable} antialiased`}>
         <Navbar />
         {children}
         <Footer />
