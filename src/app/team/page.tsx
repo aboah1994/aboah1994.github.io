@@ -4,67 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone, MapPin, Linkedin, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
-
-const currentStudents = [
-  {
-    name: "Blessing Agyei Kyem",
-    degree: "PhD Student",
-    image: "/blessing.png",
-    interests: [
-      "Computer Vision",
-      "Multimodal AI",
-      "Applications in Transport Systems",
-    ],
-    links: [
-      {
-        label: "LinkedIn",
-        url: "https://www.linkedin.com/in/blessing-agyei-kyem-b258121a8",
-        icon: "Linkedin",
-      },
-      {
-        label: "Website",
-        url: "https://blessing-agyei-kyem.github.io/",
-        icon: "ExternalLink",
-      },
-    ],
-  },
-  {
-    name: "Joshua Asamoah",
-    degree: "PhD Student",
-    image: "/joshua.png",
-    interests: ["Transport Systems", "IoT", "Multimodal AI"],
-    links: [
-      {
-        label: "LinkedIn",
-        url: "https://www.linkedin.com/in/joshua-kofi-asamoah-1ba4091a2/",
-        icon: "Linkedin",
-      },
-    ],
-  },
-  {
-    name: "Eugene Denteh",
-    degree: "PhD Student",
-    image: "/eugene.jpg",
-    interests: [
-      "Smart Cities",
-      "Smart Transportation Systems",
-      "Energy-efficient Buildings",
-      "Data Analytics",
-    ],
-    links: [
-      {
-        label: "Email",
-        url: "mailto:edenteh5@gmail.com",
-        icon: "Mail",
-      },
-      {
-        label: "LinkedIn",
-        url: "https://www.linkedin.com/in/eugene-denteh-50aa0217a/",
-        icon: "Linkedin",
-      },
-    ],
-  },
-];
+import { currentStudents } from "@/lib/constants";
 
 export default function Team() {
   return (

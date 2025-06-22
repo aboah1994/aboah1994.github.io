@@ -5,8 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { publications } from "@/lib/constants";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
 
-// Publication type based on constants.ts
 interface Publication {
   id: number;
   title: string;
@@ -17,34 +22,9 @@ interface Publication {
   year?: number;
 }
 
-type GroupedYear = { year: string; pubs: Publication[] };
-
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.05,
-    },
-  },
-};
-
-// Group publications by year (descending)
-const groupByYear = (pubs: Publication[]): GroupedYear[] => {
-  const grouped: { [year: string]: Publication[] } = {};
-  pubs.forEach((pub: Publication) => {
-    const year = pub.year ? String(pub.year) : "Other";
-    if (!grouped[year]) grouped[year] = [];
-    grouped[year].push(pub);
-  });
-  return Object.entries(grouped)
-    .sort((a, b) => Number(b[0]) - Number(a[0])) // Descending by year
-    .map(([year, pubs]) => ({ year, pubs }));
 };
 
 const getBadgeColor = (subtext: string): string => {
@@ -57,14 +37,24 @@ const getBadgeColor = (subtext: string): string => {
 };
 
 const highlightAuthor = (author: string): React.ReactNode => {
-  let out: React.ReactNode = author;
-  if (author.includes("*"))
-    out = <span className="text-orange-400 font-bold">{author}</span>;
-  else if (author.includes("†"))
-    out = <span className="text-teal-800 font-bold">{author}</span>;
-  else if (author.includes("Armstrong Aboah"))
-    out = <span className="text-teal-800 font-bold">{author}</span>;
-  return out;
+  if (author.includes("*") || author.includes("†")) {
+    // Already handled by previous logic
+    return (
+      <span
+        className={
+          author.includes("*")
+            ? "text-orange-400 font-bold"
+            : "text-teal-800 font-bold"
+        }
+      >
+        {author}
+      </span>
+    );
+  }
+  if (/Aboah Armstrong|A Aboah/.test(author)) {
+    return <span className="text-teal-800 font-bold">{author}</span>;
+  }
+  return author;
 };
 
 const PublicationCard = ({ pub }: { pub: Publication }) => (
@@ -82,7 +72,7 @@ const PublicationCard = ({ pub }: { pub: Publication }) => (
       />
     </div>
     <div className="flex-1">
-      <h3 className="text-lg md:text-xl font-bold text-gray-900 leading-tight mb-1">
+      <h3 className="text-base md:text-lg font-bold text-gray-900 leading-tight mb-1">
         {pub.title}
       </h3>
       <div className="text-sm md:text-base text-gray-700 mb-1 flex flex-wrap gap-1">
@@ -139,7 +129,9 @@ const PublicationCard = ({ pub }: { pub: Publication }) => (
 );
 
 export default function Publications() {
-  const grouped = groupByYear(publications);
+  const years = Object.keys(publications).sort((a, b) => Number(b) - Number(a));
+  const defaultOpen = "2025";
+
   return (
     <>
       <HeroBanner
@@ -178,28 +170,77 @@ export default function Publications() {
               </span>
             </span>
           </div>
-          {grouped.map(({ year, pubs }) => (
-            <motion.section
-              key={year}
-              className="mb-12"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={staggerContainer}
-            >
-              <motion.h2
-                className="text-2xl md:text-3xl font-bold text-teal-800 mb-6 border-b border-teal-100 pb-2"
-                variants={fadeInUp}
-              >
-                {year}
-              </motion.h2>
-              <div className="bg-white rounded-lg">
-                {pubs.map((pub: Publication) => (
-                  <PublicationCard key={pub.id} pub={pub} />
-                ))}
-              </div>
-            </motion.section>
-          ))}
+          <Accordion type="multiple" defaultValue={[defaultOpen]}>
+            {years.map((year) => {
+              const yearData = publications[year as keyof typeof publications];
+              return (
+                <AccordionItem key={year} value={year}>
+                  <AccordionTrigger className="text-xl md:text-2xl font-bold text-teal-800 mb-2 pb-2 pr-8 relative border-0">
+                    {year}
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    {year === "2025" ? (
+                      <>
+                        <h3 className="text-lg md:text-xl font-semibold text-gray-900 mt-2 mb-2">
+                          Peer Reviewed Journal And Conference
+                        </h3>
+                        <div className="bg-white rounded-lg mb-8">
+                          {yearData["Peer Reviewed Journal And Conference"]
+                            .length === 0 ? (
+                            <div className="text-gray-500 mb-6">
+                              No publications yet.
+                            </div>
+                          ) : (
+                            yearData[
+                              "Peer Reviewed Journal And Conference"
+                            ].map((pub: Publication) => (
+                              <PublicationCard key={pub.id} pub={pub} />
+                            ))
+                          )}
+                        </div>
+                        <h3 className="text-lg md:text-xl font-semibold text-gray-900 mt-2 mb-2">
+                          Papers Under Review
+                        </h3>
+                        <div className="bg-white rounded-lg">
+                          {yearData["Papers Under Review"].length === 0 ? (
+                            <div className="text-gray-500 mb-6">
+                              No papers under review.
+                            </div>
+                          ) : (
+                            yearData["Papers Under Review"].map(
+                              (pub: Publication) => (
+                                <PublicationCard key={pub.id} pub={pub} />
+                              )
+                            )
+                          )}
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <h3 className="text-lg md:text-xl font-semibold text-gray-900 mt-2 mb-2">
+                          Peer Reviewed Journal And Conference
+                        </h3>
+                        <div className="bg-white rounded-lg">
+                          {yearData["Peer Reviewed Journal And Conference"]
+                            .length === 0 ? (
+                            <div className="text-gray-500 mb-6">
+                              No publications yet.
+                            </div>
+                          ) : (
+                            yearData[
+                              "Peer Reviewed Journal And Conference"
+                            ].map((pub: Publication) => (
+                              <PublicationCard key={pub.id} pub={pub} />
+                            ))
+                          )}
+                        </div>
+                      </>
+                    )}
+                  </AccordionContent>
+                </AccordionItem>
+              );
+            })}
+          </Accordion>
         </div>
       </section>
     </>

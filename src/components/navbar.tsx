@@ -14,7 +14,11 @@ const Navbar = () => {
   const pathname = usePathname();
 
   React.useEffect(() => {
-    return scrollY.onChange(() => setHasScrolled(scrollY.get() > 10));
+    function handleScroll(latest: number) {
+      setHasScrolled(latest > 10);
+    }
+    scrollY.on("change", handleScroll);
+    return () => scrollY.clearListeners();
   }, [scrollY]);
 
   return (
@@ -73,7 +77,7 @@ const Navbar = () => {
           </nav>
 
           <button
-            className="md:hidden p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors"
+            className="md:hidden p-2 text-white hover:text-white/80 hover:bg-slate-100 rounded-lg transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

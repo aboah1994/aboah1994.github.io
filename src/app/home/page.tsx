@@ -3,14 +3,15 @@
 import HeroBanner from "@/components/hero-banner";
 import {
   GraduationCap,
-  Calendar,
   BrainCircuit,
-  Camera,
   Car,
-  BarChart3,
   MapPin,
   Mail,
   Phone,
+  Cpu,
+  Building2,
+  Route,
+  Shield,
 } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -93,7 +94,7 @@ const teachingTimeline = [
   },
   {
     school: "University of Missouri-Columbia",
-    code: "2022FS-CV_ENG-3100-01",
+    code: "CV_ENG-3100-01 - Fall 2022",
     course: "Transportation Engineering",
     color: "bg-teal-100",
     textColor: "text-teal-900",
@@ -101,7 +102,7 @@ const teachingTimeline = [
   },
   {
     school: "Tennessee Technological University",
-    code: "CEE3610",
+    code: "CEE3610 - Fall 2021",
     course: "Transportation Planning",
     color: "bg-orange-100",
     textColor: "text-orange-600",
@@ -246,33 +247,50 @@ export default function Home() {
             </motion.p>
           </motion.div>
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={staggerContainer}
           >
             {[
               {
-                icon: "BrainCircuit",
-                title: "Machine Learning",
+                icon: BrainCircuit,
+                title: "Big Data Analytics In Transportation",
                 description:
-                  "Advanced algorithms and neural network architectures",
+                  "Leveraging large-scale data and machine learning to uncover insights, predict trends, and support decision-making in transportation systems",
                 iconColor: "text-teal-800",
               },
               {
-                icon: "Camera",
-                title: "Computer Vision",
-                description: "Visual reasoning and image analysis systems",
+                icon: Car,
+                title: "Autonomous and Connected Vehicles",
+                description:
+                  "Exploring the development, deployment, and societal impacts of self-driving and networked vehicles",
                 iconColor: "text-orange-400",
               },
               {
-                icon: "Car",
-                title: "Transportation Systems",
-                description: "Smart infrastructure and traffic optimization",
+                icon: Building2,
+                title: "Digital Twins and Smart Cities",
+                description:
+                  "Utilizing digital replicas of physical assets and urban environments to optimize city planning, operations, and sustainability",
                 iconColor: "text-teal-800",
               },
               {
-                icon: "BarChart3",
-                title: "Data Science",
-                description: "Big data analytics and predictive modeling",
+                icon: Cpu,
+                title: "Intelligent Transportation Systems",
+                description:
+                  "Integrating advanced technologies to create smarter, adaptive transportation networks",
+                iconColor: "text-orange-400",
+              },
+              {
+                icon: Route,
+                title: "Pavement and Asset Management",
+                description:
+                  "Developing methods for monitoring, maintaining, and optimizing the lifecycle of roads, bridges, and other transportation assets",
+                iconColor: "text-teal-800",
+              },
+              {
+                icon: Shield,
+                title: "Transportation Safety",
+                description:
+                  "Roadyways accidents reduction using data analysis,simulation and safety interventions",
                 iconColor: "text-orange-400",
               },
             ].map((area, index) => (
@@ -286,19 +304,7 @@ export default function Home() {
               >
                 <div className="bg-white rounded-2xl p-6 flex flex-col items-center shadow-none border border-teal-100 h-full">
                   <div className="w-20 h-20 rounded-xl overflow-hidden mb-4 flex items-center justify-center bg-gray-50">
-                    {/* Icon instead of image */}
-                    {area.icon === "BrainCircuit" && (
-                      <BrainCircuit className={`w-14 h-14 ${area.iconColor}`} />
-                    )}
-                    {area.icon === "Camera" && (
-                      <Camera className={`w-14 h-14 ${area.iconColor}`} />
-                    )}
-                    {area.icon === "Car" && (
-                      <Car className={`w-14 h-14 ${area.iconColor}`} />
-                    )}
-                    {area.icon === "BarChart3" && (
-                      <BarChart3 className={`w-14 h-14 ${area.iconColor}`} />
-                    )}
+                    <area.icon className={`w-14 h-14 ${area.iconColor}`} />
                   </div>
                   <h3 className="text-lg font-bold text-teal-800 mb-2 text-center">
                     {area.title}
@@ -407,127 +413,25 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Current Projects - new design */}
+      {/* Contact & CTA Section */}
       <motion.section
-        className="py-20 px-4 bg-teal-800"
+        className="py-10 px-4 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
         variants={staggerContainer}
       >
         <div className="container mx-auto max-w-6xl">
-          <motion.div className="text-center mb-16" variants={fadeInUp}>
-            <motion.h2
-              className="text-2xl md:text-3xl font-bold text-white mb-4"
-              variants={fadeInUp}
-            >
-              Current Projects
-            </motion.h2>
-            <motion.p
-              className="text-teal-100 max-w-2xl mx-auto text-base lg:text-lg"
-              variants={fadeInUp}
-            >
-              Innovative research projects and software development initiatives
-            </motion.p>
-          </motion.div>
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
-            variants={staggerContainer}
-          >
-            {[
-              {
-                image: "/gaze.png",
-                title: "Robotic Shepherding of Bisons",
-                description:
-                  "Developing autonomous robotic systems to safely monitor and guide bison herds using computer vision and adaptive AI algorithms that respect natural behaviors.",
-                status: "In Progress",
-              },
-              {
-                image: "/edge-computing.png",
-                title: "Work Zone Safety",
-                description:
-                  "Enhancing construction zone safety with real-time monitoring systems that alert workers and drivers to potential hazards using IoT sensors and predictive analytics.",
-                status: "In Progress",
-              },
-              {
-                image: "/delay.jpg",
-                title: "Electric Grid Monitoring with ML Models",
-                description:
-                  "Implementing machine learning algorithms to predict and optimize electric grid performance for EV charging infrastructures, focusing on load balancing and efficiency.",
-                status: "In Progress",
-              },
-              {
-                image: "/pave.jpg",
-                title: "Building of a Smart City",
-                description:
-                  "Creating an integrated digital twin for urban planning and mobility optimization, connecting transportation systems, energy networks, and public services through a unified data platform for sustainability and efficiency.",
-                status: "In Progress",
-              },
-              {
-                image: "/anomaly.jpg",
-                title: "Pavement Cracks Detection",
-                description:
-                  "Advancing computer vision and deep learning techniques to automatically identify, classify, and assess pavement defects from mobile imagery, enabling proactive maintenance and improved infrastructure management.",
-                status: "In Progress",
-              },
-            ].map((project) => (
-              <motion.div
-                key={project.title}
-                variants={slideInFromBottom}
-                whileHover={{
-                  y: -6,
-                  transition: { duration: 0.3 },
-                }}
-              >
-                <div className="bg-white rounded-2xl p-0 flex flex-col shadow-none border border-teal-100 h-full overflow-hidden">
-                  <div className="w-full h-48 md:h-56 lg:h-44 xl:h-56 overflow-hidden rounded-t-2xl relative">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div className="p-6 flex flex-col flex-1">
-                    <h3 className="text-lg font-bold text-teal-800 mb-2">
-                      {project.title}
-                    </h3>
-                    <div className="w-10 border-t-2 border-dotted border-orange-400 mb-2"></div>
-                    <p className="text-teal-700 text-base mb-4 flex-1">
-                      {project.description}
-                    </p>
-                    <div className="flex items-center gap-2 mt-auto">
-                      <span className="inline-flex items-center text-xs text-orange-400 font-semibold gap-1">
-                        <Calendar className="w-4 h-4" /> {project.status}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </motion.section>
-
-      {/* Contact & CTA Section */}
-      <motion.section
-        className="py-24 px-4 bg-white"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-        variants={staggerContainer}
-      >
-        <div className="container mx-auto max-w-4xl">
           <div className="rounded-2xl shadow-lg shadow-teal-50 overflow-hidden flex flex-col md:flex-row bg-white">
             {/* CTA Banner Left */}
             <motion.div
               className="bg-teal-800 flex-1 p-10 flex flex-col justify-center"
               variants={fadeInLeft}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
                 Get In Touch
               </h2>
-              <p className="text-teal-100 mb-8 text-lg">
+              <p className="text-teal-100 mb-4 text-base md:text-lg">
                 Interested in collaborating, have a question, or just want to
                 say hello? Reach out using the info below or the form.
               </p>

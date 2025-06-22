@@ -1,6 +1,12 @@
 import React from "react";
 import HeroBanner from "@/components/hero-banner";
 import { news } from "@/lib/constants";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
 
 const FeaturedNews = ({ item }: { item: (typeof news)[0] }) => (
   <div className="flex flex-col gap-2 border-l-8 border-orange-400 bg-orange-50 rounded-lg p-6 mb-10">
@@ -45,6 +51,15 @@ const NewsCard = ({ item }: { item: (typeof news)[0] }) => (
 
 const News = () => {
   const [featured, ...rest] = news;
+  // Group news by year
+  const newsByYear = rest.reduce((acc, item) => {
+    const year = new Date(item.date).getFullYear();
+    if (!acc[year]) acc[year] = [];
+    acc[year].push(item);
+    return acc;
+  }, {} as Record<string, typeof news>);
+  const years = Object.keys(newsByYear).sort((a, b) => Number(b) - Number(a));
+  const defaultOpen = years[0];
   return (
     <>
       <HeroBanner
@@ -58,11 +73,22 @@ const News = () => {
       <section className="py-16 px-4 md:px-6">
         <div className="container mx-auto max-w-6xl">
           <FeaturedNews item={featured} />
-          <div className="divide-y divide-gray-100 bg-white rounded-lg p-4">
-            {rest.map((item) => (
-              <NewsCard key={item.id} item={item} />
+          <Accordion type="multiple" defaultValue={[defaultOpen]}>
+            {years.map((year) => (
+              <AccordionItem key={year} value={year}>
+                <AccordionTrigger className="text-xl md:text-2xl font-bold text-teal-800 mb-2 pb-2 pr-8 relative border-0">
+                  {year}
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="divide-y divide-gray-100 bg-white rounded-lg p-4">
+                    {newsByYear[year].map((item) => (
+                      <NewsCard key={item.id} item={item} />
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
         </div>
       </section>
     </>

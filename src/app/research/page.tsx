@@ -1,21 +1,19 @@
 "use client";
 import HeroBanner from "@/components/hero-banner";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import {
   Car,
-  Bus,
-  Shield,
   Database,
-  TrafficConeIcon as Traffic,
-  Cpu,
-  Network,
-  Building2,
-  TrendingUp,
-  RouteIcon as Road,
-  Wheat,
   BookOpen,
+  Calendar,
+  BrainCircuit,
+  Camera,
+  BarChart3,
 } from "lucide-react";
+import Image from "next/image";
+import { sponsors } from "@/lib/constants";
+import { useState, useCallback, useEffect } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 
 // Enhanced animation variants
 const fadeInUp = {
@@ -65,108 +63,30 @@ const staggerContainerFast = {
   },
 };
 
-const iconMap = {
-  "Transportation Planning": TrendingUp,
-  "Public Transportation": Bus,
-  "Transportation Safety": Shield,
-  "Big Data Analytics in Transportation": Database,
-  "Congestion Management": Traffic,
-  "Autonomous and Connected Vehicles": Car,
-  "Intelligent Transportation Systems": Cpu,
-  "Digital Twins and Smart Cities": Building2,
-  "Travel Demand Modeling": Network,
-  "Pavement and Asset Management": Road,
-  "Agriculture Technology and AI": Wheat,
-};
-
 const researchAreas = [
   {
-    title: "Transportation Planning",
-    description:
-      "Developing strategies and models to optimize the movement of people and goods, improve infrastructure, and enhance mobility in urban and rural environments.",
-    icon: "Transportation Planning",
-    publications: 8,
-    projects: 3,
+    icon: BrainCircuit,
+    title: "Machine Learning",
+    description: "Advanced algorithms and neural network architectures",
+    iconColor: "text-teal-800",
   },
   {
-    title: "Public Transportation",
-    description:
-      "Researching systems and technologies to improve the efficiency, accessibility, and sustainability of buses, trains, and other mass transit options.",
-    icon: "Public Transportation",
-    publications: 5,
-    projects: 2,
+    icon: Camera,
+    title: "Computer Vision",
+    description: "Visual reasoning and image analysis systems",
+    iconColor: "text-orange-400",
   },
   {
-    title: "Transportation Safety",
-    description:
-      "Advancing methods and technologies to reduce accidents, injuries, and fatalities on roadways through data analysis, simulation, and safety interventions.",
-    icon: "Transportation Safety",
-    publications: 12,
-    projects: 4,
+    icon: Car,
+    title: "Transportation Systems",
+    description: "Smart infrastructure and traffic optimization",
+    iconColor: "text-teal-800",
   },
   {
-    title: "Big Data Analytics in Transportation",
-    description:
-      "Leveraging large-scale data and machine learning to uncover insights, predict trends, and support decision-making in transportation systems.",
-    icon: "Big Data Analytics in Transportation",
-    publications: 15,
-    projects: 6,
-  },
-  {
-    title: "Congestion Management",
-    description:
-      "Designing solutions to monitor, predict, and alleviate traffic congestion, improving travel time reliability and reducing environmental impact.",
-    icon: "Congestion Management",
-    publications: 7,
-    projects: 3,
-  },
-  {
-    title: "Autonomous and Connected Vehicles",
-    description:
-      "Exploring the development, deployment, and societal impacts of self-driving and networked vehicles for safer and more efficient transportation.",
-    icon: "Autonomous and Connected Vehicles",
-    publications: 18,
-    projects: 8,
-  },
-  {
-    title: "Intelligent Transportation Systems",
-    description:
-      "Integrating advanced technologies such as sensors, communication, and control systems to create smarter, adaptive transportation networks.",
-    icon: "Intelligent Transportation Systems",
-    publications: 10,
-    projects: 5,
-  },
-  {
-    title: "Digital Twins and Smart Cities",
-    description:
-      "Utilizing digital replicas of physical assets and urban environments to optimize city planning, operations, and sustainability.",
-    icon: "Digital Twins and Smart Cities",
-    publications: 6,
-    projects: 4,
-  },
-  {
-    title: "Travel Demand Modeling",
-    description:
-      "Modeling and forecasting travel behavior to inform infrastructure investments, policy decisions, and transportation planning.",
-    icon: "Travel Demand Modeling",
-    publications: 9,
-    projects: 3,
-  },
-  {
-    title: "Pavement and Asset Management",
-    description:
-      "Developing methods for monitoring, maintaining, and optimizing the lifecycle of roads, bridges, and other transportation assets.",
-    icon: "Pavement and Asset Management",
-    publications: 11,
-    projects: 5,
-  },
-  {
-    title: "Agriculture Technology and AI",
-    description:
-      "Applying artificial intelligence and advanced technologies to enhance agricultural productivity, sustainability, and supply chain logistics.",
-    icon: "Agriculture Technology and AI",
-    publications: 4,
-    projects: 2,
+    icon: BarChart3,
+    title: "Data Science",
+    description: "Big data analytics and predictive modeling",
+    iconColor: "text-orange-400",
   },
 ];
 
@@ -184,105 +104,184 @@ const Research = () => {
         isSmall={true}
       />
 
-      {/* Research Areas */}
+      {/* Research Focus Areas */}
       <motion.section
-        className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50"
+        className="py-20 px-4 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
+        variants={staggerContainer}
       >
         <div className="container mx-auto max-w-6xl">
-          <motion.div className="text-center mb-16" variants={fadeInUp}>
+          <motion.div className="text-center mb-12" variants={fadeInUp}>
             <motion.h2
-              className="text-3xl md:text-4xl font-bold text-slate-900 mb-6"
+              className="text-2xl md:text-3xl font-bold text-teal-800 mb-4"
               variants={fadeInUp}
             >
               Research Focus Areas
             </motion.h2>
             <motion.p
-              className="text-slate-600 max-w-2xl mx-auto text-lg"
+              className=" max-w-2xl mx-auto text-base lg:text-lg"
               variants={fadeInUp}
             >
               My multidisciplinary approach addresses complex challenges across
               transportation systems, data science, and emerging technologies.
             </motion.p>
           </motion.div>
-
           <motion.div
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8"
             variants={staggerContainer}
           >
-            {researchAreas.map((area) => {
-              const Icon = iconMap[area.icon as keyof typeof iconMap];
-              return (
-                <motion.div
-                  key={area.title}
-                  variants={slideInFromBottom}
-                  whileHover={{
-                    y: -10,
-                    transition: { duration: 0.3 },
-                  }}
-                >
-                  <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 bg-white h-full overflow-hidden group">
-                    <CardHeader className="pb-4">
-                      <div className="mb-4">
-                        <motion.div
-                          className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-slate-200 transition-colors duration-300"
-                          whileHover={{
-                            scale: 1.1,
-                            rotate: 5,
-                            transition: { duration: 0.3 },
-                          }}
-                        >
-                          {Icon && <Icon className="w-6 h-6 text-slate-700" />}
-                        </motion.div>
-                        <CardTitle className="text-slate-900 text-xl leading-tight">
-                          {area.title}
-                        </CardTitle>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="flex-1 flex flex-col">
-                      <p className="text-slate-600 mb-6 leading-relaxed flex-1">
-                        {area.description}
-                      </p>
-
-                      {/* Research Metrics */}
-                      <motion.div
-                        className="flex items-center justify-between pt-4 border-t border-slate-100"
-                        whileHover={{
-                          x: 5,
-                          transition: { duration: 0.3 },
-                        }}
-                      >
-                        <div className="flex items-center gap-4 text-sm text-slate-500">
-                          <motion.span
-                            className="flex items-center gap-1"
-                            whileHover={{ scale: 1.05 }}
-                          >
-                            <BookOpen className="w-4 h-4" />
-                            {area.publications} papers
-                          </motion.span>
-                          <motion.span
-                            className="flex items-center gap-1"
-                            whileHover={{ scale: 1.05 }}
-                          >
-                            <Database className="w-4 h-4" />
-                            {area.projects} projects
-                          </motion.span>
-                        </div>
-                      </motion.div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              );
-            })}
+            {researchAreas.map((area, idx) => (
+              <motion.div
+                key={area.title}
+                variants={fadeInUp}
+                whileHover={{
+                  y: -8,
+                  scale: 1.03,
+                  boxShadow: "0 8px 32px 0 rgba(16, 185, 129, 0.08)",
+                  transition: { duration: 0.3 },
+                }}
+              >
+                <div className="bg-white rounded-2xl border border-teal-100 shadow-none hover:border-orange-400 transition-all duration-300 flex flex-col items-center p-8 h-full">
+                  <div
+                    className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${
+                      idx % 2 === 0 ? "bg-teal-50" : "bg-orange-50"
+                    }`}
+                  >
+                    <area.icon className={`w-9 h-9 ${area.iconColor}`} />
+                  </div>
+                  <h3 className="text-lg md:text-xl font-bold text-teal-800 mb-2 text-center">
+                    {area.title}
+                  </h3>
+                  <div className="w-10 border-t-2 border-dotted border-orange-400 mb-2 mx-auto"></div>
+                  <p className="text-teal-700 text-base text-center mb-4">
+                    {area.description}
+                  </p>
+                  {/* Only show metrics if available */}
+                  {"publications" in area && "projects" in area ? (
+                    <div className="flex justify-center gap-4 text-sm text-teal-700 mt-auto">
+                      <span className="flex items-center gap-1">
+                        <BookOpen className="w-4 h-4" />
+                        {Number(area.publications)} papers
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Database className="w-4 h-4" />
+                        {Number(area.projects)} projects
+                      </span>
+                    </div>
+                  ) : null}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </motion.section>
+      {/* Current Projects - new design */}
+      <motion.section
+        className="py-20 px-4 bg-teal-800"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={staggerContainer}
+      >
+        <div className="container mx-auto max-w-6xl">
+          <motion.div className="text-center mb-16" variants={fadeInUp}>
+            <motion.h2
+              className="text-2xl md:text-3xl font-bold text-white mb-4"
+              variants={fadeInUp}
+            >
+              Current Projects
+            </motion.h2>
+            <motion.p
+              className="text-teal-100 max-w-2xl mx-auto text-base lg:text-lg"
+              variants={fadeInUp}
+            >
+              Innovative research projects and software development initiatives
+            </motion.p>
+          </motion.div>
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+            variants={staggerContainer}
+          >
+            {[
+              {
+                image: "/gaze.png",
+                title: "Robotic Shepherding of Bisons",
+                description:
+                  "Developing autonomous robotic systems to safely monitor and guide bison herds using computer vision and adaptive AI algorithms that respect natural behaviors.",
+                status: "In Progress",
+              },
+              {
+                image: "/edge-computing.png",
+                title: "Work Zone Safety",
+                description:
+                  "Enhancing construction zone safety with real-time monitoring systems that alert workers and drivers to potential hazards using IoT sensors and predictive analytics.",
+                status: "In Progress",
+              },
+              {
+                image: "/delay.jpg",
+                title: "Electric Grid Monitoring with ML Models",
+                description:
+                  "Implementing machine learning algorithms to predict and optimize electric grid performance for EV charging infrastructures, focusing on load balancing and efficiency.",
+                status: "In Progress",
+              },
+              {
+                image: "/pave.jpg",
+                title: "Building of a Smart City",
+                description:
+                  "Creating an integrated digital twin for urban planning and mobility optimization, connecting transportation systems, energy networks, and public services through a unified data platform for sustainability and efficiency.",
+                status: "In Progress",
+              },
+              {
+                image: "/anomaly.jpg",
+                title: "Pavement Cracks Detection",
+                description:
+                  "Advancing computer vision and deep learning techniques to automatically identify, classify, and assess pavement defects from mobile imagery, enabling proactive maintenance and improved infrastructure management.",
+                status: "In Progress",
+              },
+            ].map((project) => (
+              <motion.div
+                key={project.title}
+                variants={slideInFromBottom}
+                whileHover={{
+                  y: -6,
+                  transition: { duration: 0.3 },
+                }}
+              >
+                <div className="bg-white rounded-2xl p-0 flex flex-col shadow-none border border-teal-100 h-full overflow-hidden">
+                  <div className="w-full h-48 md:h-56 lg:h-44 xl:h-56 overflow-hidden rounded-t-2xl relative">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <div className="p-6 flex flex-col flex-1">
+                    <h3 className="text-lg font-bold text-teal-800 mb-2">
+                      {project.title}
+                    </h3>
+                    <div className="w-10 border-t-2 border-dotted border-orange-400 mb-2"></div>
+                    <p className="text-teal-700 text-base mb-4 flex-1">
+                      {project.description}
+                    </p>
+                    <div className="flex items-center gap-2 mt-auto">
+                      <span className="inline-flex items-center text-xs text-orange-400 font-semibold gap-1">
+                        <Calendar className="w-4 h-4" /> {project.status}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </motion.section>
 
       {/* Research Methodology */}
       <motion.section
-        className="py-20 px-4 sm:px-6 lg:px-8"
+        className="py-20 px-4 sm:px-6 lg:px-8 bg-white"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
@@ -292,71 +291,60 @@ const Research = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div variants={fadeInLeft}>
               <motion.h2
-                className="text-3xl md:text-4xl font-bold text-slate-900 mb-6"
+                className="text-2xl md:text-3xl font-bold text-teal-800 mb-6"
                 variants={fadeInUp}
               >
-                My Research Approach
+                Research Approach
               </motion.h2>
               <motion.div className="space-y-6" variants={staggerContainerFast}>
                 <motion.div className="flex gap-4" variants={fadeInUp}>
                   <motion.div
-                    className="w-8 h-8 bg-slate-900 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
-                    whileHover={{
-                      scale: 1.2,
-                      transition: { duration: 0.3 },
-                    }}
+                    className="w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1 shadow-md"
+                    whileHover={{ scale: 1.2, transition: { duration: 0.3 } }}
                   >
                     <span className="text-white font-bold text-sm">1</span>
                   </motion.div>
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-2">
+                    <h3 className="text-lg md:text-xl font-semibold text-teal-800 mb-2">
                       Data-Driven Insights
                     </h3>
-                    <p className="text-slate-600">
+                    <p className="">
                       I leverage large-scale datasets and advanced analytics to
                       uncover patterns and insights that inform my research
                       directions and validate my findings.
                     </p>
                   </div>
                 </motion.div>
-
                 <motion.div className="flex gap-4" variants={fadeInUp}>
                   <motion.div
-                    className="w-8 h-8 bg-slate-900 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
-                    whileHover={{
-                      scale: 1.2,
-                      transition: { duration: 0.3 },
-                    }}
+                    className="w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1 shadow-md"
+                    whileHover={{ scale: 1.2, transition: { duration: 0.3 } }}
                   >
                     <span className="text-white font-bold text-sm">2</span>
                   </motion.div>
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-2">
+                    <h3 className="text-lg md:text-xl font-semibold text-teal-800 mb-2">
                       Interdisciplinary Collaboration
                     </h3>
-                    <p className="text-slate-600">
+                    <p className="">
                       My research benefits from collaborations across
                       engineering, computer science, urban planning, and policy
                       domains to address complex transportation challenges.
                     </p>
                   </div>
                 </motion.div>
-
                 <motion.div className="flex gap-4" variants={fadeInUp}>
                   <motion.div
-                    className="w-8 h-8 bg-slate-900 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
-                    whileHover={{
-                      scale: 1.2,
-                      transition: { duration: 0.3 },
-                    }}
+                    className="w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1 shadow-md"
+                    whileHover={{ scale: 1.2, transition: { duration: 0.3 } }}
                   >
                     <span className="text-white font-bold text-sm">3</span>
                   </motion.div>
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-2">
+                    <h3 className="text-lg md:text-xl font-semibold text-teal-800 mb-2">
                       Real-World Applications
                     </h3>
-                    <p className="text-slate-600">
+                    <p className="">
                       I focus on research that has practical applications and
                       can be implemented to improve transportation systems and
                       enhance quality of life.
@@ -365,52 +353,27 @@ const Research = () => {
                 </motion.div>
               </motion.div>
             </motion.div>
-
             <motion.div
               className="relative"
               variants={fadeInRight}
-              whileHover={{
-                scale: 1.02,
-                transition: { duration: 0.3 },
-              }}
+              whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
             >
               <motion.div
-                className="bg-slate-100 rounded-2xl p-8 text-center"
+                className="bg-white rounded-2xl p-8 text-center border border-teal-100"
                 variants={scaleIn}
               >
                 <motion.div
                   className="grid grid-cols-2 gap-6"
                   variants={staggerContainer}
                 >
-                  {[
-                    {
-                      icon: Database,
-                      title: "Big Data",
-                      description: "Advanced analytics and machine learning",
-                    },
-                    {
-                      icon: Car,
-                      title: "Autonomous Systems",
-                      description: "Self-driving and connected vehicles",
-                    },
-                    {
-                      icon: Shield,
-                      title: "Safety Systems",
-                      description: "Accident prevention and risk analysis",
-                    },
-                    {
-                      icon: Building2,
-                      title: "Smart Cities",
-                      description: "Digital twins and urban optimization",
-                    },
-                  ].map((item) => (
+                  {researchAreas.map((item) => (
                     <motion.div
                       key={item.title}
-                      className="bg-white rounded-xl p-6 shadow-sm"
+                      className="bg-white rounded-xl p-6 border border-teal-100 shadow-none hover:border-orange-400 transition-all duration-300"
                       variants={fadeInUp}
                       whileHover={{
                         y: -5,
-                        boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
+                        scale: 1.04,
                         transition: { duration: 0.3 },
                       }}
                     >
@@ -420,12 +383,15 @@ const Research = () => {
                           transition: { duration: 0.3 },
                         }}
                       >
-                        <item.icon className="w-8 h-8 text-slate-700 mx-auto mb-3" />
+                        <item.icon
+                          className={`w-8 h-8 mx-auto mb-3 ${item.iconColor}`}
+                        />
                       </motion.div>
-                      <h4 className="font-bold text-slate-900 mb-2">
+                      <h4 className="font-bold text-teal-800 mb-2">
                         {item.title}
                       </h4>
-                      <p className="text-slate-600 text-sm">
+                      <div className="w-8 border-t-2 border-dotted border-orange-400 mb-2 mx-auto"></div>
+                      <p className="text-teal-700 text-sm">
                         {item.description}
                       </p>
                     </motion.div>
@@ -436,8 +402,162 @@ const Research = () => {
           </div>
         </div>
       </motion.section>
+
+      {/* Sponsors & Core Partners Carousel */}
+      <motion.section
+        className="py-20 px-4 bg-white"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={staggerContainer}
+      >
+        <div className="container mx-auto max-w-5xl">
+          <motion.div className="text-center mb-10" variants={fadeInUp}>
+            <motion.h2
+              className="text-2xl md:text-3xl font-bold text-teal-800 mb-4"
+              variants={fadeInUp}
+            >
+              Our Core Partners
+            </motion.h2>
+            <motion.p
+              className="max-w-2xl mx-auto text-base lg:text-lg"
+              variants={fadeInUp}
+            >
+              Organizations we collaborate with to advance research and
+              innovation
+            </motion.p>
+          </motion.div>
+          <motion.div variants={fadeInUp}>
+            <CarouselSection />
+          </motion.div>
+        </div>
+      </motion.section>
     </>
   );
 };
+
+function CarouselSection() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: "start",
+    skipSnaps: false,
+    slidesToScroll: 1,
+    containScroll: "trimSnaps",
+  });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
+
+  // Responsive slides per view
+  const getSlidesToShow = () => {
+    if (typeof window === "undefined") return 1;
+    if (window.innerWidth >= 1024) return 4;
+    if (window.innerWidth >= 640) return 2;
+    return 1;
+  };
+  const [slidesToShow, setSlidesToShow] = useState(getSlidesToShow());
+
+  useEffect(() => {
+    const handleResize = () => setSlidesToShow(getSlidesToShow());
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Update selected index on slide change
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    emblaApi.on("select", onSelect);
+    onSelect();
+  }, [emblaApi, onSelect]);
+
+  // Autoplay logic
+  useEffect(() => {
+    if (!emblaApi) return;
+    if (intervalId) clearInterval(intervalId);
+    const id = setInterval(() => {
+      if (emblaApi) emblaApi.scrollNext();
+    }, 3000);
+    setIntervalId(id);
+    return () => clearInterval(id);
+  }, [emblaApi]);
+
+  // Pause autoplay on hover
+  const handleMouseEnter = () => {
+    if (intervalId) clearInterval(intervalId);
+  };
+  const handleMouseLeave = () => {
+    if (!emblaApi) return;
+    const id = setInterval(() => {
+      if (emblaApi) emblaApi.scrollNext();
+    }, 3000);
+    setIntervalId(id);
+  };
+
+  // Dot click handler
+  const scrollTo = (idx: number) => {
+    if (emblaApi) emblaApi.scrollTo(idx);
+  };
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div ref={emblaRef} className="overflow-hidden w-full">
+        <div className="flex">
+          {sponsors.map((s) => (
+            <div
+              key={s.name}
+              className="flex items-center justify-center flex-shrink-0"
+              style={{
+                width:
+                  slidesToShow === 4
+                    ? "25%"
+                    : slidesToShow === 2
+                    ? "50%"
+                    : "100%",
+                minWidth:
+                  slidesToShow === 4
+                    ? "25%"
+                    : slidesToShow === 2
+                    ? "50%"
+                    : "100%",
+                transition: "width 0.3s",
+              }}
+            >
+              <Image
+                src={s.image}
+                alt={s.name}
+                width={200}
+                height={80}
+                className="object-contain max-h-20 max-w-full"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* Dot indicators */}
+      <div className="flex justify-center gap-2 mt-10">
+        {sponsors.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => scrollTo(idx)}
+            className={`h-3 w-3 rounded-full transition-all duration-300 focus:outline-none  ${
+              selectedIndex === idx
+                ? "bg-orange-400 shadow-lg scale-110"
+                : "bg-gray-300"
+            }`}
+            aria-label={`Go to slide ${idx + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default Research;

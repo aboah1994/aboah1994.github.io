@@ -14,6 +14,11 @@ const bitter = Bitter({
 export const metadata: Metadata = {
   title: "Aboah Armstrong",
   description: "Associate Professor @ North Dakota State University",
+  icons: {
+    icon: [{ url: "/aboah.png", type: "image/png" }],
+    shortcut: "/aboah.png",
+    apple: "/aboah.png",
+  },
 };
 
 export default function RootLayout({
