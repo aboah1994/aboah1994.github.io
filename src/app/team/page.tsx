@@ -159,7 +159,7 @@ export default function Team() {
                       alt={student.name}
                       width={80}
                       height={80}
-                      className="rounded-full object-cover border-2 border-orange-400 bg-gray-50"
+                      className="rounded-full object-contain border-2 border-orange-400 bg-gray-50"
                     />
                     <div>
                       <h3 className="text-lg font-bold text-teal-800 mb-1">

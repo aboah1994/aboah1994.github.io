@@ -1,15 +1,7 @@
 "use client";
 import HeroBanner from "@/components/hero-banner";
 import { motion } from "framer-motion";
-import {
-  Car,
-  Database,
-  BookOpen,
-  Calendar,
-  BrainCircuit,
-  Camera,
-  BarChart3,
-} from "lucide-react";
+import { Car, Calendar, BrainCircuit, Camera, BarChart3 } from "lucide-react";
 import Image from "next/image";
 import { sponsors } from "@/lib/constants";
 import { useState, useCallback, useEffect } from "react";
@@ -104,7 +96,7 @@ const Research = () => {
         isSmall={true}
       />
 
-      {/* Research Focus Areas */}
+      {/* Current Projects - new design */}
       <motion.section
         className="py-20 px-4 bg-white"
         initial="hidden"
@@ -113,88 +105,15 @@ const Research = () => {
         variants={staggerContainer}
       >
         <div className="container mx-auto max-w-6xl">
-          <motion.div className="text-center mb-12" variants={fadeInUp}>
-            <motion.h2
-              className="text-2xl md:text-3xl font-bold text-teal-800 mb-4"
-              variants={fadeInUp}
-            >
-              Research Focus Areas
-            </motion.h2>
-            <motion.p
-              className=" max-w-2xl mx-auto text-base lg:text-lg"
-              variants={fadeInUp}
-            >
-              My multidisciplinary approach addresses complex challenges across
-              transportation systems, data science, and emerging technologies.
-            </motion.p>
-          </motion.div>
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8"
-            variants={staggerContainer}
-          >
-            {researchAreas.map((area, idx) => (
-              <motion.div
-                key={area.title}
-                variants={fadeInUp}
-                whileHover={{
-                  y: -8,
-                  scale: 1.03,
-                  boxShadow: "0 8px 32px 0 rgba(16, 185, 129, 0.08)",
-                  transition: { duration: 0.3 },
-                }}
-              >
-                <div className="bg-white rounded-2xl border border-teal-100 shadow-none hover:border-orange-400 transition-all duration-300 flex flex-col items-center p-8 h-full">
-                  <div
-                    className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${
-                      idx % 2 === 0 ? "bg-teal-50" : "bg-orange-50"
-                    }`}
-                  >
-                    <area.icon className={`w-9 h-9 ${area.iconColor}`} />
-                  </div>
-                  <h3 className="text-lg md:text-xl font-bold text-teal-800 mb-2 text-center">
-                    {area.title}
-                  </h3>
-                  <div className="w-10 border-t-2 border-dotted border-orange-400 mb-2 mx-auto"></div>
-                  <p className="text-teal-700 text-base text-center mb-4">
-                    {area.description}
-                  </p>
-                  {/* Only show metrics if available */}
-                  {"publications" in area && "projects" in area ? (
-                    <div className="flex justify-center gap-4 text-sm text-teal-700 mt-auto">
-                      <span className="flex items-center gap-1">
-                        <BookOpen className="w-4 h-4" />
-                        {Number(area.publications)} papers
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Database className="w-4 h-4" />
-                        {Number(area.projects)} projects
-                      </span>
-                    </div>
-                  ) : null}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </motion.section>
-      {/* Current Projects - new design */}
-      <motion.section
-        className="py-20 px-4 bg-teal-800"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-        variants={staggerContainer}
-      >
-        <div className="container mx-auto max-w-6xl">
           <motion.div className="text-center mb-16" variants={fadeInUp}>
             <motion.h2
-              className="text-2xl md:text-3xl font-bold text-white mb-4"
+              className="text-2xl md:text-3xl font-bold text-teal-800 mb-4"
               variants={fadeInUp}
             >
               Current Projects
             </motion.h2>
             <motion.p
-              className="text-teal-100 max-w-2xl mx-auto text-base lg:text-lg"
+              className="max-w-2xl mx-auto text-base lg:text-lg"
               variants={fadeInUp}
             >
               Innovative research projects and software development initiatives
@@ -267,8 +186,111 @@ const Research = () => {
                       {project.description}
                     </p>
                     <div className="flex items-center gap-2 mt-auto">
-                      <span className="inline-flex items-center text-xs text-orange-400 font-semibold gap-1">
+                      <span className="inline-flex items-center text-xs text-orange-500 font-semibold gap-1">
                         <Calendar className="w-4 h-4" /> {project.status}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* Past Projects - new design */}
+      <motion.section
+        className="py-20 px-4 bg-teal-800"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={staggerContainer}
+      >
+        <div className="container mx-auto max-w-6xl">
+          <motion.div className="text-center mb-16" variants={fadeInUp}>
+            <motion.h2
+              className="text-2xl md:text-3xl font-bold text-white mb-4"
+              variants={fadeInUp}
+            >
+              Past Projects
+            </motion.h2>
+            <motion.p
+              className="text-teal-100 max-w-2xl mx-auto text-base lg:text-lg"
+              variants={fadeInUp}
+            >
+              A showcase of completed research and development initiatives
+            </motion.p>
+          </motion.div>
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+            variants={staggerContainer}
+          >
+            {[
+              {
+                image: "/gaze.png",
+                title: "Robotic Shepherding of Bisons",
+                description:
+                  "Developing autonomous robotic systems to safely monitor and guide bison herds using computer vision and adaptive AI algorithms that respect natural behaviors.",
+                status: "Completed",
+              },
+              {
+                image: "/edge-computing.png",
+                title: "Work Zone Safety",
+                description:
+                  "Enhancing construction zone safety with real-time monitoring systems that alert workers and drivers to potential hazards using IoT sensors and predictive analytics.",
+                status: "Completed",
+              },
+              {
+                image: "/delay.jpg",
+                title: "Electric Grid Monitoring with ML Models",
+                description:
+                  "Implementing machine learning algorithms to predict and optimize electric grid performance for EV charging infrastructures, focusing on load balancing and efficiency.",
+                status: "Completed",
+              },
+              {
+                image: "/pave.jpg",
+                title: "Building of a Smart City",
+                description:
+                  "Creating an integrated digital twin for urban planning and mobility optimization, connecting transportation systems, energy networks, and public services through a unified data platform for sustainability and efficiency.",
+                status: "Completed",
+              },
+              {
+                image: "/anomaly.jpg",
+                title: "Pavement Cracks Detection",
+                description:
+                  "Advancing computer vision and deep learning techniques to automatically identify, classify, and assess pavement defects from mobile imagery, enabling proactive maintenance and improved infrastructure management.",
+                status: "Completed",
+              },
+            ].map((project) => (
+              <motion.div
+                key={project.title + "-past"}
+                variants={slideInFromBottom}
+                whileHover={{
+                  y: -4,
+                  scale: 1.02,
+                  transition: { duration: 0.3 },
+                }}
+              >
+                <div className="bg-teal-50 rounded-xl flex flex-col shadow-md h-full overflow-hidden">
+                  <div className="w-full h-44 md:h-52 lg:h-40 xl:h-52 overflow-hidden relative">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover w-full h-full opacity-90"
+                    />
+                  </div>
+                  <div className="p-5 flex flex-col flex-1">
+                    <h3 className="text-lg font-bold text-teal-900 mb-1">
+                      {project.title}
+                    </h3>
+                    <div className="w-8 border-t-2 border-solid border-orange-400 mb-2"></div>
+                    <p className="text-teal-800 text-base mb-3 flex-1">
+                      {project.description}
+                    </p>
+                    <div className="flex items-center gap-2 mt-auto">
+                      <span className="inline-flex items-center text-xs text-orange-600 font-semibold gap-1">
+                        <Calendar className="w-4 h-4" /> Completed
                       </span>
                     </div>
                   </div>

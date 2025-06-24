@@ -26,7 +26,13 @@ type Props = {
   showCtaBtn?: boolean;
   isSmall?: boolean;
   children?: React.ReactNode;
-  pageType?: "home" | "research" | "publications" | "team" | "news";
+  pageType?:
+    | "home"
+    | "research"
+    | "publications"
+    | "team"
+    | "news"
+    | "activities";
   showSocialLinks?: boolean;
 };
 

@@ -268,6 +268,26 @@ export const publications = {
         links: [{ label: "arXiv", url: "#" }],
         year: 2025,
       },
+      {
+        id: 2004,
+        title:
+          "Advancing pavement distress detection in developing countries: A novel deep learning approach with locally-collected datasets",
+        authors: "BA Kyem, EKO Denteh, JK Asamoah, KA Tutu, A Aboah",
+        subtext: "arXiv preprint arXiv:2408.05649",
+        image: "/gcru.jpg",
+        links: [{ label: "arXiv", url: "#" }],
+        year: 2024,
+      },
+      {
+        id: 2005,
+        title:
+          "Pavecap: The first multimodal framework for comprehensive pavement condition assessment with dense captioning and pci estimation",
+        authors: "BA Kyem, EKO Denteh, JK Asamoah, A Aboah",
+        subtext: "arXiv preprint arXiv:2408.04110",
+        image: "/gcru.jpg",
+        links: [{ label: "arXiv", url: "#" }],
+        year: 2024,
+      },
     ],
   },
   "2024": {
@@ -303,26 +323,7 @@ export const publications = {
         links: [{ label: "Paper", url: "#" }],
         year: 2024,
       },
-      {
-        id: 2004,
-        title:
-          "Advancing pavement distress detection in developing countries: A novel deep learning approach with locally-collected datasets",
-        authors: "BA Kyem, EKO Denteh, JK Asamoah, KA Tutu, A Aboah",
-        subtext: "arXiv preprint arXiv:2408.05649",
-        image: "/gcru.jpg",
-        links: [{ label: "arXiv", url: "#" }],
-        year: 2024,
-      },
-      {
-        id: 2005,
-        title:
-          "Pavecap: The first multimodal framework for comprehensive pavement condition assessment with dense captioning and pci estimation",
-        authors: "BA Kyem, EKO Denteh, JK Asamoah, A Aboah",
-        subtext: "arXiv preprint arXiv:2408.04110",
-        image: "/gcru.jpg",
-        links: [{ label: "arXiv", url: "#" }],
-        year: 2024,
-      },
+
       {
         id: 2006,
         title:
@@ -817,5 +818,42 @@ export const sponsors = [
     name: "USNF",
     image: "/usnsf.jpg",
     link: "",
+  },
+];
+
+export const activities = [
+  {
+    image: "/andrews-danyo.jpg",
+    title: "Andrews Danyo's Research Paper Published in Transportation Journal",
+    date: "2025-04-08",
+    person: "Andrews Danyo",
+    link: "",
+    description: "Research paper published in a transportation journal.",
+  },
+  {
+    image: "/eugene-best-presenter.png",
+    title: "Eugene Denteh Receives Best Presenter Award at ICBDA Conference",
+    date: "2025-03-15",
+    person: "Eugene Denteh",
+    link: "https://www.icbda.org/html/2025.html",
+    description: "Best Presenter Award at ICBDA 2025 Conference.",
+  },
+  {
+    image: "/eugene-best-presenter.png",
+    title: "Eugene Denteh Presents Two Papers at ICBDA 2025 in Singapore",
+    date: "2025-03-13~2025-03-15",
+    person: "Eugene Denteh",
+    link: "https://www.icbda.org/html/2025.html",
+    description: "Presented two papers at ICBDA 2025 in Singapore.",
+  },
+  {
+    image: "/armstrong-invited-speaker-icbda.png",
+    title:
+      "Dr. Armstrong Aboah Delivers Invited Speech at ICBDA 2025 on Big Data in Transportation",
+    date: "2025-03-14",
+    person: "Prof. Armstrong Aboah",
+    link: "https://www.icbda.org/html/invited.html",
+    description: "Invited speech at ICBDA 2025 on Big Data in Transportation.",
+    highlight: true,
   },
 ];

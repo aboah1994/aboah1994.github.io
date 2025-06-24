@@ -33,7 +33,7 @@ const getBadgeColor = (subtext: string): string => {
     return "bg-teal-100 text-teal-800";
   if (/journal|ieee|transactions|systems|big data analytics/i.test(subtext))
     return "bg-blue-100 text-blue-700";
-  return "bg-gray-100 text-gray-700";
+  return "bg-blue-100 text-blue-700";
 };
 
 const highlightAuthor = (author: string): React.ReactNode => {
