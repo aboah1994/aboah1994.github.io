@@ -137,8 +137,8 @@ export default function Home() {
       <HeroBanner
         id="home"
         title="Aboah Armstrong"
-        subtitle="Professor and Data Scientist"
-        description="Welcome to my academic portfolio. I am dedicated to pushing the boundaries of technology through cutting-edge research, collaborative partnerships, and mentoring the next generation of researchers."
+        subtitle="Assistant Professor and Transportation Data Scientist"
+        description="I am dedicated to pushing the boundaries of technology through cutting-edge research, collaborative partnerships, and mentoring the next generation of researchers."
         showCtaBtn={false}
         showSocialLinks
         pageType="home"

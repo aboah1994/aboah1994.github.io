@@ -33,11 +33,8 @@ const Navbar = () => {
             <Link href="/" className="flex items-center space-x-3 group">
               <div>
                 <h1 className="text-lg font-bold text-white group-hover:text-white/80 transition-colors">
-                  Prof. Aboah Armstrong
+                  The SMART Lab
                 </h1>
-                <p className="text-xs text-orange-400 -mt-1">
-                  Professor & Data Scientist
-                </p>
               </div>
             </Link>
           </div>

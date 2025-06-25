@@ -227,9 +227,9 @@ const HeroBanner = (props: Props) => {
               >
                 {[
                   { value: "45+", label: "Publications" },
-                  { value: "15+", label: "Students Mentored" },
+                  { value: "6+", label: "Students Mentored" },
                   { value: "8", label: "Awards" },
-                  { value: "10+", label: "Years Experience" },
+                  { value: "5+", label: "Research Years Exp." },
                 ].map((stat) => (
                   <div
                     key={stat.label}

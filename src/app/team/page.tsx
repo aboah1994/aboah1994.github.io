@@ -26,7 +26,7 @@ export default function Team() {
             viewport={{ once: true }}
           >
             <h2 className="text-xl md:text-2xl font-bold text-teal-800 mb-8">
-              Professor
+              Principal Investigator (PI)
             </h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

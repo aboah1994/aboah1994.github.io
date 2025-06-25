@@ -169,7 +169,7 @@ export const publications = {
         id: 1003,
         title:
           "Saam-reflectnet: Sign-aware attention-based multitasking framework for integrated traffic sign detection and retroreflectivity estimation",
-        authors: "JK Asamoah, BA Kyem, ND Obeng-Amoako, A Aboah",
+        authors: "JK Asamoah*, BA Kyem*, ND Obeng-Amoako*, A Aboah†",
         subtext: "Expert Systems with Applications, 128003",
         image: "/gaze.png",
         links: [{ label: "Paper", url: "#" }],
@@ -179,7 +179,7 @@ export const publications = {
         id: 1005,
         title:
           "An improved ResNet50 model for predicting pavement condition index (PCI) directly from pavement images",
-        authors: "A Danyo, A Donto, A Aboah",
+        authors: "A Danyo*, A Donto*, A Aboah†",
         subtext: "Road Materials and Pavement Design, 1-18",
         image: "/pave.jpg",
         links: [{ label: "Paper", url: "#" }],
@@ -198,7 +198,7 @@ export const publications = {
       {
         id: 1008,
         title: "PaveSAM--segment anything for pavement distress",
-        authors: "NJ Owor, Y Adu-Gyamfi, A Aboah, M Amo-Boateng",
+        authors: "NJ Owor*, Y Adu-Gyamfi, A Aboah, M Amo-Boateng",
         subtext: "Road Materials and Pavement Design 26 (3), 593-617",
         image: "/nemma.gif",
         links: [{ label: "Paper", url: "#" }],
@@ -219,7 +219,7 @@ export const publications = {
         id: 1010,
         title:
           "Context-CrackNet: A Context-Aware Framework for Precise Segmentation of Tiny Cracks in Pavement Images",
-        authors: "BA Kyem, JK Asamoah, A Aboah",
+        authors: "BA Kyem*, JK Asamoah*, A Aboah†",
         subtext: "Construction and Building Materials 484 (141583), 0950-0618",
         image: "/pav1.jpg",
         links: [{ label: "Paper", url: "#" }],
@@ -385,26 +385,6 @@ export const publications = {
         subtext:
           "Journal of Transportation Engineering, Part A: Systems 151 (3), 04025001",
         image: "/lidar1.jpg",
-        links: [{ label: "Paper", url: "#" }],
-        year: 2024,
-      },
-      {
-        id: 2012,
-        title:
-          "Context-CrackNet: A Context-Aware Framework for Precise Segmentation of Tiny Cracks in Pavement Images",
-        authors: "BA Kyem, JK Asamoah, A Aboah",
-        subtext: "Construction and Building Materials 484 (141583), 0950-0618",
-        image: "/gcru.jpg",
-        links: [{ label: "Paper", url: "#" }],
-        year: 2024,
-      },
-      {
-        id: 2013,
-        title:
-          "Context-Cracknet: A Context-Aware Framework for Precise Segmentation of Tiny Cracks in Pavement Images",
-        authors: "B Agyei Kyem, JK Asamoah, A Aboah",
-        subtext: "",
-        image: "/gcru.jpg",
         links: [{ label: "Paper", url: "#" }],
         year: 2024,
       },

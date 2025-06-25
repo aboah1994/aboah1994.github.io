@@ -36,97 +36,170 @@ const getBadgeColor = (subtext: string): string => {
   return "bg-blue-100 text-blue-700";
 };
 
-const highlightAuthor = (author: string): React.ReactNode => {
-  if (author.includes("*") || author.includes("†")) {
-    // Already handled by previous logic
-    return (
-      <span
-        className={
-          author.includes("*")
-            ? "text-orange-400 font-bold"
-            : "text-teal-800 font-bold"
-        }
-      >
-        {author}
-      </span>
-    );
-  }
-  if (/Aboah Armstrong|A Aboah/.test(author)) {
-    return <span className="text-teal-800 font-bold">{author}</span>;
-  }
-  return author;
-};
+// Names to always mark as students advised
+const studentNames = [
+  "Eugene",
+  "Dontoh",
+  "Andrews",
+  "JK",
+  "Blessing",
+  "Addai",
+  "Tutu",
+  "Kyem",
+  "Danyo",
+  "Denteh",
+  "Donto",
+];
 
-const PublicationCard = ({ pub }: { pub: Publication }) => (
-  <motion.div
-    className="flex gap-6 items-start py-6 border-b border-gray-200 last:border-b-0"
-    variants={fadeInUp}
-  >
-    <div className="flex-shrink-0 w-40 h-28 md:w-44 md:h-32 rounded-lg overflow-hidden bg-gray-100">
-      <Image
-        src={pub.image || "/placeholder.svg"}
-        alt={pub.title}
-        width={176}
-        height={128}
-        className="object-cover w-full h-full"
-      />
-    </div>
-    <div className="flex-1">
-      <h3 className="text-base md:text-lg font-bold text-gray-900 leading-tight mb-1">
-        {pub.title}
-      </h3>
-      <div className="text-sm md:text-base text-gray-700 mb-1 flex flex-wrap gap-1">
-        {pub.authors
-          .split(/, ?/)
-          .map((author: string, idx: number, arr: string[]) => (
+// Helper to check if a name matches any student
+function isStudent(name: string): boolean {
+  return studentNames.some((n) => new RegExp(n, "i").test(name));
+}
+
+// Helper to check if a name is Aboah
+function isAboah(name: string): boolean {
+  return /Aboah/i.test(name);
+}
+
+// Helper to extract legend from author string
+function extractLegend(author: string): string | null {
+  const match = author.match(/([*†e])$/);
+  return match ? match[1] : null;
+}
+
+// Helper to render legend as colored superscript
+function renderLegend(legend: string | null): React.ReactNode {
+  if (legend === "*") return <sup className="text-orange-400 font-bold">*</sup>;
+  if (legend === "†") return <sup className="text-teal-800 font-bold">†</sup>;
+  if (legend === "e") return <sup className="text-blue-700 font-bold">e</sup>;
+  return null;
+}
+
+// Main author rendering logic
+function renderAuthor(
+  author: string,
+  isUnderReview = false,
+  isAnyEqualContribution = false
+): React.ReactNode {
+  // Remove any existing legend for clean processing
+  const name = author.replace(/([*†e])$/, "");
+  let legend = extractLegend(author);
+
+  // Always mark Aboah as corresponding author (†), unless equal contribution applies
+  const isAboahAuthor = isAboah(name);
+  if (isAboahAuthor) {
+    if (isAnyEqualContribution) {
+      legend = "e";
+    } else {
+      legend = "†";
+    }
+  } else if (isStudent(name)) {
+    legend = "*";
+  }
+
+  // For papers under review, enforce the rules
+  if (isUnderReview) {
+    if (isAboahAuthor) legend = isAnyEqualContribution ? "e" : "†";
+    else if (isStudent(name)) legend = "*";
+  }
+
+  // If no legend, mark as equal contribution (e)
+  if (!legend) legend = "e";
+
+  return (
+    <>
+      {isAboahAuthor ? (
+        <span className="text-teal-800 font-bold">{name}</span>
+      ) : (
+        name
+      )}
+      {renderLegend(legend)}
+    </>
+  );
+}
+
+const PublicationCard = ({
+  pub,
+  isUnderReview = false,
+}: {
+  pub: Publication;
+  isUnderReview?: boolean;
+}) => {
+  // Determine if any author is marked as equal contribution (e)
+  const authorsArr = pub.authors.split(/, ?/);
+  const isAnyEqualContribution = authorsArr.some(
+    (author) => extractLegend(author) === "e"
+  );
+
+  return (
+    <motion.div
+      className="flex gap-6 items-start py-6 border-b border-gray-200 last:border-b-0"
+      variants={fadeInUp}
+    >
+      <div className="flex-shrink-0 w-40 h-28 md:w-44 md:h-32 rounded-lg overflow-hidden bg-gray-100">
+        <Image
+          src={pub.image || "/placeholder.svg"}
+          alt={pub.title}
+          width={176}
+          height={128}
+          className="object-cover w-full h-full"
+        />
+      </div>
+      <div className="flex-1">
+        <h3 className="text-base md:text-lg font-bold text-gray-900 leading-tight mb-1">
+          {pub.title}
+        </h3>
+        <div className="text-sm md:text-base text-gray-700 mb-1 flex flex-wrap gap-1">
+          {authorsArr.map((author, idx, arr) => (
             <span key={author}>
-              {highlightAuthor(author)}
+              {renderAuthor(author, isUnderReview, isAnyEqualContribution)}
               {idx < arr.length - 1 ? <span>, </span> : <span>.</span>}
             </span>
           ))}
-      </div>
-      <div className="flex items-center gap-2 mb-2">
-        <span
-          className={`px-2 py-0.5 rounded-full text-xs font-semibold ${getBadgeColor(
-            pub.subtext
-          )}`}
-        >
-          {pub.subtext.replace(/\(.*\)/, "").split(/\[|\]/)[0]}
-        </span>
-        {pub.subtext.match(/\d{4}/) && (
-          <span className="text-xs text-orange-400 font-bold">
-            {pub.subtext.match(/\d{4}/)![0]}
+        </div>
+        <div className="flex items-center gap-2 mb-2">
+          <span
+            className={`px-2 py-0.5 rounded-full text-xs font-semibold ${getBadgeColor(
+              pub.subtext
+            )}`}
+          >
+            {pub.subtext.replace(/\(.*\)/, "").split(/\[|\]/)[0]}
           </span>
+          {pub.subtext.match(/\d{4}/) && (
+            <span className="text-xs text-orange-400 font-bold">
+              {pub.subtext.match(/\d{4}/)![0]}
+            </span>
+          )}
+        </div>
+        {pub.links && pub.links.length > 0 && (
+          <div className="flex gap-3 flex-wrap mt-1">
+            {pub.links.map((link: { label: string; url: string }) => (
+              <Link
+                key={link.label}
+                href={link.url}
+                className={`text-xs md:text-sm font-semibold px-2 py-1 rounded transition-colors
+                  ${
+                    link.label.toLowerCase().includes("arxiv")
+                      ? "bg-orange-400 text-white hover:bg-orange-500"
+                      : link.label.toLowerCase().includes("code")
+                      ? "bg-teal-800 text-white hover:bg-teal-900"
+                      : link.label.toLowerCase().includes("paper")
+                      ? "bg-teal-100 text-teal-800 hover:bg-teal-200"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  }
+                `}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         )}
       </div>
-      {pub.links && pub.links.length > 0 && (
-        <div className="flex gap-3 flex-wrap mt-1">
-          {pub.links.map((link: { label: string; url: string }) => (
-            <Link
-              key={link.label}
-              href={link.url}
-              className={`text-xs md:text-sm font-semibold px-2 py-1 rounded transition-colors
-                ${
-                  link.label.toLowerCase().includes("arxiv")
-                    ? "bg-orange-400 text-white hover:bg-orange-500"
-                    : link.label.toLowerCase().includes("code")
-                    ? "bg-teal-800 text-white hover:bg-teal-900"
-                    : link.label.toLowerCase().includes("paper")
-                    ? "bg-teal-100 text-teal-800 hover:bg-teal-200"
-                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                }
-              `}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
-      )}
-    </div>
-  </motion.div>
-);
+    </motion.div>
+  );
+};
 
 export default function Publications() {
   const years = Object.keys(publications).sort((a, b) => Number(b) - Number(a));
@@ -147,12 +220,18 @@ export default function Publications() {
           {/* Legend */}
           <div className="mb-8 flex flex-wrap items-center gap-6 text-sm md:text-base">
             <span className="inline-flex items-center gap-1">
-              <span className="text-orange-400 font-bold">*</span>{" "}
+              <sup className="text-orange-400 font-bold">*</sup>{" "}
               <span className="text-gray-700">Student Advised</span>
             </span>
             <span className="inline-flex items-center gap-1">
-              <span className="text-teal-800 font-bold">†</span>{" "}
+              <sup className="text-teal-800 font-bold">†</sup>{" "}
               <span className="text-gray-700">Corresponding Author</span>
+            </span>
+            <span className="inline-flex items-center gap-1">
+              <span className="text-blue-700 font-bold">
+                <sup>e</sup>
+              </span>{" "}
+              <span className="text-gray-700">Equal Contribution</span>
             </span>
             <span className="inline-flex items-center gap-1">
               <span className="bg-teal-100 text-teal-800 px-2 py-0.5 rounded-full text-xs font-semibold">
@@ -209,7 +288,11 @@ export default function Publications() {
                           ) : (
                             yearData["Papers Under Review"].map(
                               (pub: Publication) => (
-                                <PublicationCard key={pub.id} pub={pub} />
+                                <PublicationCard
+                                  key={pub.id}
+                                  pub={pub}
+                                  isUnderReview
+                                />
                               )
                             )
                           )}

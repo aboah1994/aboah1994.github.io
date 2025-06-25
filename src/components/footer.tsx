@@ -18,12 +18,9 @@ const Footer = () => {
           <div className="md:col-span-4 flex flex-col gap-4">
             <Link href="/" className="flex items-center space-x-3 group mb-2">
               <div>
-                <h1 className="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">
-                  Prof. Aboah Armstrong
+                <h1 className="text-lg font-bold text-white group-hover:text-white/80 transition-colors">
+                  The SMART Lab
                 </h1>
-                <p className="text-xs text-orange-400 -mt-1">
-                  Professor & Data Scientist
-                </p>
               </div>
             </Link>
             <p className="text-sm text-teal-100 mb-2 leading-relaxed">
