@@ -7,54 +7,6 @@ import { sponsors } from "@/lib/constants";
 import { useState, useCallback, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 
-// Enhanced animation variants
-const fadeInUp = {
-  hidden: { opacity: 0, y: 60 },
-  visible: { opacity: 1, y: 0 },
-};
-
-const fadeInLeft = {
-  hidden: { opacity: 0, x: -60 },
-  visible: { opacity: 1, x: 0 },
-};
-
-const fadeInRight = {
-  hidden: { opacity: 0, x: 60 },
-  visible: { opacity: 1, x: 0 },
-};
-
-const scaleIn = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: { opacity: 1, scale: 1 },
-};
-
-const slideInFromBottom = {
-  hidden: { opacity: 0, y: 100 },
-  visible: { opacity: 1, y: 0 },
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const staggerContainerFast = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.05,
-    },
-  },
-};
-
 const researchAreas = [
   {
     icon: BrainCircuit,
@@ -97,32 +49,23 @@ const Research = () => {
       />
 
       {/* Current Projects - new design */}
-      <motion.section
-        className="py-20 px-4 bg-white"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-        variants={staggerContainer}
-      >
+      <section className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-6xl">
-          <motion.div className="text-center mb-16" variants={fadeInUp}>
-            <motion.h2
-              className="text-2xl md:text-3xl font-bold text-teal-800 mb-4"
-              variants={fadeInUp}
-            >
-              Current Projects
-            </motion.h2>
-            <motion.p
-              className="max-w-2xl mx-auto text-base lg:text-lg"
-              variants={fadeInUp}
-            >
-              Innovative research projects and software development initiatives
-            </motion.p>
-          </motion.div>
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
-            variants={staggerContainer}
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
           >
+            <h2 className="text-2xl md:text-3xl font-bold text-teal-800 mb-4">
+              Current Projects
+            </h2>
+            <p className="max-w-2xl mx-auto text-base lg:text-lg">
+              Innovative research projects and software development initiatives
+            </p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {[
               {
                 image: "/gaze.png",
@@ -159,14 +102,18 @@ const Research = () => {
                   "Advancing computer vision and deep learning techniques to automatically identify, classify, and assess pavement defects from mobile imagery, enabling proactive maintenance and improved infrastructure management.",
                 status: "In Progress",
               },
-            ].map((project) => (
+            ].map((project, idx) => (
               <motion.div
                 key={project.title}
-                variants={slideInFromBottom}
-                whileHover={{
-                  y: -6,
-                  transition: { duration: 0.3 },
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                  duration: 0.7,
+                  ease: "easeOut",
+                  delay: idx * 0.08,
                 }}
+                whileHover={{ scale: 1.03 }}
               >
                 <div className="bg-white rounded-2xl p-0 flex flex-col shadow-none border border-teal-100 h-full overflow-hidden">
                   <div className="w-full h-48 md:h-56 lg:h-44 xl:h-56 overflow-hidden rounded-t-2xl relative">
@@ -194,37 +141,28 @@ const Research = () => {
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Past Projects - new design */}
-      <motion.section
-        className="py-20 px-4 bg-teal-800"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-        variants={staggerContainer}
-      >
+      <section className="py-20 px-4 bg-teal-800">
         <div className="container mx-auto max-w-6xl">
-          <motion.div className="text-center mb-16" variants={fadeInUp}>
-            <motion.h2
-              className="text-2xl md:text-3xl font-bold text-white mb-4"
-              variants={fadeInUp}
-            >
-              Past Projects
-            </motion.h2>
-            <motion.p
-              className="text-teal-100 max-w-2xl mx-auto text-base lg:text-lg"
-              variants={fadeInUp}
-            >
-              A showcase of completed research and development initiatives
-            </motion.p>
-          </motion.div>
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
-            variants={staggerContainer}
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
           >
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              Past Projects
+            </h2>
+            <p className="text-teal-100 max-w-2xl mx-auto text-base lg:text-lg">
+              A showcase of completed research and development initiatives
+            </p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {[
               {
                 image: "/gaze.png",
@@ -261,15 +199,18 @@ const Research = () => {
                   "Advancing computer vision and deep learning techniques to automatically identify, classify, and assess pavement defects from mobile imagery, enabling proactive maintenance and improved infrastructure management.",
                 status: "Completed",
               },
-            ].map((project) => (
+            ].map((project, idx) => (
               <motion.div
                 key={project.title + "-past"}
-                variants={slideInFromBottom}
-                whileHover={{
-                  y: -4,
-                  scale: 1.02,
-                  transition: { duration: 0.3 },
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                  duration: 0.7,
+                  ease: "easeOut",
+                  delay: idx * 0.08,
                 }}
+                whileHover={{ scale: 1.02 }}
               >
                 <div className="bg-teal-50 rounded-xl flex flex-col shadow-md h-full overflow-hidden">
                   <div className="w-full h-44 md:h-52 lg:h-40 xl:h-52 overflow-hidden relative">
@@ -297,114 +238,95 @@ const Research = () => {
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Research Methodology */}
-      <motion.section
-        className="py-20 px-4 sm:px-6 lg:px-8 bg-white"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-        variants={staggerContainer}
-      >
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div variants={fadeInLeft}>
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
               <motion.h2
                 className="text-2xl md:text-3xl font-bold text-teal-800 mb-6"
-                variants={fadeInUp}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
               >
                 Research Approach
               </motion.h2>
-              <motion.div className="space-y-6" variants={staggerContainerFast}>
-                <motion.div className="flex gap-4" variants={fadeInUp}>
+              <div className="space-y-6">
+                {[1, 2, 3].map((step, idx) => (
                   <motion.div
-                    className="w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1 shadow-md"
-                    whileHover={{ scale: 1.2, transition: { duration: 0.3 } }}
+                    key={step}
+                    className="flex gap-4"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{
+                      duration: 0.7,
+                      ease: "easeOut",
+                      delay: idx * 0.08,
+                    }}
                   >
-                    <span className="text-white font-bold text-sm">1</span>
+                    <motion.div
+                      className="w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1 shadow-md"
+                      whileHover={{ scale: 1.12 }}
+                    >
+                      <span className="text-white font-bold text-sm">
+                        {step}
+                      </span>
+                    </motion.div>
+                    <div>
+                      <h3 className="text-lg md:text-xl font-semibold text-teal-800 mb-2">
+                        {step === 1 && "Data-Driven Insights"}
+                        {step === 2 && "Interdisciplinary Collaboration"}
+                        {step === 3 && "Real-World Applications"}
+                      </h3>
+                      <p>
+                        {step === 1 &&
+                          "I leverage large-scale datasets and advanced analytics to uncover patterns and insights that inform my research directions and validate my findings."}
+                        {step === 2 &&
+                          "My research benefits from collaborations across engineering, computer science, urban planning, and policy domains to address complex transportation challenges."}
+                        {step === 3 &&
+                          "I focus on research that has practical applications and can be implemented to improve transportation systems and enhance quality of life."}
+                      </p>
+                    </div>
                   </motion.div>
-                  <div>
-                    <h3 className="text-lg md:text-xl font-semibold text-teal-800 mb-2">
-                      Data-Driven Insights
-                    </h3>
-                    <p className="">
-                      I leverage large-scale datasets and advanced analytics to
-                      uncover patterns and insights that inform my research
-                      directions and validate my findings.
-                    </p>
-                  </div>
-                </motion.div>
-                <motion.div className="flex gap-4" variants={fadeInUp}>
-                  <motion.div
-                    className="w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1 shadow-md"
-                    whileHover={{ scale: 1.2, transition: { duration: 0.3 } }}
-                  >
-                    <span className="text-white font-bold text-sm">2</span>
-                  </motion.div>
-                  <div>
-                    <h3 className="text-lg md:text-xl font-semibold text-teal-800 mb-2">
-                      Interdisciplinary Collaboration
-                    </h3>
-                    <p className="">
-                      My research benefits from collaborations across
-                      engineering, computer science, urban planning, and policy
-                      domains to address complex transportation challenges.
-                    </p>
-                  </div>
-                </motion.div>
-                <motion.div className="flex gap-4" variants={fadeInUp}>
-                  <motion.div
-                    className="w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1 shadow-md"
-                    whileHover={{ scale: 1.2, transition: { duration: 0.3 } }}
-                  >
-                    <span className="text-white font-bold text-sm">3</span>
-                  </motion.div>
-                  <div>
-                    <h3 className="text-lg md:text-xl font-semibold text-teal-800 mb-2">
-                      Real-World Applications
-                    </h3>
-                    <p className="">
-                      I focus on research that has practical applications and
-                      can be implemented to improve transportation systems and
-                      enhance quality of life.
-                    </p>
-                  </div>
-                </motion.div>
-              </motion.div>
+                ))}
+              </div>
             </motion.div>
             <motion.div
               className="relative"
-              variants={fadeInRight}
-              whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              whileHover={{ scale: 1.02 }}
             >
-              <motion.div
-                className="bg-white rounded-2xl p-8 text-center border border-teal-100"
-                variants={scaleIn}
-              >
-                <motion.div
-                  className="grid grid-cols-2 gap-6"
-                  variants={staggerContainer}
-                >
-                  {researchAreas.map((item) => (
+              <div className="bg-white rounded-2xl p-8 text-center border border-teal-100">
+                <div className="grid grid-cols-2 gap-6">
+                  {researchAreas.map((item, idx) => (
                     <motion.div
                       key={item.title}
                       className="bg-white rounded-xl p-6 border border-teal-100 shadow-none hover:border-orange-400 transition-all duration-300"
-                      variants={fadeInUp}
-                      whileHover={{
-                        y: -5,
-                        scale: 1.04,
-                        transition: { duration: 0.3 },
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.2 }}
+                      transition={{
+                        duration: 0.7,
+                        ease: "easeOut",
+                        delay: idx * 0.08,
                       }}
+                      whileHover={{ scale: 1.04 }}
                     >
-                      <motion.div
-                        whileHover={{
-                          scale: 1.1,
-                          transition: { duration: 0.3 },
-                        }}
-                      >
+                      <motion.div whileHover={{ scale: 1.1 }}>
                         <item.icon
                           className={`w-8 h-8 mx-auto mb-3 ${item.iconColor}`}
                         />
@@ -418,42 +340,41 @@ const Research = () => {
                       </p>
                     </motion.div>
                   ))}
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Sponsors & Core Partners Carousel */}
-      <motion.section
-        className="py-20 px-4 bg-white"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-        variants={staggerContainer}
-      >
+      <section className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-5xl">
-          <motion.div className="text-center mb-10" variants={fadeInUp}>
-            <motion.h2
-              className="text-2xl md:text-3xl font-bold text-teal-800 mb-4"
-              variants={fadeInUp}
-            >
+          <motion.div
+            className="text-center mb-10"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-teal-800 mb-4">
               Our Core Partners
-            </motion.h2>
-            <motion.p
-              className="max-w-2xl mx-auto text-base lg:text-lg"
-              variants={fadeInUp}
-            >
+            </h2>
+            <p className="max-w-2xl mx-auto text-base lg:text-lg">
               Organizations we collaborate with to advance research and
               innovation
-            </motion.p>
+            </p>
           </motion.div>
-          <motion.div variants={fadeInUp}>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
             <CarouselSection />
           </motion.div>
         </div>
-      </motion.section>
+      </section>
     </>
   );
 };

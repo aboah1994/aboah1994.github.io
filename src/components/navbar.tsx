@@ -65,7 +65,7 @@ const Navbar = () => {
                       scaleX: 1,
                       opacity: 1,
                     }}
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    transition={{ duration: 0.35, ease: "easeInOut" }}
                     style={{ pointerEvents: "none" }}
                   />
                 </Link>
@@ -87,6 +87,7 @@ const Navbar = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
           className="md:hidden bg-white border-t border-slate-200"
         >
           <div className="container mx-auto px-4 py-4">

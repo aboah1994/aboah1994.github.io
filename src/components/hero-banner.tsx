@@ -67,13 +67,13 @@ const HeroBanner = (props: Props) => {
           className="absolute top-[15%] right-[10%] w-48 h-48 rounded-full bg-teal-400/20 blur-3xl"
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.8 }}
-          transition={{ duration: 2 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
         />
         <motion.div
           className="absolute bottom-[25%] left-[5%] w-64 h-64 rounded-full bg-orange-400/20 blur-3xl"
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.6 }}
-          transition={{ duration: 2, delay: 0.5 }}
+          transition={{ duration: 1.2, delay: 0.3, ease: "easeInOut" }}
         />
       </div>
 
@@ -85,7 +85,7 @@ const HeroBanner = (props: Props) => {
               className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
             >
               <span className="text-white">{props.title}</span>
             </motion.h1>
@@ -95,7 +95,7 @@ const HeroBanner = (props: Props) => {
                 className="text-slate-200 text-lg md:text-xl font-medium"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
               >
                 {props.subtitle}
               </motion.p>
@@ -106,7 +106,7 @@ const HeroBanner = (props: Props) => {
                 className="text-slate-300 text-base md:text-lg max-w-2xl leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
               >
                 {props.description}
               </motion.p>
@@ -118,7 +118,7 @@ const HeroBanner = (props: Props) => {
                 className="flex flex-wrap gap-4 items-center pt-2"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.35 }}
+                transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
               >
                 <Link
                   href="https://www.linkedin.com/in/armstrong-aboah-ph-d-5ab809142/"
@@ -192,7 +192,7 @@ const HeroBanner = (props: Props) => {
               className="flex flex-wrap gap-4 items-center pt-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
             >
               {props.showCtaBtn && props.ctaBtnText && (
                 <Link href="/contact">
@@ -223,7 +223,7 @@ const HeroBanner = (props: Props) => {
                 className="flex flex-col sm:flex-row gap-6 mt-10"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.5 }}
+                transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
               >
                 {[
                   { value: "45+", label: "Publications" },
@@ -254,7 +254,7 @@ const HeroBanner = (props: Props) => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
+                transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
               >
                 {props.children}
               </motion.div>
@@ -266,7 +266,7 @@ const HeroBanner = (props: Props) => {
             className="lg:col-span-5 relative hidden lg:flex items-center justify-center h-full"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}
           >
             <div className="relative w-full max-w-sm aspect-square">
               {/* Academic rings */}
@@ -350,6 +350,7 @@ const HeroBanner = (props: Props) => {
                     duration: 3,
                     repeat: Number.POSITIVE_INFINITY,
                     delay: item.delay,
+                    ease: "easeInOut",
                   }}
                 >
                   <item.icon className="w-4 h-4 text-teal-100" />

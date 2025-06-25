@@ -22,11 +22,6 @@ interface Publication {
   year?: number;
 }
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
-
 const getBadgeColor = (subtext: string): string => {
   if (/arxiv/i.test(subtext)) return "bg-orange-100 text-orange-500";
   if (/cvpr|wacv|neurips|conference|trb|workshop/i.test(subtext))
@@ -134,7 +129,10 @@ const PublicationCard = ({
   return (
     <motion.div
       className="flex gap-6 items-start py-6 border-b border-gray-200 last:border-b-0"
-      variants={fadeInUp}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
     >
       <div className="flex-shrink-0 w-40 h-28 md:w-44 md:h-32 rounded-lg overflow-hidden bg-gray-100">
         <Image

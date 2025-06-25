@@ -27,54 +27,6 @@ import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { Textarea } from "@/components/ui/textarea";
 
-// Enhanced animation variants
-const fadeInUp = {
-  hidden: { opacity: 0, y: 60 },
-  visible: { opacity: 1, y: 0 },
-};
-
-const fadeInLeft = {
-  hidden: { opacity: 0, x: -60 },
-  visible: { opacity: 1, x: 0 },
-};
-
-const fadeInRight = {
-  hidden: { opacity: 0, x: 60 },
-  visible: { opacity: 1, x: 0 },
-};
-
-const scaleIn = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: { opacity: 1, scale: 1 },
-};
-
-const slideInFromBottom = {
-  hidden: { opacity: 0, y: 100 },
-  visible: { opacity: 1, y: 0 },
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const staggerContainerFast = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.05,
-    },
-  },
-};
-
 const teachingTimeline = [
   {
     school: "North Dakota State University",
@@ -142,30 +94,36 @@ export default function Home() {
         showCtaBtn={false}
         showSocialLinks
         pageType="home"
-      ></HeroBanner>
+      />
 
       {/* About Section */}
-      <motion.section
-        className="py-20 px-4 sm:px-6 lg:px-8"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-        variants={staggerContainer}
-      >
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-5 gap-12 items-center">
-            <motion.div className="lg:col-span-3" variants={fadeInLeft}>
+            <motion.div
+              className="lg:col-span-3"
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
               <motion.h2
                 className="text-3xl md:text-4xl font-bold text-teal-800 mb-6"
-                variants={fadeInUp}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
               >
                 About Me
               </motion.h2>
-              <motion.div
-                className="prose prose-lg max-w-none"
-                variants={staggerContainerFast}
-              >
-                <motion.p className=" mb-6 leading-relaxed" variants={fadeInUp}>
+              <motion.div className="prose prose-lg max-w-none">
+                <motion.p
+                  className="mb-6 leading-relaxed"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.7, ease: "easeOut" }}
+                >
                   I am an Assistant Professor at{" "}
                   <a
                     href="https://www.ndsu.edu/"
@@ -182,7 +140,13 @@ export default function Home() {
                   vision systems aimed at improving transportation system
                   management and operations.
                 </motion.p>
-                <motion.p className=" mb-8 leading-relaxed" variants={fadeInUp}>
+                <motion.p
+                  className="mb-8 leading-relaxed"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+                >
                   My broad interests lie in computer vision and machine
                   learning. My research involves visual reasoning, vision and
                   language, image generation, air taxis, naturalistic studies,
@@ -202,54 +166,45 @@ export default function Home() {
             </motion.div>
             <motion.div
               className="lg:col-span-2 flex justify-center"
-              variants={fadeInRight}
-              whileHover={{
-                scale: 1.05,
-                transition: { duration: 0.3 },
-              }}
+              initial={{ opacity: 0, scale: 0.92 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              whileHover={{ scale: 1.04 }}
             >
-              <motion.div className="relative" variants={scaleIn}>
+              <motion.div className="relative">
                 <Image
                   src="/aboah.png"
                   alt="Professor Aboah Armstrong"
                   width={400}
                   height={400}
-                  className="relative rounded-2xl  shadow-lg"
+                  className="relative rounded-2xl shadow-lg"
                 />
               </motion.div>
             </motion.div>
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Research Focus Areas */}
-      <motion.section
-        className="py-20 px-4 bg-teal-800"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-        variants={staggerContainer}
-      >
+      <section className="py-20 px-4 bg-teal-800">
         <div className="container mx-auto max-w-6xl">
-          <motion.div className="text-center mb-16" variants={fadeInUp}>
-            <motion.h2
-              className="text-2xl md:text-3xl font-bold text-white mb-4"
-              variants={fadeInUp}
-            >
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Research Focus Areas
-            </motion.h2>
-            <motion.p
-              className="text-teal-100 max-w-2xl mx-auto text-base lg:text-lg"
-              variants={fadeInUp}
-            >
+            </h2>
+            <p className="text-teal-100 max-w-2xl mx-auto text-base lg:text-lg">
               My research spans multiple domains, contributing to both
               theoretical understanding and practical applications.
-            </motion.p>
+            </p>
           </motion.div>
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={staggerContainer}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 icon: BrainCircuit,
@@ -296,104 +251,99 @@ export default function Home() {
             ].map((area, index) => (
               <motion.div
                 key={index}
-                variants={slideInFromBottom}
-                whileHover={{
-                  y: -6,
-                  transition: { duration: 0.3 },
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                  duration: 0.7,
+                  ease: "easeOut",
+                  delay: index * 0.08,
                 }}
+                whileHover={{ scale: 1.03 }}
+                className="bg-white rounded-2xl p-6 flex flex-col items-center shadow-none border border-teal-100 h-full"
               >
-                <div className="bg-white rounded-2xl p-6 flex flex-col items-center shadow-none border border-teal-100 h-full">
-                  <div className="w-20 h-20 rounded-xl overflow-hidden mb-4 flex items-center justify-center bg-gray-50">
-                    <area.icon className={`w-14 h-14 ${area.iconColor}`} />
-                  </div>
-                  <h3 className="text-lg font-bold text-teal-800 mb-2 text-center">
-                    {area.title}
-                  </h3>
-                  <div className="w-10 border-t-2 border-dotted border-orange-400 mb-2"></div>
-                  <p className="text-teal-700 text-base text-center">
-                    {area.description}
-                  </p>
+                <div className="w-20 h-20 rounded-xl overflow-hidden mb-4 flex items-center justify-center bg-gray-50">
+                  <area.icon className={`w-14 h-14 ${area.iconColor}`} />
                 </div>
+                <h3 className="text-lg font-bold text-teal-800 mb-2 text-center">
+                  {area.title}
+                </h3>
+                <div className="w-10 border-t-2 border-dotted border-orange-400 mb-2"></div>
+                <p className="text-teal-700 text-base text-center">
+                  {area.description}
+                </p>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Teaching Experience Timeline */}
-      <motion.section
-        className="py-20 px-4 bg-white"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-        variants={staggerContainer}
-      >
+      <section className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-4xl">
-          <motion.div className="text-center mb-16" variants={fadeInUp}>
-            <motion.h2
-              className="text-2xl md:text-3xl font-bold text-teal-800 mb-4"
-              variants={fadeInUp}
-            >
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-teal-800 mb-4">
               Teaching Experience
-            </motion.h2>
-            <motion.p
-              className=" max-w-2xl mx-auto text-base lg:text-lg"
-              variants={fadeInUp}
-            >
+            </h2>
+            <p className="max-w-2xl mx-auto text-base lg:text-lg">
               I have taught various courses in transportation engineering and
               related fields across multiple prestigious institutions.
-            </motion.p>
+            </p>
           </motion.div>
-
-          <motion.div className="relative" variants={staggerContainer}>
+          <div className="relative">
             {/* Timeline line */}
             <motion.div
               className="absolute left-8 top-0 bottom-0 w-0.5 bg-teal-100"
-              initial={{ scaleY: 0 }}
-              whileInView={{ scaleY: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}
+              initial={{ scaleY: 0, opacity: 0 }}
+              whileInView={{ scaleY: 1, opacity: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 1, ease: "easeInOut", delay: 0.2 }}
             ></motion.div>
-
             <div className="space-y-8">
               {teachingTimeline.map((item, index) => (
                 <motion.div
                   key={item.school + item.code}
                   className="relative flex items-start gap-6"
-                  variants={fadeInLeft}
-                  whileHover={{
-                    x: 10,
-                    transition: { duration: 0.3 },
+                  initial={{ opacity: 0, x: -40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{
+                    duration: 0.7,
+                    ease: "easeOut",
+                    delay: index * 0.08,
                   }}
+                  whileHover={{ x: 8 }}
                 >
                   {/* Timeline dot */}
                   <motion.div
                     className="relative z-10"
-                    whileHover={{
-                      scale: 1.2,
-                      transition: { duration: 0.3 },
-                    }}
+                    whileHover={{ scale: 1.12 }}
                   >
                     <motion.div
                       className={`${item.color} p-3 rounded-full border-4 border-white shadow-none`}
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
+                      initial={{ scale: 0, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      viewport={{ once: true, amount: 0.2 }}
                       transition={{
                         duration: 0.5,
-                        delay: index * 0.2,
-                        type: "spring",
-                        stiffness: 200,
+                        ease: "easeOut",
+                        delay: index * 0.08,
                       }}
                     >
                       <GraduationCap className={`h-6 w-6 ${item.textColor}`} />
                     </motion.div>
                   </motion.div>
-
                   {/* Content card */}
                   <motion.div
                     className={`bg-white p-6 rounded-xl border-l-4 ${item.borderColor} flex-1`}
                     whileHover={{
                       boxShadow: "0 4px 12px 0 rgba(16, 185, 129, 0.08)",
-                      transition: { duration: 0.3 },
                     }}
                   >
                     <h3 className="text-lg font-bold text-teal-800 mb-2">
@@ -409,24 +359,21 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Contact & CTA Section */}
-      <motion.section
-        className="py-10 px-4 bg-white"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-        variants={staggerContainer}
-      >
+      <section className="py-10 px-4 bg-white">
         <div className="container mx-auto max-w-6xl">
           <div className="rounded-2xl shadow-lg shadow-teal-50 overflow-hidden flex flex-col md:flex-row bg-white">
             {/* CTA Banner Left */}
             <motion.div
               className="bg-teal-800 flex-1 p-10 flex flex-col justify-center"
-              variants={fadeInLeft}
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
             >
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
                 Get In Touch
@@ -468,79 +415,114 @@ export default function Home() {
             <div className="hidden md:block w-px bg-teal-100" />
             <div className="block md:hidden h-px bg-teal-100 mx-10" />
             {/* Form Card Right */}
-            <motion.div className="bg-white flex-1 p-10" variants={fadeInRight}>
+            <motion.div
+              className="bg-white flex-1 p-10"
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
               <Form {...form}>
                 <form
                   onSubmit={form.handleSubmit(onSubmit)}
                   className="grid gap-6"
                 >
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-teal-800">Name</FormLabel>
-                        <FormControl>
-                          <Input
-                            placeholder="Your Name"
-                            {...field}
-                            className="bg-gray-50 text-teal-800  placeholder:text-sm text-sm rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400 transition-colors"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    rules={{ required: "Email is required" }}
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-teal-800">Email</FormLabel>
-                        <FormControl>
-                          <Input
-                            type="email"
-                            placeholder="Your Email"
-                            {...field}
-                            className="bg-gray-50 text-teal-800  placeholder:text-sm text-sm rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400 transition-colors"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    rules={{ required: "Message is required" }}
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-teal-800">Message</FormLabel>
-                        <FormControl>
-                          <Textarea
-                            placeholder="Your Message"
-                            rows={4}
-                            {...field}
-                            className="bg-gray-50 text-teal-800  placeholder:text-sm text-sm rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400 transition-colors"
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <button
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                  >
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-teal-800">Name</FormLabel>
+                          <FormControl>
+                            <Input
+                              placeholder="Your Name"
+                              {...field}
+                              className="bg-gray-50 text-teal-800  placeholder:text-sm text-sm rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400 transition-colors"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.7, ease: "easeOut", delay: 0.05 }}
+                  >
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      rules={{ required: "Email is required" }}
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-teal-800">Email</FormLabel>
+                          <FormControl>
+                            <Input
+                              type="email"
+                              placeholder="Your Email"
+                              {...field}
+                              className="bg-gray-50 text-teal-800  placeholder:text-sm text-sm rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400 transition-colors"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+                  >
+                    <FormField
+                      control={form.control}
+                      name="message"
+                      rules={{ required: "Message is required" }}
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-teal-800">
+                            Message
+                          </FormLabel>
+                          <FormControl>
+                            <Textarea
+                              placeholder="Your Message"
+                              rows={4}
+                              {...field}
+                              className="bg-gray-50 text-teal-800  placeholder:text-sm text-sm rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400 transition-colors"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </motion.div>
+                  <motion.button
                     type="submit"
                     className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 text-lg w-full"
+                    whileTap={{ scale: 0.97 }}
+                    whileHover={{ scale: 1.03 }}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
                   >
                     Send Message
-                  </button>
+                  </motion.button>
                 </form>
               </Form>
             </motion.div>
           </div>
         </div>
-      </motion.section>
+      </section>
     </main>
   );
 }
