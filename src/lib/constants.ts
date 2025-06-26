@@ -159,30 +159,46 @@ export const publications = {
         id: 1002,
         title:
           "Visual Question Answering-based Referring Expression Segmentation for construction safety analysis",
-        authors: "DQ Tran, A Aboah, Y Jeon, MT Do, M Abdel-Aty, M Park, S Park",
+        authors:
+          "DQ Tran(e), A Aboah(e), Y Jeon(e), MT Do(e), M Abdel-Aty(e), M Park(e), S Park(e)",
         subtext: "Automation in Construction 174, 106127",
-        image: "/vidcap.png",
-        links: [{ label: "Paper", url: "#" }],
+        image: "/pave.jpg",
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:k_IJM867U9cC",
+          },
+        ],
         year: 2025,
       },
       {
         id: 1003,
         title:
           "Saam-reflectnet: Sign-aware attention-based multitasking framework for integrated traffic sign detection and retroreflectivity estimation",
-        authors: "JK Asamoah*, BA Kyem*, ND Obeng-Amoako*, A Aboah†",
+        authors: "JK Asamoah(*), BA Kyem(*), ND Obeng-Amoako(*), A Aboah(†)",
         subtext: "Expert Systems with Applications, 128003",
-        image: "/gaze.png",
-        links: [{ label: "Paper", url: "#" }],
+        image: "/saam-reflectnet.png",
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:bEWYMUwI8FkC",
+          },
+        ],
         year: 2025,
       },
       {
         id: 1005,
         title:
           "An improved ResNet50 model for predicting pavement condition index (PCI) directly from pavement images",
-        authors: "A Danyo*, A Donto*, A Aboah†",
+        authors: "A Danyo(*), A Donto(*), A Aboah(†)",
         subtext: "Road Materials and Pavement Design, 1-18",
-        image: "/pave.jpg",
-        links: [{ label: "Paper", url: "#" }],
+        image: "/resnet.png",
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:JV2RwH3_ST0C",
+          },
+        ],
         year: 2025,
       },
       {
@@ -192,16 +208,26 @@ export const publications = {
         authors: "MF Habib, D Motuba, Y Huang, A Aboah",
         subtext: "Traffic Injury Prevention, 1-11",
         image: "/vidcap.png",
-        links: [{ label: "Paper", url: "#" }],
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:M3NEmzRMIkIC",
+          },
+        ],
         year: 2025,
       },
       {
         id: 1008,
         title: "PaveSAM--segment anything for pavement distress",
-        authors: "NJ Owor*, Y Adu-Gyamfi, A Aboah, M Amo-Boateng",
+        authors: "NJ Owor(*), Y Adu-Gyamfi, A Aboah, M Amo-Boateng",
         subtext: "Road Materials and Pavement Design 26 (3), 593-617",
-        image: "/nemma.gif",
-        links: [{ label: "Paper", url: "#" }],
+        image: "/paveSam.png",
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:7PzlFSSx8tAC",
+          },
+        ],
         year: 2025,
       },
       {
@@ -212,17 +238,27 @@ export const publications = {
         subtext:
           "Journal of Transportation Engineering, Part A: Systems 151 (3), 04025001",
         image: "/lidar1.jpg",
-        links: [{ label: "Paper", url: "#" }],
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:_Qo2XoVZTnwC",
+          },
+        ],
         year: 2025,
       },
       {
         id: 1010,
         title:
           "Context-CrackNet: A Context-Aware Framework for Precise Segmentation of Tiny Cracks in Pavement Images",
-        authors: "BA Kyem*, JK Asamoah*, A Aboah†",
+        authors: "BA Kyem(*), JK Asamoah(*), A Aboah(†)",
         subtext: "Construction and Building Materials 484 (141583), 0950-0618",
-        image: "/pav1.jpg",
-        links: [{ label: "Paper", url: "#" }],
+        image: "/cracknet.png",
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:r0BpntZqJG4C",
+          },
+        ],
         year: 2025,
       },
       {
@@ -232,8 +268,13 @@ export const publications = {
         authors: "DQ Tran, Y Jeon, A Aboah, J Bak, M Park, S Park",
         subtext:
           "Journal of Construction Engineering and Management 151 (1), 04024190",
-        image: "/vidcap.png",
-        links: [{ label: "Paper", url: "#" }],
+        image: "/domain-adaptation.png",
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:R3hNpaxXUhUC",
+          },
+        ],
         year: 2025,
       },
     ],
@@ -242,50 +283,79 @@ export const publications = {
         id: 1001,
         title:
           "Demographics-Informed Neural Network for Multi-Modal Spatiotemporal forecasting of Urban Growth and Travel Patterns Using Satellite Imagery",
-        authors: "EKO Denteh, A Danyo, JK Asamoah, BA Kyem, A Aboah",
+        authors:
+          "EKO Denteh(*), A Danyo(*), JK Asamoah(*), BA Kyem(*), A Aboah",
         subtext: "arXiv preprint arXiv:2506.12456",
-        image: "/anomaly.jpg",
-        links: [{ label: "arXiv", url: "#" }],
+        image: "/demographics.png",
+        links: [
+          {
+            label: "arXiv",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:hMod-77fHWUC",
+          },
+        ],
         year: 2025,
       },
       {
         id: 1004,
         title:
           "Visual Dominance and Emerging Multimodal Approaches in Distracted Driving Detection: A Review of Machine Learning Techniques",
-        authors: "A Donto, S Ivey, L Sribuarang, A Danyo, A Aboah",
+        authors:
+          "A Donto(*), S Ivey(*), L Sribuarang(*), A Danyo(*), A Aboah(†)",
         subtext: "arXiv preprint arXiv:2505.01973",
-        image: "/driver.png",
-        links: [{ label: "arXiv", url: "#" }],
+        image: "/visual.png",
+        links: [
+          {
+            label: "arXiv",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:blknAaTinKkC",
+          },
+        ],
         year: 2025,
       },
       {
         id: 1007,
         title:
           "Integrating travel behavior forecasting and generative modeling for predicting future urban mobility and spatial transformations",
-        authors: "E Denteh, A Danyo, JK Asamoah, BA Kyem, T Addai, A Aboah",
+        authors:
+          "E Denteh(*), A Danyo(*), JK Asamoah(*), BA Kyem(*), T Addai(*), A Aboah(†)",
         subtext: "arXiv preprint arXiv:2503.21158",
-        image: "/delay.jpg",
-        links: [{ label: "arXiv", url: "#" }],
+        image: "/travel-behaviour.png",
+        links: [
+          {
+            label: "arXiv",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:maZDTaKrznsC",
+          },
+        ],
         year: 2025,
       },
       {
         id: 2004,
         title:
           "Advancing pavement distress detection in developing countries: A novel deep learning approach with locally-collected datasets",
-        authors: "BA Kyem, EKO Denteh, JK Asamoah, KA Tutu, A Aboah",
+        authors:
+          "BA Kyem(*), EKO Denteh(*), JK Asamoah(*), KA Tutu(*), A Aboah(†)",
         subtext: "arXiv preprint arXiv:2408.05649",
-        image: "/gcru.jpg",
-        links: [{ label: "arXiv", url: "#" }],
+        image: "/advancing-pavement-distress.png",
+        links: [
+          {
+            label: "arXiv",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:IWHjjKOFINEC",
+          },
+        ],
         year: 2024,
       },
       {
         id: 2005,
         title:
           "Pavecap: The first multimodal framework for comprehensive pavement condition assessment with dense captioning and pci estimation",
-        authors: "BA Kyem, EKO Denteh, JK Asamoah, A Aboah",
+        authors: "BA Kyem(*), EKO Denteh(*), JK Asamoah(*), A Aboah(†)",
         subtext: "arXiv preprint arXiv:2408.04110",
         image: "/gcru.jpg",
-        links: [{ label: "arXiv", url: "#" }],
+        links: [
+          {
+            label: "arXiv",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:ZeXyd9-uunAC",
+          },
+        ],
         year: 2024,
       },
     ],
@@ -296,20 +366,30 @@ export const publications = {
         id: 2001,
         title:
           "Weather-Adaptive Synthetic Data Generation for Enhanced Power Line Inspection Using StarGAN",
-        authors: "BA Kyem, JK Asamoah, Y Huang, A Aboah",
+        authors: "BA Kyem(*), JK Asamoah(*), Y Huang, A Aboah(†)",
         subtext: "IEEE Access",
-        image: "/gcru.jpg",
-        links: [{ label: "Paper", url: "#" }],
+        image: "/weather-adaptive.png",
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:e5wmG9Sq2KIC",
+          },
+        ],
         year: 2024,
       },
       {
         id: 2002,
         title:
           "A Novel FHWA-Compliant Dataset for Granular Vehicle Detection and Classification.",
-        authors: "E Arthur, A Aboah, Y Huang",
+        authors: "E Arthur, A Aboah(†), Y Huang",
         subtext: "IEEE Access",
-        image: "/maneu.png",
-        links: [{ label: "Paper", url: "#" }],
+        image: "/novel.png",
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:TQgYirikUcIC",
+          },
+        ],
         year: 2024,
       },
       {
@@ -319,8 +399,13 @@ export const publications = {
         authors: "K Kwakye, Y Seong, S Yi, A Aboah",
         subtext:
           "Proceedings of the Human Factors and Ergonomics Society Annual Meeting 68 (1 ...",
-        image: "/3dcnn.jpeg",
-        links: [{ label: "Paper", url: "#" }],
+        image: "/all-you-need-to-know.jpg",
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:-f6ydRqryjwC",
+          },
+        ],
         year: 2024,
       },
 
@@ -328,10 +413,15 @@ export const publications = {
         id: 2006,
         title:
           "Divneds: Diverse naturalistic edge driving scene dataset for autonomous vehicle scene understanding",
-        authors: "JO Duah, A Aboah, S Osafo-Gyamfi",
+        authors: "JO Duah(*), A Aboah(†), S Osafo-Gyamfi(*)",
         subtext: "IEEE Access",
         image: "/divnends.png",
-        links: [{ label: "Paper", url: "#" }],
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:QIV2ME_5wuYC",
+          },
+        ],
         year: 2024,
       },
       {
@@ -341,7 +431,12 @@ export const publications = {
         authors: "B Wang, A Aboah, Z Zhang, H Pan, U Bagci",
         subtext: "NeurIPS 2023 Workshop on Gaze Meets ML, 254-265",
         image: "/icon.gif",
-        links: [{ label: "Paper", url: "#" }],
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:MXK_kJrjxJIC",
+          },
+        ],
         year: 2024,
       },
       {
@@ -352,18 +447,29 @@ export const publications = {
         subtext:
           "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern ...",
         image: "/gaze.png",
-        links: [{ label: "Paper", url: "#" }],
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:dhFuZR0502QC",
+          },
+        ],
         year: 2024,
       },
       {
         id: 2009,
         title:
           "Low-light image enhancement framework for improved object detection in fisheye lens datasets",
-        authors: "DQ Tran, A Aboah, Y Jeon, M Shoman, M Park, S Park",
+        authors:
+          "DQ Tran(e), A Aboah(e), Y Jeon(e), M Shoman(e), M Park, S Park(e)",
         subtext:
           "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern ...",
         image: "/lowlight.png",
-        links: [{ label: "Paper", url: "#" }],
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:aqlVkmm33-oC",
+          },
+        ],
         year: 2024,
       },
       {
@@ -374,18 +480,27 @@ export const publications = {
         subtext:
           "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern ...",
         image: "/vidcap.png",
-        links: [{ label: "Paper", url: "#" }],
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:qxL8FJ1GzNcC",
+          },
+        ],
         year: 2024,
       },
       {
-        id: 2011,
+        id: 20121,
         title:
-          "Three-Dimensional Object Detection and High-Resolution Traffic Parameter Extraction Using Low-Resolution LiDAR Data",
-        authors: "L Zhang, X Yu, A Aboah, Y Adu-Gyamfi",
-        subtext:
-          "Journal of Transportation Engineering, Part A: Systems 151 (3), 04025001",
-        image: "/lidar1.jpg",
-        links: [{ label: "Paper", url: "#" }],
+          "Graph Convolutional Gated Recurrent Unit Network for Traffic Prediction Using Loop Detector Data",
+        authors: " Shoman, A Aboah, A Daud, Y Adu-Gyamfi",
+        subtext: "Advances in Data Science & Adaptive Analysis",
+        image: "/gcru.jpg",
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:M3ejUd6NZC8C",
+          },
+        ],
         year: 2024,
       },
     ],
@@ -401,7 +516,12 @@ export const publications = {
         subtext:
           "103rd Annual Meeting of the Transportation Research Board, Washington, DC",
         image: "/nemma.gif",
-        links: [{ label: "arXiv", url: "#" }],
+        links: [
+          {
+            label: "arXiv",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:0EnyYjriUFMC",
+          },
+        ],
         year: 2023,
       },
       {
@@ -412,7 +532,12 @@ export const publications = {
         subtext:
           "103rd Annual Meeting of the Transportation Research Board, Washington, DC",
         image: "/edge-computing.png",
-        links: [{ label: "arXiv", url: "#" }],
+        links: [
+          {
+            label: "arXiv",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:hqOjcs7Dif8C",
+          },
+        ],
         year: 2023,
       },
       {
@@ -422,8 +547,13 @@ export const publications = {
         authors: "K Kwakye, Y Seong, S Yi, A Aboah",
         subtext:
           "Proceedings of the ICOM International Conference on Smart Mobility and ...",
-        image: "/3dcnn.jpeg",
-        links: [{ label: "Paper", url: "#" }],
+        image: "/drive-sam.png",
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:iH-uZ7U-co4C",
+          },
+        ],
         year: 2023,
       },
       {
@@ -435,7 +565,12 @@ export const publications = {
         subtext:
           "2023 IEEE Applied Imagery Pattern Recognition Workshop (AIPR), ix",
         image: "/realpred.jpg",
-        links: [{ label: "arXiv", url: "#" }],
+        links: [
+          {
+            label: "arXiv",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:_kc_bZDykSQC",
+          },
+        ],
         year: 2023,
       },
       {
@@ -446,7 +581,12 @@ export const publications = {
         subtext:
           "Proceedings of the Human Factors and Ergonomics Society Annual Meeting 67 (1 ...",
         image: "/3dcnn.jpeg",
-        links: [{ label: "Paper", url: "#" }],
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:8k81kl-MbHgC",
+          },
+        ],
         year: 2023,
       },
       {
@@ -455,8 +595,13 @@ export const publications = {
           "SigSegment: A Signal-Based Segmentation Algorithm for Identifying Anomalous Driving Behaviours in Naturalistic Driving Videos",
         authors: "K Kwakye, Y Seong, A Aboah, S Yi",
         subtext: "arXiv preprint arXiv:2304.09427",
-        image: "/3dcnn.jpeg",
-        links: [{ label: "arXiv", url: "#" }],
+        image: "/sig-seg.png",
+        links: [
+          {
+            label: "arXiv",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:LkGwnXOMwfcC",
+          },
+        ],
         year: 2023,
       },
       {
@@ -465,8 +610,13 @@ export const publications = {
           "Performance of Concrete Using Shredded Waste Plastics as Replacement for Coarse Aggregate",
         authors: "RO Afirifa, ES Nanor, A Aboah",
         subtext: "",
-        image: "/maneu.png",
-        links: [{ label: "Paper", url: "#" }],
+        image: "/plastic-concrete.png.png",
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:YOwf2qJgpHMC",
+          },
+        ],
         year: 2023,
       },
       {
@@ -478,7 +628,12 @@ export const publications = {
         subtext:
           "Journal of Transportation Engineering, Part A: Systems 149 (3), 04022157",
         image: "/maneu.png",
-        links: [{ label: "arXiv", url: "#" }],
+        links: [
+          {
+            label: "arXiv",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:Y0pCki6q_DkC",
+          },
+        ],
         year: 2023,
       },
       {
@@ -489,7 +644,12 @@ export const publications = {
         subtext:
           "Proceedings of the IEEE/CVF Conference on computer vision and pattern ...",
         image: "/realpred.jpg",
-        links: [{ label: "arXiv", url: "#" }],
+        links: [
+          {
+            label: "arXiv",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:WF5omc3nYNoC",
+          },
+        ],
         year: 2023,
       },
       {
@@ -500,7 +660,12 @@ export const publications = {
         subtext:
           "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern ...",
         image: "/driver.png",
-        links: [{ label: "arXiv", url: "#" }],
+        links: [
+          {
+            label: "arXiv",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:eQOLeE2rZwMC",
+          },
+        ],
         year: 2023,
       },
     ],
@@ -514,8 +679,13 @@ export const publications = {
           "AI-based framework for automatically extracting high-low features from NDS data to understand driver behavior",
         authors: "A Aboah",
         subtext: "University of Missouri--Columbia",
-        image: "/maneu.png",
-        links: [{ label: "Paper", url: "#" }],
+        image: "/ai-based.png",
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:isC4tDSrTZIC",
+          },
+        ],
         year: 2022,
       },
       {
@@ -526,7 +696,12 @@ export const publications = {
         subtext:
           "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern ...",
         image: "/retail-checkout.png",
-        links: [{ label: "arXiv", url: "#" }],
+        links: [
+          {
+            label: "arXiv",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:zYLM7Y9cAGgC",
+          },
+        ],
         year: 2022,
       },
     ],
@@ -540,8 +715,13 @@ export const publications = {
           "Identifying the factors that influence urban public transit demand",
         authors: "A Aboah, L Johnson, S Shah",
         subtext: "arXiv preprint arXiv:2111.09126",
-        image: "/maneu.png",
-        links: [{ label: "arXiv", url: "#" }],
+        image: "/urban-transport.png",
+        links: [
+          {
+            label: "arXiv",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:IjCSPb-OGe4C",
+          },
+        ],
         year: 2021,
       },
       {
@@ -550,8 +730,13 @@ export const publications = {
           "Comparative analysis of machine learning models for predicting travel time",
         authors: "A Aboah, E Arthur",
         subtext: "arXiv preprint arXiv:2111.08226",
-        image: "/maneu.png",
-        links: [{ label: "arXiv", url: "#" }],
+        image: "/comp-analysis.png",
+        links: [
+          {
+            label: "arXiv",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:UeHWp8X0CEIC",
+          },
+        ],
         year: 2021,
       },
       {
@@ -563,7 +748,12 @@ export const publications = {
         subtext:
           "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern ...",
         image: "/anomaly.jpg",
-        links: [{ label: "arXiv", url: "#" }],
+        links: [
+          {
+            label: "arXiv",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:2osOgNQ5qMEC",
+          },
+        ],
         year: 2021,
       },
     ],
@@ -578,7 +768,12 @@ export const publications = {
         authors: "M Shoman, A Aboah, Y Adu-Gyamfi",
         subtext: "Journal of Big Data Analytics in Transportation 2, 275-290",
         image: "/delay.jpg",
-        links: [{ label: "Paper", url: "#" }],
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:9yKSN-GCB0IC",
+          },
+        ],
         year: 2020,
       },
       {
@@ -589,7 +784,12 @@ export const publications = {
         subtext:
           "Advances in Data Science and Adaptive Analysis 12 (03n04), 2050007",
         image: "/pave.jpg",
-        links: [{ label: "Paper", url: "#" }],
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:d1gkVwhDpl0C",
+          },
+        ],
         year: 2020,
       },
     ],
@@ -603,8 +803,13 @@ export const publications = {
           "AGGREGATE INDEX: A MEASURE FOR CALIBRATING SHEAR STRENGTH MODELS FOR DIRECT APPLICATION TO SELF-CONSOLIDATING CONCRETE BEAMS",
         authors: "JB Osei, M Adom-Asamoah, A Aboah",
         subtext: "ARPN Journal of Engineering and Applied Sciences",
-        image: "/maneu.png",
-        links: [{ label: "Paper", url: "#" }],
+        image: "/agg-index.png",
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:u-x6o8ySG0sC",
+          },
+        ],
         year: 2019,
       },
       {
@@ -614,7 +819,12 @@ export const publications = {
         authors: "A Aboah",
         subtext: "Tennessee Technological University",
         image: "/lowlight.png",
-        links: [{ label: "Paper", url: "#" }],
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:u5HHmVD_uO8C",
+          },
+        ],
         year: 2019,
       },
     ],
@@ -628,7 +838,12 @@ export const publications = {
         authors: "NEH Zhaohua Wu",
         subtext: "Biomed. Tech. 55, 193-201",
         image: "/maneu.png",
-        links: [{ label: "Paper", url: "#" }],
+        links: [
+          {
+            label: "Paper",
+            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:mB3voiENLucC",
+          },
+        ],
         year: 2010,
       },
     ],

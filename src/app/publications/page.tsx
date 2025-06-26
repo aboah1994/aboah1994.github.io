@@ -31,26 +31,6 @@ const getBadgeColor = (subtext: string): string => {
   return "bg-blue-100 text-blue-700";
 };
 
-// Names to always mark as students advised
-const studentNames = [
-  "Eugene",
-  "Dontoh",
-  "Andrews",
-  "JK",
-  "Blessing",
-  "Addai",
-  "Tutu",
-  "Kyem",
-  "Danyo",
-  "Denteh",
-  "Donto",
-];
-
-// Helper to check if a name matches any student
-function isStudent(name: string): boolean {
-  return studentNames.some((n) => new RegExp(n, "i").test(name));
-}
-
 // Helper to check if a name is Aboah
 function isAboah(name: string): boolean {
   return /Aboah/i.test(name);
@@ -58,7 +38,7 @@ function isAboah(name: string): boolean {
 
 // Helper to extract legend from author string
 function extractLegend(author: string): string | null {
-  const match = author.match(/([*†e])$/);
+  const match = author.match(/\((\*|†|e)\)$/);
   return match ? match[1] : null;
 }
 
@@ -71,35 +51,14 @@ function renderLegend(legend: string | null): React.ReactNode {
 }
 
 // Main author rendering logic
-function renderAuthor(
-  author: string,
-  isUnderReview = false,
-  isAnyEqualContribution = false
-): React.ReactNode {
-  // Remove any existing legend for clean processing
-  const name = author.replace(/([*†e])$/, "");
-  let legend = extractLegend(author);
+function renderAuthor(author: string): React.ReactNode {
+  // Extract legend if present in the form (e), (†), or (*)
+  const legend = extractLegend(author);
+  // Remove the legend from the name for display
+  const name = author.replace(/\((\*|†|e)\)$/, "");
 
-  // Always mark Aboah as corresponding author (†), unless equal contribution applies
+  // Always highlight Aboah as corresponding author (†) in teal, but only add superscript if legend is present
   const isAboahAuthor = isAboah(name);
-  if (isAboahAuthor) {
-    if (isAnyEqualContribution) {
-      legend = "e";
-    } else {
-      legend = "†";
-    }
-  } else if (isStudent(name)) {
-    legend = "*";
-  }
-
-  // For papers under review, enforce the rules
-  if (isUnderReview) {
-    if (isAboahAuthor) legend = isAnyEqualContribution ? "e" : "†";
-    else if (isStudent(name)) legend = "*";
-  }
-
-  // If no legend, mark as equal contribution (e)
-  if (!legend) legend = "e";
 
   return (
     <>
@@ -115,16 +74,12 @@ function renderAuthor(
 
 const PublicationCard = ({
   pub,
-  isUnderReview = false,
 }: {
   pub: Publication;
   isUnderReview?: boolean;
 }) => {
   // Determine if any author is marked as equal contribution (e)
   const authorsArr = pub.authors.split(/, ?/);
-  const isAnyEqualContribution = authorsArr.some(
-    (author) => extractLegend(author) === "e"
-  );
 
   return (
     <motion.div
@@ -150,7 +105,7 @@ const PublicationCard = ({
         <div className="text-sm md:text-base text-gray-700 mb-1 flex flex-wrap gap-1">
           {authorsArr.map((author, idx, arr) => (
             <span key={author}>
-              {renderAuthor(author, isUnderReview, isAnyEqualContribution)}
+              {renderAuthor(author)}
               {idx < arr.length - 1 ? <span>, </span> : <span>.</span>}
             </span>
           ))}
