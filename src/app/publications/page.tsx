@@ -202,6 +202,18 @@ export default function Publications() {
               </span>
             </span>
           </div>
+          <div className="mb-8 text-sm md:text-base text-gray-600">
+            For more publications, visit my{" "}
+            <a
+              href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-teal-800 underline hover:text-orange-400"
+            >
+              Google Scholar
+            </a>
+            .
+          </div>
           <Accordion type="multiple" defaultValue={[defaultOpen]}>
             {years.map((year) => {
               const yearData = publications[year as keyof typeof publications];

@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
       destination: "/home",
     },
   ],
+  images: {
+    domains: ["ik.imagekit.io"],
+  },
 };
 
 export default nextConfig;

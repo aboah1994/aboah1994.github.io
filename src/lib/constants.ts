@@ -160,7 +160,7 @@ export const publications = {
         title:
           "Visual Question Answering-based Referring Expression Segmentation for construction safety analysis",
         authors:
-          "DQ Tran(e), A Aboah(e), Y Jeon(e), MT Do(e), M Abdel-Aty(e), M Park(e), S Park(e)",
+          "DQ Tran(e), A Aboah(e), Y Jeon, MT Do, M Abdel-Aty, M Park, S Park",
         subtext: "Automation in Construction 174, 106127",
         image: "/pave.jpg",
         links: [
@@ -459,8 +459,7 @@ export const publications = {
         id: 2009,
         title:
           "Low-light image enhancement framework for improved object detection in fisheye lens datasets",
-        authors:
-          "DQ Tran(e), A Aboah(e), Y Jeon(e), M Shoman(e), M Park, S Park(e)",
+        authors: "DQ Tran(e), A Aboah(e), Y Jeon, M Shoman, M Park, S Park",
         subtext:
           "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern ...",
         image: "/lowlight.png",
@@ -882,7 +881,55 @@ export const projects = [
   },
 ];
 
-export const currentStudents = [
+export const mastersStudents = [
+  {
+    name: "Andrews Danyo",
+    degree: "Masters Student",
+    image: "/andrews-danyo.jpg",
+    interests: [
+      "Smart Cities",
+      "Aritificial Intelligence in Transportation",
+      "Energy-efficient Buildings",
+      "Data Analytics",
+    ],
+    links: [
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/andrews-danyo-55608775/",
+        icon: "Linkedin",
+      },
+    ],
+  },
+  {
+    name: "Twitchell Addai",
+    degree: "Masters Student",
+    image: "/twitchell-addai.jpg",
+    interests: [
+      "AI-driven sustainable infrastructure solutions",
+      "Transportation data science and statistical modeling",
+      "Machine learning applications in transportation",
+    ],
+    links: [
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/twitchell-addai-a07087126/",
+        icon: "Linkedin",
+      },
+      {
+        label: "Website",
+        url: "https://me.twitchdl.com/",
+        icon: "ExternalLink",
+      },
+      {
+        label: "Email",
+        url: "mailto:twitch@twitchdl.com",
+        icon: "Mail",
+      },
+    ],
+  },
+];
+
+export const phdStudents = [
   {
     name: "Blessing Agyei Kyem",
     degree: "PhD Student",
@@ -941,50 +988,26 @@ export const currentStudents = [
       },
     ],
   },
+];
+
+export const alumniStudents = [
   {
-    name: "Andrews Danyo",
-    degree: "Masters Student",
-    image: "/andrews-danyo.jpg",
-    interests: [
-      "Smart Cities",
-      "Aritificial Intelligence in Transportation",
-      "Energy-efficient Buildings",
-      "Data Analytics",
-    ],
-    links: [
-      {
-        label: "LinkedIn",
-        url: "https://www.linkedin.com/in/andrews-danyo-55608775/",
-        icon: "Linkedin",
-      },
-    ],
+    name: "Fatima Ezahra Chrit",
+    degree: "PhD Mechanical Engineering (2023)",
+    coAdvised: "Dr. A. Alexeev",
+    dissertation:
+      "Modeling and simulation of cells and particles in microfluidic channels",
+    nowAt: "IronCAD",
   },
+];
+
+export const undergraduateStudents = [
   {
-    name: "Twitchell Addai",
-    degree: "Masters Student",
-    image: "/twitchell-addai.jpg",
-    interests: [
-      "AI-driven sustainable infrastructure solutions",
-      "Transportation data science and statistical modeling",
-      "Machine learning applications in transportation",
-    ],
-    links: [
-      {
-        label: "LinkedIn",
-        url: "https://www.linkedin.com/in/twitchell-addai-a07087126/",
-        icon: "Linkedin",
-      },
-      {
-        label: "Website",
-        url: "https://me.twitchdl.com/",
-        icon: "ExternalLink",
-      },
-      {
-        label: "Email",
-        url: "mailto:twitch@twitchdl.com",
-        icon: "Mail",
-      },
-    ],
+    name: "Kian Ansarinejad",
+    degree: "Undergraduate Student",
+    image: "/kian.jpg",
+    interests: ["Transport systems"],
+    links: [],
   },
 ];
 
@@ -1016,39 +1039,67 @@ export const sponsors = [
   },
 ];
 
-export const activities = [
+export const socialEvents = [
   {
-    image: "/andrews-danyo.jpg",
-    title: "Andrews Danyo's Research Paper Published in Transportation Journal",
-    date: "2025-04-08",
-    person: "Andrews Danyo",
+    title: "2024 Transportation Research Board Meeting",
+    year: 2024,
+    description: "",
+    gallery: [],
     link: "",
-    description: "Research paper published in a transportation journal.",
-  },
-  {
-    image: "/eugene-best-presenter.png",
-    title: "Eugene Denteh Receives Best Presenter Award at ICBDA Conference",
-    date: "2025-03-15",
-    person: "Eugene Denteh",
-    link: "https://www.icbda.org/html/2025.html",
-    description: "Best Presenter Award at ICBDA 2025 Conference.",
-  },
-  {
-    image: "/eugene-best-presenter.png",
-    title: "Eugene Denteh Presents Two Papers at ICBDA 2025 in Singapore",
-    date: "2025-03-13~2025-03-15",
-    person: "Eugene Denteh",
-    link: "https://www.icbda.org/html/2025.html",
-    description: "Presented two papers at ICBDA 2025 in Singapore.",
-  },
-  {
-    image: "/armstrong-invited-speaker-icbda.png",
-    title:
-      "Dr. Armstrong Aboah Delivers Invited Speech at ICBDA 2025 on Big Data in Transportation",
-    date: "2025-03-14",
-    person: "Prof. Armstrong Aboah",
-    link: "https://www.icbda.org/html/invited.html",
-    description: "Invited speech at ICBDA 2025 on Big Data in Transportation.",
-    highlight: true,
   },
 ];
+
+export const activities = {
+  "2025": {
+    Conferences: [
+      {
+        name: "2025 NAIRR Conference, Viriginia",
+        link: "",
+        gallery: [
+          "https://ik.imagekit.io/5kwcgtj3iv/Prof%20Aboah%20Images/WhatsApp%20Image%202025-06-26%20at%202.25.08%20PM%20(5).jpeg?updatedAt=1751015351218",
+          "https://ik.imagekit.io/5kwcgtj3iv/Prof%20Aboah%20Images/WhatsApp%20Image%202025-06-26%20at%202.25.08%20PM%20(4).jpeg?updatedAt=1751015339657",
+          "https://ik.imagekit.io/5kwcgtj3iv/Prof%20Aboah%20Images/WhatsApp%20Image%202025-06-26%20at%202.25.07%20PM.jpeg?updatedAt=1751015339421",
+          "https://ik.imagekit.io/5kwcgtj3iv/Prof%20Aboah%20Images/WhatsApp%20Image%202025-06-26%20at%202.25.08%20PM%20(1).jpeg?updatedAt=1751015339321",
+          "https://ik.imagekit.io/5kwcgtj3iv/Prof%20Aboah%20Images/WhatsApp%20Image%202025-06-26%20at%202.25.08%20PM%20(3).jpeg?updatedAt=1751015338745",
+          "https://ik.imagekit.io/5kwcgtj3iv/Prof%20Aboah%20Images/WhatsApp%20Image%202025-06-26%20at%202.25.08%20PM%20(2).jpeg?updatedAt=1751015337119",
+          "https://ik.imagekit.io/5kwcgtj3iv/Prof%20Aboah%20Images/WhatsApp%20Image%202025-06-26%20at%202.25.08%20PM.jpeg?updatedAt=1751015336074",
+        ],
+      },
+    ],
+    "Social Events": [],
+  },
+  "2024": {
+    Conferences: [
+      {
+        name: "2024 Transportation Research Board Meeting",
+        link: "",
+        gallery: [
+          "https://ik.imagekit.io/5kwcgtj3iv/Prof%20Aboah%20Images/WhatsApp%20Image%202025-06-26%20at%202.23.36%20PM.jpeg?updatedAt=1751015349470",
+          "https://ik.imagekit.io/5kwcgtj3iv/Prof%20Aboah%20Images/WhatsApp%20Image%202025-06-26%20at%202.23.36%20PM%20(1).jpeg?updatedAt=1751015343750",
+          "https://ik.imagekit.io/5kwcgtj3iv/Prof%20Aboah%20Images/WhatsApp%20Image%202025-06-26%20at%202.23.36%20PM%20(2).jpeg?updatedAt=1751015342316",
+          "https://ik.imagekit.io/5kwcgtj3iv/Prof%20Aboah%20Images/WhatsApp%20Image%202025-06-26%20at%202.23.36%20PM%20(3).jpeg?updatedAt=1751015341466",
+          "https://ik.imagekit.io/5kwcgtj3iv/Prof%20Aboah%20Images/WhatsApp%20Image%202025-06-26%20at%202.23.36%20PM%20(5).jpeg?updatedAt=1751015338549",
+          "https://ik.imagekit.io/5kwcgtj3iv/Prof%20Aboah%20Images/WhatsApp%20Image%202025-06-26%20at%202.23.36%20PM%20(4).jpeg?updatedAt=1751015335536",
+          "https://ik.imagekit.io/5kwcgtj3iv/Prof%20Aboah%20Images/WhatsApp%20Image%202025-06-26%20at%202.23.37%20PM%20(1).jpeg?updatedAt=1751015330273",
+        ],
+      },
+    ],
+    "Social Events": [],
+  },
+  "2023": {
+    Conferences: [
+      {
+        name: "2023 Transportation Research Board Meeting",
+        link: "",
+        gallery: [
+          "https://ik.imagekit.io/5kwcgtj3iv/Prof%20Aboah%20Images/WhatsApp%20Image%202025-06-26%20at%202.29.49%20PM%20(3).jpeg?updatedAt=1751015349781",
+          "https://ik.imagekit.io/5kwcgtj3iv/Prof%20Aboah%20Images/WhatsApp%20Image%202025-06-26%20at%202.29.49%20PM.jpeg?updatedAt=1751015343538",
+          "https://ik.imagekit.io/5kwcgtj3iv/Prof%20Aboah%20Images/WhatsApp%20Image%202025-06-26%20at%202.29.49%20PM%20(4).jpeg?updatedAt=1751015349765",
+          "https://ik.imagekit.io/5kwcgtj3iv/Prof%20Aboah%20Images/WhatsApp%20Image%202025-06-26%20at%202.29.49%20PM%20(2).jpeg?updatedAt=1751015349467",
+          "https://ik.imagekit.io/5kwcgtj3iv/Prof%20Aboah%20Images/WhatsApp%20Image%202025-06-26%20at%202.29.49%20PM%20(5).jpeg?updatedAt=1751015346967",
+        ],
+      },
+    ],
+    "Social Events": [],
+  },
+};

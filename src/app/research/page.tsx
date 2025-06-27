@@ -65,42 +65,43 @@ const Research = () => {
               Innovative research projects and software development initiatives
             </p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                image: "/gaze.png",
+                image: "/bison-sherperding.png",
                 title: "Robotic Shepherding of Bisons",
                 description:
                   "Developing autonomous robotic systems to safely monitor and guide bison herds using computer vision and adaptive AI algorithms that respect natural behaviors.",
                 status: "In Progress",
               },
               {
-                image: "/edge-computing.png",
+                image: "/work-safety.png",
                 title: "Work Zone Safety",
                 description:
                   "Enhancing construction zone safety with real-time monitoring systems that alert workers and drivers to potential hazards using IoT sensors and predictive analytics.",
                 status: "In Progress",
               },
               {
-                image: "/delay.jpg",
+                image: "/electric-grid.png",
                 title: "Electric Grid Monitoring with ML Models",
                 description:
                   "Implementing machine learning algorithms to predict and optimize electric grid performance for EV charging infrastructures, focusing on load balancing and efficiency.",
                 status: "In Progress",
               },
               {
-                image: "/pave.jpg",
+                image: "/smart-city.png",
                 title: "Building of a Smart City",
                 description:
                   "Creating an integrated digital twin for urban planning and mobility optimization, connecting transportation systems, energy networks, and public services through a unified data platform for sustainability and efficiency.",
                 status: "In Progress",
               },
               {
-                image: "/anomaly.jpg",
+                image: "/pavement.mp4",
                 title: "Pavement Cracks Detection",
                 description:
                   "Advancing computer vision and deep learning techniques to automatically identify, classify, and assess pavement defects from mobile imagery, enabling proactive maintenance and improved infrastructure management.",
                 status: "In Progress",
+                isVideo: true,
               },
             ].map((project, idx) => (
               <motion.div
@@ -113,28 +114,37 @@ const Research = () => {
                   ease: "easeOut",
                   delay: idx * 0.08,
                 }}
-                whileHover={{ scale: 1.03 }}
+                whileHover={{ scale: 1.02 }}
               >
-                <div className="bg-white rounded-2xl p-0 flex flex-col shadow-none border border-teal-100 h-full overflow-hidden">
-                  <div className="w-full h-48 md:h-56 lg:h-44 xl:h-56 overflow-hidden rounded-t-2xl relative">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover w-full h-full"
-                    />
+                <div className="flex flex-col h-full overflow-hidden shadow-none border-none p-0">
+                  <div className="w-full h-56 md:h-64 lg:h-56 xl:h-64 overflow-hidden relative">
+                    {project?.isVideo ? (
+                      <video
+                        src={project.image}
+                        autoPlay
+                        loop
+                        muted
+                        className="object-cover w-full h-full bg-gray-50"
+                      />
+                    ) : (
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover w-full h-full bg-gray-50"
+                      />
+                    )}
                   </div>
-                  <div className="p-6 flex flex-col flex-1">
-                    <h3 className="text-lg font-bold text-teal-800 mb-2">
+                  <div className="py-7 flex flex-col flex-1 bg-transparent">
+                    <h3 className="text-xl font-bold text-teal-800 mb-2">
                       {project.title}
                     </h3>
-                    <div className="w-10 border-t-2 border-dotted border-orange-400 mb-2"></div>
-                    <p className="text-teal-700 text-base mb-4 flex-1">
+                    <p className="text-black text-base mb-6 flex-1">
                       {project.description}
                     </p>
-                    <div className="flex items-center gap-2 mt-auto">
+                    <div className="flex items-center mt-auto">
                       <span className="inline-flex items-center text-xs text-orange-500 font-semibold gap-1">
-                        <Calendar className="w-4 h-4" /> {project.status}
+                        {project.status}
                       </span>
                     </div>
                   </div>

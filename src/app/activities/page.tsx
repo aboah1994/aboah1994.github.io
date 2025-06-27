@@ -1,12 +1,41 @@
 "use client";
 import React from "react";
 import HeroBanner from "@/components/hero-banner";
-import { motion } from "framer-motion";
-import { activities } from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
+import Masonry from "react-masonry-css";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
+import { activities } from "@/lib/constants";
+
+type Event = {
+  name: string;
+  link: string;
+  gallery: string[];
+};
+
+type ActivitiesByYear = {
+  [year: string]: {
+    "Social Events": Event[];
+    Conferences: Event[];
+  };
+};
+
+const activitiesTyped = activities as ActivitiesByYear;
 
 const Activities = () => {
+  const years = Object.keys(activitiesTyped).sort(
+    (a, b) => Number(b) - Number(a)
+  );
+  const breakpointColumnsObj = {
+    default: 3,
+    1100: 2,
+    700: 1,
+  };
   return (
     <>
       <HeroBanner
@@ -18,55 +47,111 @@ const Activities = () => {
         pageType="activities"
         isSmall={true}
       />
-      <motion.section className="py-20 px-4">
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="container mx-auto max-w-6xl">
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-          >
-            {activities.map((item) => (
-              <motion.div
-                key={item.title + item.date}
-                whileHover={{
-                  y: -6,
-                  boxShadow: "0 8px 32px 0 rgba(16, 185, 129, 0.10)",
-                }}
-              >
-                <div className="bg-white rounded-2xl shadow-lg border border-teal-100 overflow-hidden flex flex-col h-full">
-                  <div className="relative w-full h-48 md:h-56">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div className="p-6 flex flex-col flex-1">
-                    <Link href={item.link} target="_blank">
-                      <h3 className="text-lg font-bold text-teal-800 hover:text-orange-400 mb-2 cursor-pointer">
-                        {item.title}
-                      </h3>
-                    </Link>
-                    <div className="w-10 border-t-2 border-dotted border-orange-400 mb-2"></div>
-                    <p className="text-teal-700 text-base mb-4 flex-1">
-                      {item.description}
-                    </p>
-                    <div className="flex items-center gap-2 mt-auto">
-                      <span className="inline-flex items-center text-xs text-orange-500 font-semibold gap-1">
-                        {new Date(item.date).toLocaleDateString(undefined, {
-                          year: "numeric",
-                          month: "long",
-                          day: "numeric",
-                        })}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+          <Accordion type="multiple" defaultValue={[years[0]]}>
+            {years.map((year) => {
+              const yearData = activitiesTyped[year];
+              return (
+                <AccordionItem key={year} value={year}>
+                  <AccordionTrigger className="text-xl md:text-2xl font-bold text-teal-800 mb-2 pb-2 pr-8 relative border-0">
+                    {year}
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    {/* Conferences */}
+                    <h3 className="text-lg md:text-xl font-semibold text-orange-400 mt-6 mb-2">
+                      Conferences
+                    </h3>
+                    {yearData.Conferences.length === 0 ? (
+                      <div className="text-gray-500 mb-6">
+                        No conferences yet.
+                      </div>
+                    ) : (
+                      yearData.Conferences.map((event: Event, idx: number) => (
+                        <div key={event.name + idx} className="mb-8">
+                          <Link
+                            href={event.link || "#"}
+                            target="_blank"
+                            className="text-lg font-bold text-teal-800 hover:text-orange-400 block mb-2"
+                          >
+                            {event.name}
+                          </Link>
+                          {event.gallery && event.gallery.length > 0 && (
+                            <Masonry
+                              breakpointCols={breakpointColumnsObj}
+                              className="flex w-auto gap-4"
+                              columnClassName="masonry-column"
+                            >
+                              {event.gallery.map((img: string, i: number) => (
+                                <div
+                                  key={img + i}
+                                  className="mb-4 rounded-lg overflow-hidden"
+                                >
+                                  <Image
+                                    src={img}
+                                    alt={event.name + " image " + (i + 1)}
+                                    width={400}
+                                    height={300}
+                                    className="object-cover w-full h-auto rounded-lg"
+                                  />
+                                </div>
+                              ))}
+                            </Masonry>
+                          )}
+                        </div>
+                      ))
+                    )}
+
+                    {/* Social Events */}
+                    <h3 className="text-lg md:text-xl font-semibold text-orange-400 mt-2 mb-2">
+                      Social Events
+                    </h3>
+                    {yearData["Social Events"].length === 0 ? (
+                      <div className="text-gray-500 mb-6">
+                        No social events yet.
+                      </div>
+                    ) : (
+                      yearData["Social Events"].map(
+                        (event: Event, idx: number) => (
+                          <div key={event.name + idx} className="mb-8">
+                            <Link
+                              href={event.link || "#"}
+                              target="_blank"
+                              className="text-lg font-bold text-teal-800 hover:text-orange-400 block mb-2"
+                            >
+                              {event.name}
+                            </Link>
+                            {event.gallery && event.gallery.length > 0 && (
+                              <Masonry
+                                breakpointCols={breakpointColumnsObj}
+                                className="flex w-auto gap-4"
+                                columnClassName="masonry-column"
+                              >
+                                {event.gallery.map((img: string, i: number) => (
+                                  <div
+                                    key={img + i}
+                                    className="mb-4 rounded-lg overflow-hidden bg-gray-50"
+                                  >
+                                    <Image
+                                      src={img}
+                                      alt={event.name + " image " + (i + 1)}
+                                      width={400}
+                                      height={300}
+                                      className="object-cover w-full h-auto rounded-lg bg-gray-50"
+                                    />
+                                  </div>
+                                ))}
+                              </Masonry>
+                            )}
+                          </div>
+                        )
+                      )
+                    )}
+                  </AccordionContent>
+                </AccordionItem>
+              );
+            })}
+          </Accordion>
           <div className="flex justify-center mt-16">
             <Link
               href="https://www.ndsu-smartlab.com/blog.html"
@@ -77,7 +162,7 @@ const Activities = () => {
             </Link>
           </div>
         </div>
-      </motion.section>
+      </section>
     </>
   );
 };
