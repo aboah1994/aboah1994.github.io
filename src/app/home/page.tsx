@@ -26,41 +26,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { Textarea } from "@/components/ui/textarea";
-
-const teachingTimeline = [
-  {
-    school: "North Dakota State University",
-    code: "CE454/654 - Fall 2024",
-    course: "Geometric Highway Design",
-    color: "bg-teal-50",
-    textColor: "text-teal-800",
-    borderColor: "border-teal-200",
-  },
-  {
-    school: "University of Arizona",
-    code: "CE363 - Fall 2023",
-    course: "Transportation Engineering and Pavement Engineering",
-    color: "bg-orange-50",
-    textColor: "text-orange-400",
-    borderColor: "border-orange-200",
-  },
-  {
-    school: "University of Missouri-Columbia",
-    code: "CV_ENG-3100-01 - Fall 2022",
-    course: "Transportation Engineering",
-    color: "bg-teal-100",
-    textColor: "text-teal-900",
-    borderColor: "border-teal-300",
-  },
-  {
-    school: "Tennessee Technological University",
-    code: "CEE3610 - Fall 2021",
-    course: "Transportation Planning",
-    color: "bg-orange-100",
-    textColor: "text-orange-600",
-    borderColor: "border-orange-300",
-  },
-];
+import { teachingTimeline } from "@/lib/constants";
 
 type ContactFormValues = {
   name: string;
@@ -305,10 +271,10 @@ export default function Home() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 1, ease: "easeInOut", delay: 0.2 }}
             ></motion.div>
-            <div className="space-y-8">
-              {teachingTimeline.map((item, index) => (
+            <div className="space-y-16">
+              {teachingTimeline.map((school, index) => (
                 <motion.div
-                  key={item.school + item.code}
+                  key={school.school}
                   className="relative flex items-start gap-6"
                   initial={{ opacity: 0, x: -40 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -316,7 +282,7 @@ export default function Home() {
                   transition={{
                     duration: 0.7,
                     ease: "easeOut",
-                    delay: index * 0.08,
+                    delay: index * 0.12,
                   }}
                   whileHover={{ x: 8 }}
                 >
@@ -326,35 +292,58 @@ export default function Home() {
                     whileHover={{ scale: 1.12 }}
                   >
                     <motion.div
-                      className={`${item.color} p-3 rounded-full border-4 border-white shadow-none`}
+                      className={`${school.color} p-3 rounded-full border-4 border-white shadow-none`}
                       initial={{ scale: 0, opacity: 0 }}
                       whileInView={{ scale: 1, opacity: 1 }}
                       viewport={{ once: true, amount: 0.2 }}
                       transition={{
                         duration: 0.5,
                         ease: "easeOut",
-                        delay: index * 0.08,
+                        delay: index * 0.12,
                       }}
                     >
-                      <GraduationCap className={`h-6 w-6 ${item.textColor}`} />
+                      <GraduationCap
+                        className={`h-6 w-6 ${school.textColor}`}
+                      />
                     </motion.div>
                   </motion.div>
                   {/* Content card */}
                   <motion.div
-                    className={`bg-white p-6 rounded-xl border-l-4 ${item.borderColor} flex-1`}
+                    className={`bg-white p-6 rounded-xl border-l-4 ${school.borderColor} flex-1`}
                     whileHover={{
-                      boxShadow: "0 4px 12px 0 rgba(16, 185, 129, 0.08)",
+                      boxShadow: "2px 4px 12px 0 rgba(16, 185, 129, 0.08)",
                     }}
                   >
-                    <h3 className="text-lg font-bold text-teal-800 mb-2">
-                      {item.school}
+                    <h3 className="text-lg font-bold text-teal-800 mb-4">
+                      {school.school}
                     </h3>
-                    <p
-                      className={`text-sm font-semibold mb-1 ${item.textColor}`}
-                    >
-                      {item.code}
-                    </p>
-                    <p className="text-teal-700">{item.course}</p>
+                    <div className="w-full overflow-x-auto">
+                      <div className="flex flex-row gap-4 min-w-[220px] pb-2">
+                        {school.courses.map((course, cidx) => (
+                          <div
+                            key={course.code + course.period + cidx}
+                            className={`rounded-xl border ${school.borderColor} bg-gray-50 p-4 shadow-sm min-w-[220px] flex-shrink-0 flex flex-col justify-between hover:shadow-md transition-shadow duration-200`}
+                          >
+                            <div className="flex items-center gap-2 mb-2">
+                              <span
+                                className={`text-sm font-semibold ${school.textColor}`}
+                              >
+                                {course.code}
+                              </span>
+                              <span className="text-xs text-gray-400">
+                                {course.period}
+                              </span>
+                            </div>
+                            <div className="text-teal-800 text-base font-bold mb-1">
+                              {course.name}
+                            </div>
+                            <div className="text-xs text-gray-500 font-medium">
+                              {course.role}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </motion.div>
                 </motion.div>
               ))}

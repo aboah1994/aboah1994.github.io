@@ -73,7 +73,8 @@ export default function Team() {
                     Aboah Armstrong, Ph.D.
                   </h3>
                   <p className="text-base md:text-lg text-orange-400 font-semibold mb-2">
-                    Professor, Transportation Engineering and Smart Systems
+                    Assistant Professor, Transportation Engineering and Smart
+                    Systems
                   </p>
                   <div className="space-y-3 text-gray-700">
                     <p className="text-sm md:text-base leading-relaxed">

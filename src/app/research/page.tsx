@@ -3,7 +3,7 @@ import HeroBanner from "@/components/hero-banner";
 import { motion } from "framer-motion";
 import { Car, Calendar, BrainCircuit, Camera, BarChart3 } from "lucide-react";
 import Image from "next/image";
-import { sponsors } from "@/lib/constants";
+import { currentProjects, pastProjects, sponsors } from "@/lib/constants";
 import { useState, useCallback, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 
@@ -66,44 +66,7 @@ const Research = () => {
             </p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                image: "/bison-sherperding.png",
-                title: "Robotic Shepherding of Bisons",
-                description:
-                  "Developing autonomous robotic systems to safely monitor and guide bison herds using computer vision and adaptive AI algorithms that respect natural behaviors.",
-                status: "In Progress",
-              },
-              {
-                image: "/work-safety.png",
-                title: "Work Zone Safety",
-                description:
-                  "Enhancing construction zone safety with real-time monitoring systems that alert workers and drivers to potential hazards using IoT sensors and predictive analytics.",
-                status: "In Progress",
-              },
-              {
-                image: "/electric-grid.png",
-                title: "Electric Grid Monitoring with ML Models",
-                description:
-                  "Implementing machine learning algorithms to predict and optimize electric grid performance for EV charging infrastructures, focusing on load balancing and efficiency.",
-                status: "In Progress",
-              },
-              {
-                image: "/smart-city.png",
-                title: "Building of a Smart City",
-                description:
-                  "Creating an integrated digital twin for urban planning and mobility optimization, connecting transportation systems, energy networks, and public services through a unified data platform for sustainability and efficiency.",
-                status: "In Progress",
-              },
-              {
-                image: "/pavement.mp4",
-                title: "Pavement Cracks Detection",
-                description:
-                  "Advancing computer vision and deep learning techniques to automatically identify, classify, and assess pavement defects from mobile imagery, enabling proactive maintenance and improved infrastructure management.",
-                status: "In Progress",
-                isVideo: true,
-              },
-            ].map((project, idx) => (
+            {currentProjects.map((project, idx) => (
               <motion.div
                 key={project.title}
                 initial={{ opacity: 0, y: 40 }}
@@ -172,44 +135,8 @@ const Research = () => {
               A showcase of completed research and development initiatives
             </p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {[
-              {
-                image: "/gaze.png",
-                title: "Robotic Shepherding of Bisons",
-                description:
-                  "Developing autonomous robotic systems to safely monitor and guide bison herds using computer vision and adaptive AI algorithms that respect natural behaviors.",
-                status: "Completed",
-              },
-              {
-                image: "/edge-computing.png",
-                title: "Work Zone Safety",
-                description:
-                  "Enhancing construction zone safety with real-time monitoring systems that alert workers and drivers to potential hazards using IoT sensors and predictive analytics.",
-                status: "Completed",
-              },
-              {
-                image: "/delay.jpg",
-                title: "Electric Grid Monitoring with ML Models",
-                description:
-                  "Implementing machine learning algorithms to predict and optimize electric grid performance for EV charging infrastructures, focusing on load balancing and efficiency.",
-                status: "Completed",
-              },
-              {
-                image: "/pave.jpg",
-                title: "Building of a Smart City",
-                description:
-                  "Creating an integrated digital twin for urban planning and mobility optimization, connecting transportation systems, energy networks, and public services through a unified data platform for sustainability and efficiency.",
-                status: "Completed",
-              },
-              {
-                image: "/anomaly.jpg",
-                title: "Pavement Cracks Detection",
-                description:
-                  "Advancing computer vision and deep learning techniques to automatically identify, classify, and assess pavement defects from mobile imagery, enabling proactive maintenance and improved infrastructure management.",
-                status: "Completed",
-              },
-            ].map((project, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-10">
+            {pastProjects.map((project, idx) => (
               <motion.div
                 key={project.title + "-past"}
                 initial={{ opacity: 0, y: 40 }}

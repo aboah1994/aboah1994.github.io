@@ -37,6 +37,17 @@ const FeaturedNews = ({ item }: { item: (typeof news)[0] }) => (
   </motion.div>
 );
 
+const isPaperAcceptance = (item: (typeof news)[0]) => {
+  const text = `${item.title} ${item.description}`.toLowerCase();
+  return (
+    text.includes("paper accepted") ||
+    text.includes("accepted for publication") ||
+    text.includes("got accepted") ||
+    text.includes("accepted to") ||
+    text.includes("accepted for presentation")
+  );
+};
+
 const NewsCard = ({ item }: { item: (typeof news)[0] }) => (
   <motion.div
     className="flex gap-4 items-start py-4 border-b border-teal-100 last:border-b-0"
@@ -46,7 +57,13 @@ const NewsCard = ({ item }: { item: (typeof news)[0] }) => (
     transition={{ duration: 0.7, ease: "easeOut" }}
   >
     <div className="flex flex-col items-center mr-2">
-      <span className="bg-teal-100 text-teal-800 text-xs font-semibold rounded px-2 py-0.5 mb-1">
+      <span
+        className={`${
+          isPaperAcceptance(item)
+            ? "bg-orange-100 text-orange-500"
+            : "bg-teal-100 text-teal-800"
+        } text-xs font-semibold rounded px-2 py-0.5 mb-1`}
+      >
         {new Date(item.date).toLocaleDateString(undefined, {
           year: "2-digit",
           month: "short",

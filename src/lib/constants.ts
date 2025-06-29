@@ -6,15 +6,55 @@ export const navLinks = [
   { name: "News", href: "/news" },
   { name: "Activities", href: "/activities" },
 ];
-
 export const news = [
+  {
+    id: 23,
+    title: "Paper Accepted to Journal of Construction and Building Materials",
+    description:
+      "Our paper was accepted for publication in the Journal of Construction and Building Materials.",
+    date: "2025-05-20",
+  },
+  {
+    id: 22,
+    title: "Paper Accepted to Expert Systems with Applications Journal",
+    description:
+      "A paper was accepted for publication in the Expert Systems with Applications Journal.",
+    date: "2025-05-10",
+  },
+  {
+    id: 24,
+    title: "Paper Accepted to Road Materials and Pavement Design Journal",
+    description:
+      "Our paper was accepted for publication in the Road Materials and Pavement Design Journal.",
+    date: "2025-04-25",
+  },
+  {
+    id: 21,
+    title: "Paper Accepted to Automation in Construction Journal",
+    description:
+      "A paper was accepted for publication in the Automation in Construction Journal.",
+    date: "2025-03-20",
+  },
+  {
+    id: 20,
+    title: "Grant Awarded at Tennessee Technological University",
+    description:
+      "The lab was awarded a grant at Tennessee Technological University",
+    date: "2025-03-15",
+  },
+  {
+    id: 19,
+    title: "New Students Join Lab!",
+    description:
+      "Excited to welcome one new Ph.D student and two new Masters students  into my lab.",
+    date: "2025-01-01",
+  },
   {
     id: 1,
     title: "First Paper Publication",
     description:
       "Congratulations to Blessing for getting his first paper accepted for publication.",
     date: "2024-12-13",
-    image: "/news/paper-accepted.jpg",
   },
   {
     id: 2,
@@ -22,7 +62,6 @@ export const news = [
     description:
       "Congratulations! The SMART Lab was awarded NAIRR Pilot Project Grant.",
     date: "2024-12-10",
-    image: "/news/grant-awarded.jpg",
   },
   {
     id: 3,
@@ -30,14 +69,12 @@ export const news = [
     description:
       "Congratulations! The SMART Lab received a seed grant from AI SUSTEIN.",
     date: "2024-07-08",
-    image: "/news/seed-grant.jpg",
   },
   {
     id: 4,
     title: "EDRF Grant Awarded",
     description: "Congratulations! The SMART Lab was awarded an EDRF grant.",
     date: "2024-07-02",
-    image: "/news/edrf-grant.jpg",
   },
   {
     id: 5,
@@ -45,7 +82,6 @@ export const news = [
     description:
       "Excited to welcome two new Ph.D students (Blessing and Joshua) into my lab.",
     date: "2024-06-10",
-    image: "/news/new-students.jpg",
   },
   {
     id: 6,
@@ -53,7 +89,6 @@ export const news = [
     description:
       "Congratulations! Excited to be joining North Dakota State University as an Assistant Professor.",
     date: "2023-12-29",
-    image: "/news/ndsu-joining.jpg",
   },
   {
     id: 7,
@@ -61,7 +96,6 @@ export const news = [
     description:
       "Congratulations! Our Paper got accepted to 2023 NeurIPS workshop, Gaze Meet Machine Learning.",
     date: "2023-10-27",
-    image: "/news/neurips-workshop.jpg",
   },
   {
     id: 8,
@@ -69,7 +103,6 @@ export const news = [
     description:
       "Congratulations! Three of our papers got accepted to TRB 2024.",
     date: "2023-09-25",
-    image: "/news/trb-2024.jpg",
   },
   {
     id: 9,
@@ -77,7 +110,6 @@ export const news = [
     description:
       "Congratulations! Our Paper got accepted to IEOM International Conference in Detroit.",
     date: "2023-08-25",
-    image: "/news/ieom-conference.jpg",
   },
   {
     id: 10,
@@ -85,7 +117,6 @@ export const news = [
     description:
       "Congratulations! Our paper on Classification of Human Driver Distraction was accepted to HFES 67th Intl. Annual Conference.",
     date: "2023-08-16",
-    image: "/news/hfes-conference.jpg",
   },
   {
     id: 11,
@@ -93,7 +124,6 @@ export const news = [
     description:
       "Congratulations! Our paper on Gaze-Guided Graph Neural Network as accepted to 2024 IEEE/CVF WACV.",
     date: "2023-08-15",
-    image: "/news/wacv-2024.jpg",
   },
   {
     id: 12,
@@ -101,14 +131,12 @@ export const news = [
     description:
       "Excited to be joining the University of Arizona as an Assistant Research Professor.",
     date: "2023-08-01",
-    image: "/news/arizona-joining.jpg",
   },
   {
     id: 13,
     title: "Two Papers Accepted to CVPR 2023",
     description: "Two papers accepted for presentation at CVPR 2023.",
     date: "2023-04-17",
-    image: "/news/cvpr-2023.jpg",
   },
   {
     id: 14,
@@ -116,7 +144,6 @@ export const news = [
     description:
       "Join Northwestern University as a Postdoctoral Student under the Supervision of Dr. Ulas Bagci",
     date: "2023-01-01",
-    image: "/news/northwestern-postdoc.jpg",
   },
   {
     id: 15,
@@ -124,7 +151,6 @@ export const news = [
     description:
       "Graduated with a PhD from the University of Missouri-Columbia",
     date: "2022-12-17",
-    image: "/news/phd-graduation.jpg",
   },
   {
     id: 16,
@@ -132,7 +158,6 @@ export const news = [
     description:
       "Driver Maneuver Detection and Analysis using Time Series Segmentation and Classification was accepted for publication",
     date: "2022-11-07",
-    image: "/news/driver-maneuver-paper.jpg",
   },
   {
     id: 17,
@@ -140,7 +165,6 @@ export const news = [
     description:
       "Mobile Sensing for Multipurpose Applications in Transportation was accepted for publication",
     date: "2022-10-12",
-    image: "/news/mobile-sensing-paper.jpg",
   },
   {
     id: 18,
@@ -148,7 +172,6 @@ export const news = [
     description:
       "Oral presentation at CVPR: A Region-Based Deep Learning Approach to Automated Retail Checkout",
     date: "2022-06-20",
-    image: "/news/cvpr-presentation.jpg",
   },
 ];
 
@@ -829,25 +852,25 @@ export const publications = {
     ],
     "Papers Under Review": [],
   },
-  "2010": {
-    "Peer Reviewed Journal And Conference": [
-      {
-        id: 8001,
-        title: "Ensemble empirical mode decomposition: A noise-assisted",
-        authors: "NEH Zhaohua Wu",
-        subtext: "Biomed. Tech. 55, 193-201",
-        image: "/maneu.png",
-        links: [
-          {
-            label: "Paper",
-            url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:mB3voiENLucC",
-          },
-        ],
-        year: 2010,
-      },
-    ],
-    "Papers Under Review": [],
-  },
+  // "2010": {
+  //   "Peer Reviewed Journal And Conference": [
+  //     {
+  //       id: 8001,
+  //       title: "Ensemble empirical mode decomposition: A noise-assisted",
+  //       authors: "NEH Zhaohua Wu",
+  //       subtext: "Biomed. Tech. 55, 193-201",
+  //       image: "/maneu.png",
+  //       links: [
+  //         {
+  //           label: "Paper",
+  //           url: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ev1PAAwAAAAJ&pagesize=80&sortby=pubdate&citation_for_view=Ev1PAAwAAAAJ:mB3voiENLucC",
+  //         },
+  //       ],
+  //       year: 2010,
+  //     },
+  //   ],
+  //   "Papers Under Review": [],
+  // },
 };
 
 export const projects = [
@@ -1039,16 +1062,6 @@ export const sponsors = [
   },
 ];
 
-export const socialEvents = [
-  {
-    title: "2024 Transportation Research Board Meeting",
-    year: 2024,
-    description: "",
-    gallery: [],
-    link: "",
-  },
-];
-
 export const activities = {
   "2025": {
     Conferences: [
@@ -1071,7 +1084,7 @@ export const activities = {
   "2024": {
     Conferences: [
       {
-        name: "2024 Transportation Research Board Meeting",
+        name: "2024 Transportation Research Board Meeting, Washington DC",
         link: "",
         gallery: [
           "https://ik.imagekit.io/5kwcgtj3iv/Prof%20Aboah%20Images/WhatsApp%20Image%202025-06-26%20at%202.23.36%20PM.jpeg?updatedAt=1751015349470",
@@ -1103,3 +1116,140 @@ export const activities = {
     "Social Events": [],
   },
 };
+
+export const teachingTimeline = [
+  {
+    school: "North Dakota State University",
+    color: "bg-teal-50",
+    textColor: "text-teal-800",
+    borderColor: "border-teal-200",
+    courses: [
+      {
+        name: "Transportation Engineering",
+        role: "Instructor",
+        period: "Spring 2025",
+        code: "CE 418",
+      },
+      {
+        name: "Senior Design",
+        role: "Instructor",
+        period: "Spring 2025",
+        code: "CE 489",
+      },
+      {
+        name: "Geometric Highway Design",
+        role: "Instructor",
+        period: "Fall 2024",
+        code: "CE 454/654",
+      },
+    ],
+  },
+  {
+    school: "University of Arizona",
+    color: "bg-orange-50",
+    textColor: "text-orange-400",
+    borderColor: "border-orange-200",
+    courses: [
+      {
+        name: "Transportation Engineering and Pavement Engineering",
+        role: "Instructor",
+        period: "Fall 2023",
+        code: "CE 363",
+      },
+    ],
+  },
+  {
+    school: "University of Missouri-Columbia",
+    color: "bg-teal-100",
+    textColor: "text-teal-900",
+    borderColor: "border-teal-300",
+    courses: [
+      {
+        name: "Transportation Engineering",
+        role: "Lab Instructor",
+        period: "Fall 2022",
+        code: "CV_ENG-3100-01",
+      },
+    ],
+  },
+  {
+    school: "Tennessee Technological University",
+    color: "bg-orange-100",
+    textColor: "text-orange-600",
+    borderColor: "border-orange-300",
+    courses: [
+      {
+        name: "Transportation Planning",
+        role: "Teaching Assistant",
+        period: "Fall 2021",
+        code: "CEE3610",
+      },
+    ],
+  },
+];
+
+export const currentProjects = [
+  {
+    image: "/bison-sherperding.png",
+    title: "Robotic Shepherding of Bisons",
+    description:
+      "Developing autonomous robotic systems to safely monitor and guide bison herds using computer vision and adaptive AI algorithms that respect natural behaviors.",
+    status: "In Progress",
+  },
+  {
+    image: "/work-safety.png",
+    title: "Work Zone Safety",
+    description:
+      "Enhancing construction zone safety with real-time monitoring systems that alert workers and drivers to potential hazards using IoT sensors and predictive analytics.",
+    status: "In Progress",
+  },
+  {
+    image: "/electric-grid.png",
+    title: "Electric Grid Monitoring with ML Models",
+    description:
+      "Implementing machine learning algorithms to predict and optimize electric grid performance for EV charging infrastructures, focusing on load balancing and efficiency.",
+    status: "In Progress",
+  },
+  {
+    image: "/smart-city.png",
+    title: "Building of a Smart City",
+    description:
+      "Creating an integrated digital twin for urban planning and mobility optimization, connecting transportation systems, energy networks, and public services through a unified data platform for sustainability and efficiency.",
+    status: "In Progress",
+  },
+  {
+    image: "/pavement.mp4",
+    title: "Pavement Cracks Detection",
+    description:
+      "Advancing computer vision and deep learning techniques to automatically identify, classify, and assess pavement defects from mobile imagery, enabling proactive maintenance and improved infrastructure management.",
+    status: "In Progress",
+    isVideo: true,
+  },
+];
+
+export const pastProjects = [
+  {
+    image: "/realpred.jpg",
+    title: "Helmet Violation Detection",
+    description:
+      "This study proposes a robust real-time helmet violation detection system. The proposed system utilizes a unique data processing strategy, referred to as few-shot data sampling, to develop a robust model with fewer annotations, and a single-stage object detection model, YOLOv8 (You Only Look Once Version 8), for detecting helmet violations in real-time from video frames. Our proposed method won 7th place in the 2023 AI City Challenge, Track 5, with an mAP score of 0.5861 on experimental validation data. The experimental results demonstrate the effectiveness, efficiency, and robustness of the proposed system.",
+  },
+  {
+    image: "/sig-seg.png",
+    title: "Traffic Signal Performace Evaluation",
+    description:
+      "This project has 2 main objectives: \n1) to categorize pedestrians into subcategories in order to address their safety requirements at intersections; \n2) to estimate the time required to cross an intersection and determine whether the pedestrian can safely cross within the pedestrian signal time allotted at intersections. The objectives were accomplished using data collected from three Ouster digital LiDAR sensors installed at an intersection in Chattanooga, Tennessee.",
+  },
+  {
+    image: "/anomaly.jpg",
+    title: "DeepSegmenter: Driver Anomaly Detection",
+    description:
+      "The current study therefore departs from conventional approaches and introduces a novel methodological framework, DeepSegmenter, that simultaneously performs activity segmentation and classification in a single framework. The proposed framework consists of four major modules namely Data Module, Activity Segmentation Module, Classification Module and Postprocessing Module. Our proposed method won 8th place in the 2023 AI City Challenge, Track 3, with an activity overlap score of 0.5426 on experimental validation data. The experimental results demonstrate the effectiveness, efficiency, and robustness of the proposed system.",
+  },
+  {
+    image: "/maneu.png",
+    title: "Driver Maneuver Detection",
+    description:
+      "The current paper implements a methodology for automatically detecting vehicle maneuvers from vehicle telemetry data under naturalistic driving settings. Previous approaches have treated vehicle maneuver detection as a classification problem, although both time series segmentation and classification are required since input telemetry data is continuous. Our objective is to develop an end-to-end pipeline for frame-by-frame annotation of naturalistic driving studies videos into various driving events including stop and lane keeping events, lane changes, left-right turning movements, and horizontal curve maneuvers.",
+  },
+];
