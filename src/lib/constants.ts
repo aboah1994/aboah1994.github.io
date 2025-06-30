@@ -36,11 +36,58 @@ export const news = [
     date: "2025-03-20",
   },
   {
+    id: 24,
+    title: "Eugene Denteh Receives Best Presenter Award at ICBDA Conference",
+    description:
+      "Eugene Denteh was recognized as one of the Best Presenter at the 2025 International Conference on Big Data and Analytics (ICBDA) for his outstanding presentation.",
+    date: "2025-03-15",
+    image: "/eugene-best-presenter.png",
+    link: "https://www.icbda.org/html/2025.html",
+  },
+  {
+    id: 25,
+    title: "Eugene Denteh Presents Two Papers at ICBDA 2025 in Singapore",
+    description:
+      "Eugene Denteh presented two research papers at the 2025 ICBDA conference held in Singapore, showcasing innovative work in data analytics.",
+    date: "2025-03-15",
+    image: "/eugene-best-presenter.png",
+    link: "https://www.icbda.org/html/2025.html",
+  },
+  {
     id: 20,
     title: "Grant Awarded at Tennessee Technological University",
     description:
       "The lab was awarded a grant at Tennessee Technological University",
     date: "2025-03-15",
+  },
+  {
+    id: 235,
+    title:
+      "Dr. Armstrong Aboah Delivers Invited Speech at ICBDA 2025 on Big Data in Transportation",
+    description:
+      "Dr. Armstrong Aboah was invited to deliver a keynote speech on the role of big data in transportation at the 2025 ICBDA conference.",
+    date: "2025-03-14",
+    image: "/armstrong-invited-speaker-icbda.png",
+    link: "https://www.icbda.org/html/2025.html",
+  },
+  {
+    id: 255,
+    title:
+      "Eugene Denteh Presents Poster on PRIME: A Foundational Predictive Real-time Intersection Monitoring Engine at NAIRR Conference",
+    description:
+      "Eugene Denteh presented a poster on the PRIME project, highlighting advancements in real-time intersection monitoring, at the NAIRR Conference.",
+    date: "2025-02-19",
+    image:
+      "https://ik.imagekit.io/5kwcgtj3iv/Prof%20Aboah%20Images/WhatsApp%20Image%202025-06-26%20at%202.25.07%20PM.jpeg?updatedAt=1751015339421",
+  },
+  {
+    id: 254325,
+    title: "Dr. Armstrong Aboah testifies at ND State Legislative Committee",
+    description:
+      "Dr. Armstrong Aboah provided expert testimony at the North Dakota State Legislative Committee, sharing insights on research and policy.",
+    date: "2025-01-22",
+    image: "/armstrong_senate.png",
+    link: "https://www.ndsu.edu/research/research_news/features/edrf_testimony/",
   },
   {
     id: 19,
@@ -1034,6 +1081,24 @@ export const undergraduateStudents = [
   },
 ];
 
+export const interns = [
+  {
+    name: "Regina Arthur",
+    year: 2024,
+  },
+  {
+    name: "Jensen Guo",
+    year: 2025,
+  },
+  {
+    name: "Ama Baidoo",
+    year: 2025,
+  },
+  {
+    name: "Jessica Eteme Ngono",
+    year: 2025,
+  },
+];
 export const sponsors = [
   {
     name: "Farms",

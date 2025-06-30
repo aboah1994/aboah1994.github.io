@@ -9,6 +9,7 @@ import {
   mastersStudents,
   undergraduateStudents,
   alumniStudents,
+  interns,
 } from "@/lib/constants";
 import {
   Accordion,
@@ -452,6 +453,41 @@ export default function Team() {
                       </p>
                     )}
                   </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Interns Section */}
+      <section className="py-10 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-xl md:text-2xl font-bold text-teal-800 mb-8">
+              Interns
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {interns.map((intern, idx) => (
+                <motion.div
+                  key={intern.name}
+                  className="flex flex-col border border-teal-100 bg-white rounded-xl p-6 gap-2 transition-transform hover:-translate-y-1"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: idx * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-lg font-bold text-teal-800 mb-1">
+                    {intern.name}
+                  </h3>
+                  <p className="text-sm text-orange-400 font-semibold">
+                    Intern, {intern.year}
+                  </p>
                 </motion.div>
               ))}
             </div>

@@ -9,6 +9,82 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { motion } from "framer-motion";
+import { Star } from "lucide-react";
+
+// Dazzling stars animation component
+const DazzlingStars = () => (
+  <span className="inline-flex items-center ml-2 relative">
+    {/* Star 1: Large, slow rotate and scale */}
+    <motion.span
+      className="relative z-10"
+      initial={{ rotate: 0, scale: 1, y: 0 }}
+      animate={{ rotate: [0, 20, -20, 0], scale: [1, 1.3, 1], y: [0, -4, 0] }}
+      transition={{
+        duration: 1.8,
+        repeat: Infinity,
+        repeatType: "loop",
+        ease: "easeInOut",
+      }}
+    >
+      <Star
+        className="text-orange-400 drop-shadow"
+        fill="#fb923c"
+        strokeWidth={1.5}
+        size={18}
+      />
+    </motion.span>
+    {/* Star 2: Medium, twinkle and bounce, offset left */}
+    <motion.span
+      className="absolute left-3 top-2 z-0"
+      initial={{ scale: 0.8, opacity: 0.7, rotate: 0, y: 0 }}
+      animate={{
+        scale: [0.8, 1.1, 0.8],
+        opacity: [0.7, 1, 0.7],
+        rotate: [0, -30, 0],
+        y: [0, 3, 0],
+      }}
+      transition={{
+        duration: 1.2,
+        repeat: Infinity,
+        repeatType: "loop",
+        ease: "easeInOut",
+        delay: 0.5,
+      }}
+    >
+      <Star
+        className="text-orange-300"
+        fill="#fdba74"
+        strokeWidth={1.2}
+        size={16}
+      />
+    </motion.span>
+    {/* Star 3: Small, fast twinkle, offset right */}
+    <motion.span
+      className="absolute left-7 top-0 z-0"
+      initial={{ scale: 0.7, opacity: 0.6, rotate: 0, y: 0 }}
+      animate={{
+        scale: [0.7, 1.2, 0.7],
+        opacity: [0.6, 1, 0.6],
+        rotate: [0, 40, 0],
+        y: [0, -2, 0],
+      }}
+      transition={{
+        duration: 0.9,
+        repeat: Infinity,
+        repeatType: "loop",
+        ease: "easeInOut",
+        delay: 1.0,
+      }}
+    >
+      <Star
+        className="text-orange-200"
+        fill="#ffedd5"
+        strokeWidth={1}
+        size={11}
+      />
+    </motion.span>
+  </span>
+);
 
 const FeaturedNews = ({ item }: { item: (typeof news)[0] }) => (
   <motion.div
@@ -30,10 +106,25 @@ const FeaturedNews = ({ item }: { item: (typeof news)[0] }) => (
         Featured
       </span>
     </div>
-    <h2 className="text-2xl font-bold text-teal-800 mb-2 leading-tight">
-      {item.title}
+    <h2 className="text-2xl font-bold text-teal-800 mb-2 leading-tight flex items-center">
+      {item.link ? (
+        <a href={item.link} target="_blank" rel="noopener noreferrer">
+          {item.title}
+        </a>
+      ) : (
+        item.title
+      )}
+      {isPaperAcceptance(item) && <DazzlingStars />}
     </h2>
-    <div className="text-gray-700 text-base">{item.description}</div>
+    <div className="text-gray-700 text-base mb-2">{item.description}</div>
+    {item.image && (
+      <img
+        src={item.image}
+        alt={item.title}
+        className="w-full max-w-md rounded-lg mt-2 border border-teal-100 bg-white"
+        style={{ objectFit: "cover" }}
+      />
+    )}
   </motion.div>
 );
 
@@ -50,19 +141,15 @@ const isPaperAcceptance = (item: (typeof news)[0]) => {
 
 const NewsCard = ({ item }: { item: (typeof news)[0] }) => (
   <motion.div
-    className="flex gap-4 items-start py-4 border-b border-teal-100 last:border-b-0"
+    className="flex flex-row py-4 border-b border-teal-100 last:border-b-0"
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, amount: 0.2 }}
     transition={{ duration: 0.7, ease: "easeOut" }}
   >
-    <div className="flex flex-col items-center mr-2">
+    <div className="flex flex-col items-center mr-4 min-w-[70px]">
       <span
-        className={`${
-          isPaperAcceptance(item)
-            ? "bg-orange-100 text-orange-500"
-            : "bg-teal-100 text-teal-800"
-        } text-xs font-semibold rounded px-2 py-0.5 mb-1`}
+        className={`bg-teal-100 text-teal-800 text-xs font-semibold rounded px-2 py-0.5 mb-1 whitespace-nowrap`}
       >
         {new Date(item.date).toLocaleDateString(undefined, {
           year: "2-digit",
@@ -71,11 +158,30 @@ const NewsCard = ({ item }: { item: (typeof news)[0] }) => (
         })}
       </span>
     </div>
-    <div>
-      <div className="text-lg font-semibold text-teal-800 mb-1">
-        {item.title}
+    <div className="flex-1 min-w-0">
+      <div className="text-lg font-semibold text-teal-800 mb-1 flex items-center">
+        {item.link ? (
+          <a
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline"
+          >
+            {item.title}
+          </a>
+        ) : (
+          item.title
+        )}
+        {isPaperAcceptance(item) && <DazzlingStars />}
       </div>
       <div className="text-gray-700 mb-1 text-base">{item.description}</div>
+      {item.image && (
+        <img
+          src={item.image}
+          alt={item.title}
+          className="w-1/2 h-60 object-cover rounded-lg mt-2 border border-teal-100 bg-white"
+        />
+      )}
     </div>
   </motion.div>
 );
