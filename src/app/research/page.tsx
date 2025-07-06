@@ -41,7 +41,7 @@ const Research = () => {
         id="research"
         title="Research"
         subtitle="Advancing Transportation Technology Through Innovation"
-        description="My research spans cutting-edge areas in transportation engineering, data science, and artificial intelligence, with a focus on creating innovative solutions for real-world challenges in autonomous vehicles, computer vision, and smart transportation systems."
+        description="Our research spans cutting-edge areas in transportation engineering, data science, and artificial intelligence, with a focus on creating innovative solutions for real-world challenges in autonomous vehicles, computer vision, and smart transportation systems."
         showCtaBtn={false}
         ctaBtnText="View Publications"
         pageType="research"
@@ -228,11 +228,11 @@ const Research = () => {
                       </h3>
                       <p>
                         {step === 1 &&
-                          "I leverage large-scale datasets and advanced analytics to uncover patterns and insights that inform my research directions and validate my findings."}
+                          "We leverage large-scale datasets and advanced analytics to uncover patterns and insights that inform our research directions and validate our findings."}
                         {step === 2 &&
-                          "My research benefits from collaborations across engineering, computer science, urban planning, and policy domains to address complex transportation challenges."}
+                          "Our research benefits from collaborations across engineering, computer science, urban planning, and policy domains to address complex transportation challenges."}
                         {step === 3 &&
-                          "I focus on research that has practical applications and can be implemented to improve transportation systems and enhance quality of life."}
+                          "We focus on research that has practical applications and can be implemented to improve transportation systems and enhance quality of life."}
                       </p>
                     </div>
                   </motion.div>

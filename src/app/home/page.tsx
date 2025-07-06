@@ -54,9 +54,9 @@ export default function Home() {
     <main className="min-h-screen">
       <HeroBanner
         id="home"
-        title="Aboah Armstrong"
-        subtitle="Assistant Professor and Transportation Data Scientist"
-        description="I am dedicated to pushing the boundaries of technology through cutting-edge research, collaborative partnerships, and mentoring the next generation of researchers."
+        title="The Sustainable Mobility and Advanced Research in Transportation Lab"
+        subtitle="Leveraging cutting-edge technologies to enhance transportation"
+        description="Dedicated to pushing the boundaries of technology through cutting-edge research, collaborative partnerships, and mentoring the next generation of researchers."
         showCtaBtn={false}
         showSocialLinks
         pageType="home"
@@ -80,7 +80,7 @@ export default function Home() {
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
               >
-                About Me
+                About Principal Investigator
               </motion.h2>
               <motion.div className="prose prose-lg max-w-none">
                 <motion.p
@@ -90,7 +90,8 @@ export default function Home() {
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.7, ease: "easeOut" }}
                 >
-                  I am an Assistant Professor at{" "}
+                  Assistant Professor Aboah Armstrong is an Assistant Professor
+                  at{" "}
                   <a
                     href="https://www.ndsu.edu/"
                     target="_blank"
@@ -99,7 +100,7 @@ export default function Home() {
                   >
                     North Dakota State University
                   </a>
-                  . I am an ingenious and resourceful Transportation Data
+                  . He is an ingenious and resourceful Transportation Data
                   Scientist with a proven track record of success in research
                   and hands-on experience developing cutting-edge database
                   solutions, statistical modeling, data products, and computer
@@ -113,11 +114,11 @@ export default function Home() {
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
                 >
-                  My broad interests lie in computer vision and machine
-                  learning. My research involves visual reasoning, vision and
+                  His broad interests lie in computer vision and machine
+                  learning. His research involves visual reasoning, vision and
                   language, image generation, air taxis, naturalistic studies,
-                  and autonomous vehicles. I received my PhD from the University
-                  of Missouri-Columbia, where I was advised by{" "}
+                  and autonomous vehicles. He received his PhD from the
+                  University of Missouri-Columbia, where he was advised by{" "}
                   <a
                     href="https://www.ndsu.edu/"
                     target="_blank"
@@ -166,7 +167,7 @@ export default function Home() {
               Research Focus Areas
             </h2>
             <p className="text-teal-100 max-w-2xl mx-auto text-base lg:text-lg">
-              My research spans multiple domains, contributing to both
+              Our research spans multiple domains, contributing to both
               theoretical understanding and practical applications.
             </p>
           </motion.div>
@@ -258,8 +259,9 @@ export default function Home() {
               Teaching Experience
             </h2>
             <p className="max-w-2xl mx-auto text-base lg:text-lg">
-              I have taught various courses in transportation engineering and
-              related fields across multiple prestigious institutions.
+              Assistant Professor, Aboah Armstrong, has taught various courses
+              in transportation engineering and related fields across multiple
+              prestigious institutions.
             </p>
           </motion.div>
           <div className="relative">

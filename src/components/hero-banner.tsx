@@ -154,7 +154,7 @@ const HeroBanner = (props: Props) => {
                 </Link>
 
                 <Link
-                  href="https://ndsu-smartlab.com"
+                  href="https://aboah1994.github.io"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-teal-200 hover:text-white transition-colors duration-300 group"

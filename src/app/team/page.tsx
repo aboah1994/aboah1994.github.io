@@ -24,8 +24,8 @@ export default function Team() {
       <HeroBanner
         id="team"
         title="Research Team"
-        subtitle="My Students and Collaborators"
-        description="I work with talented graduate students and collaborate with researchers worldwide to advance the field of transportation engineering through innovative data science and computer vision applications."
+        subtitle="Students and Collaborators"
+        description="We work with talented graduate students and collaborate with researchers worldwide to advance the field of transportation engineering through innovative data science and computer vision applications."
         pageType="team"
         isSmall={true}
       />
@@ -550,7 +550,7 @@ export default function Team() {
                     failure to respond to your email does not mean it
                     hasn&apos;t been read. Please send your email to:{" "}
                     <span className="font-semibold italic">
-                      info@ndsu-smartlab.com
+                      info@aboah1994.github.io
                     </span>
                     . For detailed application process, visit the{" "}
                     <span className="italic">
@@ -576,7 +576,7 @@ export default function Team() {
                   </span>
                   . Please send your email to:{" "}
                   <span className="font-semibold italic">
-                    info@ndsu-smartlab.com
+                    info@aboah1994.github.io
                   </span>
                 </p>
                 <p>

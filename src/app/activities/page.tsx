@@ -154,7 +154,7 @@ const Activities = () => {
           </Accordion>
           <div className="flex justify-center mt-16">
             <Link
-              href="https://www.ndsu-smartlab.com/blog.html"
+              href="https://www.aboah1994.github.io/blog.html"
               target="_blank"
               className="rounded-full bg-orange-400 hover:bg-orange-500 text-white font-bold py-4 px-8 transition-all duration-300 text-base"
             >

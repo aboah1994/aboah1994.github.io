@@ -163,8 +163,8 @@ export default function Publications() {
       <HeroBanner
         id="publications"
         title="Research Publications"
-        subtitle="My Academic Contributions"
-        description="A comprehensive collection of my peer-reviewed research publications in computer vision, machine learning, and transportation engineering, showcasing my contributions to advancing these fields."
+        subtitle="Our Academic Contributions"
+        description="A comprehensive collection of our peer-reviewed research publications in computer vision, machine learning, and transportation engineering, showcasing our contributions to advancing these fields."
         pageType="publications"
         isSmall={true}
       />

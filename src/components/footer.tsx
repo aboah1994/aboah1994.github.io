@@ -112,8 +112,8 @@ const Footer = () => {
         {/* Copyright Section */}
         <div className="mt-12 pt-8 border-t border-teal-700">
           <p className="text-center text-xs text-teal-100">
-            &copy; {new Date().getFullYear()} Professor Aboah Armstrong. All
-            rights reserved.
+            &copy; {new Date().getFullYear()} The SMART Lab. All rights
+            reserved.
           </p>
         </div>
       </div>

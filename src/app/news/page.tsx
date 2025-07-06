@@ -202,8 +202,8 @@ const News = () => {
       <HeroBanner
         id="news"
         title="News & Updates"
-        subtitle="My Latest Achievements and Milestones"
-        description="Stay updated with my latest developments, including new publications, grants, awards, and research achievements in transportation engineering and data science."
+        subtitle="Our Latest Achievements and Milestones"
+        description="Stay updated with our latest developments, including new publications, grants, awards, and research achievements in transportation engineering and data science."
         pageType="news"
         isSmall={true}
       />

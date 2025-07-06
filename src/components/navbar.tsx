@@ -76,6 +76,11 @@ const Navbar = () => {
           <button
             className="md:hidden p-2 text-white hover:text-white/80 hover:bg-slate-100 rounded-lg transition-colors"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={
+              isOpen ? "Close navigation menu" : "Open navigation menu"
+            }
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -84,11 +89,14 @@ const Navbar = () => {
 
       {isOpen && (
         <motion.div
+          id="mobile-menu"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
           className="md:hidden bg-white border-t border-slate-200"
+          role="navigation"
+          aria-label="Mobile navigation"
         >
           <div className="container mx-auto px-4 py-4">
             <nav className="flex flex-col space-y-2">

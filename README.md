@@ -57,21 +57,6 @@ src/
 └── styles/            # Global styles
 ```
 
-## Required Images
-
-The following images need to be added to the `public/images` directory:
-
-- `hero-bg.jpg` - Home page hero background
-- `team-hero.jpg` - Team page hero background
-- `research-hero.jpg` - Research page hero background
-- `publications-hero.jpg` - Publications page hero background
-- `news-hero.jpg` - News page hero background
-- `professor.jpg` - Professor's profile image
-- `team/` - Team member images
-- `research/` - Research area images
-- `publications/` - Publication images
-- `news/` - News article images
-
 ## Contributing
 
 1. Create a new branch for your feature
