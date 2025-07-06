@@ -25,7 +25,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   generateEtags: true,
   experimental: {
-    optimizeCss: true,
+    // optimizeCss: true,
     optimizePackageImports: ["lucide-react", "framer-motion"],
   },
   async headers() {
@@ -55,15 +55,15 @@ const nextConfig: NextConfig = {
           },
         ],
       },
-      {
-        source: "/static/(.*)",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
+      // {
+      //   source: "/static/(.*)",
+      //   headers: [
+      //     {
+      //       key: "Cache-Control",
+      //       value: "public, max-age=31536000, immutable",
+      //     },
+      //   ],
+      // },
       {
         source: "/images/(.*)",
         headers: [
